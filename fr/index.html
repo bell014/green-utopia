@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Services Premium | Solutions Sûres & Conformes</title>
+    <meta content="Accompagnement professionnel pour vos projets, du concept initial au lancement sur le marché."
+        name="description" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2C445C",
+                        accent: "#C1A376",
+                        "background-light": "#F9F7F4",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="bg-background-light text-primary">
+
+    <!-- Header -->
+    <header class="glass-nav sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="../assets/logo_green.png" alt="Logo" class="h-12 w-auto">
+                <div class="hidden sm:block">
+
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="index.html" class="nav-link active">Accueil</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">À propos</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-3 text-[10px] font-bold tracking-widest uppercase">
+                    <a href="../index.html" class="opacity-40 hover:opacity-100 transition-opacity">EN</a>
+                    <span class="opacity-20">|</span>
+                    <a href="index.html" class="opacity-100 text-accent">FR</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-primary">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center gap-8 md:hidden">
+            <button id="close-menu-btn" class="absolute top-6 right-6">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+            <a href="index.html" class="text-2xl font-display font-bold text-primary">Accueil</a>
+            <a href="services.html" class="text-2xl font-display font-bold text-primary">Services</a>
+            <a href="about.html" class="text-2xl font-display font-bold text-primary">À propos</a>
+            <a href="contact.html" class="text-2xl font-display font-bold text-primary">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden bg-background-light min-h-[90vh] flex items-center">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                <div class="space-y-8 py-20 animate-fade-in-up">
+                    <span class="text-accent font-bold tracking-[0.3em] uppercase text-xs block">Bienvenue dans notre
+                        marque</span>
+                    <h1 class="text-6xl lg:text-8xl leading-tight font-display text-primary uppercase reveal">
+                        Créer un produit <br /> <span class="italic text-accent">Sûr & Conforme</span>
+                    </h1>
+                    <p class="text-xl text-gray-500 max-w-lg font-light reveal">
+                        Accompagnement sur mesure de l'idée au lancement sur le marché pour vos projets les plus
+                        ambitieux.
+                    </p>
+                    <div class="pt-4 reveal flex gap-4">
+                        <a class="btn-primary" href="contact.html">
+                            CONTACTEZ-NOUS
+                        </a>
+                        <a class="border border-primary text-primary px-10 py-4 text-sm font-bold tracking-[0.2em] uppercase rounded-[4px] hover:bg-primary hover:text-white transition-all flex items-center"
+                            href="services.html">
+                            NOS SERVICES
+                        </a>
+                    </div>
+                </div>
+                <div class="relative h-[600px] hidden lg:block reveal w-full">
+                    <div class="carousel-container h-full w-full rounded-lg shadow-2xl overflow-hidden">
+                        <div class="carousel-track h-full">
+                            <div class="carousel-slide h-full">
+                                <img alt="Laboratoire" class="w-full h-full object-cover"
+                                    src="../assets/Makes_the_lab_2k_202601201151.jpeg" />
+                            </div>
+                            <div class="carousel-slide h-full">
+                                <img alt="Usine" class="w-full h-full object-cover"
+                                    src="../assets/Professional_factory_range_2k_202601201152.jpeg" />
+                            </div>
+                            <div class="carousel-slide h-full">
+                                <img alt="Entrepôt" class="w-full h-full object-cover"
+                                    src="../assets/Neatly_organized_and_2k_202601201152.jpeg" />
+                            </div>
+                        </div>
+                        <!-- Controls -->
+                        <button class="carousel-btn carousel-btn-prev">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button class="carousel-btn carousel-btn-next">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                        <!-- Indicators -->
+                        <div class="carousel-indicators"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute right-0 top-0 h-full w-1/3 bg-accent/5 -skew-x-12 transform translate-x-20"></div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="bg-navy py-32 text-white" id="services">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-24 space-y-4 reveal">
+                    <h2 class="text-5xl md:text-6xl font-display uppercase tracking-wider">Expertise</h2>
+                    <div class="w-20 h-1 bg-accent mx-auto"></div>
+                    <p class="text-gray-400 font-light italic text-xl">Des services personnalisés adaptés à vos besoins
+                        spécifiques.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service 1 -->
+                    <div
+                        class="group cursor-pointer rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-accent/40 transition-all duration-500 reveal">
+                        <div class="aspect-square overflow-hidden bg-gray-900">
+                            <img alt="Consulting"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                                src="../assets/Makes_the_lab_2k_202601201151.jpeg" />
+                        </div>
+                        <div class="p-8 text-center space-y-4">
+                            <h3 class="text-2xl font-display uppercase tracking-widest text-accent">Conseil Stratégique
+                            </h3>
+                            <p class="text-sm text-gray-400 font-light">Clarifier vos idées et transformer votre vision
+                                en un plan concret.</p>
+                        </div>
+                    </div>
+                    <!-- Service 2 -->
+                    <div
+                        class="group cursor-pointer rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-accent/40 transition-all duration-500 reveal">
+                        <div class="aspect-square overflow-hidden bg-gray-900">
+                            <img alt="Développement"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                                src="../assets/Professional_factory_range_2k_202601201152.jpeg" />
+                        </div>
+                        <div class="p-8 text-center space-y-4">
+                            <h3 class="text-2xl font-display uppercase tracking-widest text-accent">Développement
+                                Produit</h3>
+                            <p class="text-sm text-gray-400 font-light">Créer des solutions excellentes, innovantes et
+                                performantes.</p>
+                        </div>
+                    </div>
+                    <!-- Service 3 -->
+                    <div
+                        class="group cursor-pointer rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-accent/40 transition-all duration-500 reveal">
+                        <div class="aspect-square overflow-hidden bg-gray-900">
+                            <img alt="Conformité"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                                src="../assets/Neatly_organized_and_2k_202601201152.jpeg" />
+                        </div>
+                        <div class="p-8 text-center space-y-4">
+                            <h3 class="text-2xl font-display uppercase tracking-widest text-accent">Conformité</h3>
+                            <p class="text-sm text-gray-400 font-light">Sécuriser votre lancement avec un contrôle
+                                réglementaire et de qualité total.</p>
+                        </div>
+                    </div>
+                    <!-- Service 4 -->
+                    <div
+                        class="group cursor-pointer rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-accent/40 transition-all duration-500 reveal">
+                        <div class="aspect-square overflow-hidden bg-gray-900">
+                            <img alt="Accompagnement Complet"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                                src="../assets/Makes_the_lab_2k_202601201151-2.jpeg" />
+                        </div>
+                        <div class="p-8 text-center space-y-4">
+                            <h3 class="text-2xl font-display uppercase tracking-widest text-accent">Support Complet</h3>
+                            <p class="text-sm text-gray-400 font-light">Gestion globale de l'idée initiale au produit
+                                fini.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-20 text-center reveal">
+                    <a class="btn-secondary" href="services.html">
+                        VOIR TOUS LES SERVICES
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Preview -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 min-h-[700px] items-stretch overflow-hidden">
+            <div class="bg-white flex items-center justify-center p-12 lg:p-24 reveal">
+                <div class="max-w-xl space-y-12">
+                    <div class="space-y-4">
+                        <span class="text-accent font-bold tracking-widest text-xs uppercase">Notre Philosophie</span>
+                        <h2 class="text-5xl font-display tracking-tight uppercase text-primary">Pourquoi nous choisir ?
+                        </h2>
+                        <p class="text-2xl font-display italic text-accent font-light">Une approche rigoureuse, humaine
+                            et d'une précision absolue.</p>
+                    </div>
+                    <ul class="space-y-8">
+                        <li class="flex gap-6 group">
+                            <div
+                                class="w-12 h-12 rounded-full border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all flex-shrink-0">
+                                <span class="material-symbols-outlined">lightbulb</span>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-lg uppercase mb-1">Clarté</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed">Nous définissons ensemble
+                                    une direction claire pour éviter les pièges courants de l'industrie.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-6 group">
+                            <div
+                                class="w-12 h-12 rounded-full border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all flex-shrink-0">
+                                <span class="material-symbols-outlined">science</span>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-lg uppercase mb-1">Expertise</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed">Méthodologies rigoureuses
+                                    conformes aux normes internationales.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-6 group">
+                            <div
+                                class="w-12 h-12 rounded-full border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all flex-shrink-0">
+                                <span class="material-symbols-outlined">gavel</span>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-lg uppercase mb-1">Fiabilité</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed">Gestion complète de toutes
+                                    les exigences pour un lancement serein.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="pt-4">
+                        <a href="about.html"
+                            class="text-primary font-bold text-sm tracking-widest uppercase border-b-2 border-accent pb-2 hover:text-accent transition-all">En
+                            savoir plus sur nous</a>
+                    </div>
+                </div>
+            </div>
+            <div class="relative bg-accent/10 flex items-center justify-center overflow-hidden min-h-[500px]">
+                <div class="absolute inset-0 bg-navy opacity-5"></div>
+                <div
+                    class="relative z-10 w-3/4 max-w-sm transform group hover:scale-105 transition-transform duration-1000 reveal">
+                    <img alt="Installation Professionnelle" class="shadow-2xl rounded-sm"
+                        src="../assets/Professional_factory_range_2k_202601201152-2.jpeg" />
+                    <div class="absolute -inset-8 border-2 border-accent/20 -z-10 translate-x-4 translate-y-4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter / Ebook Section -->
+        <section class="bg-background-light py-32 border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="flex justify-center reveal">
+                    <div class="bg-navy p-12 shadow-2xl relative max-w-sm group rounded-sm overflow-hidden text-center">
+                        <div
+                            class="absolute top-0 right-0 w-20 h-20 bg-accent transform translate-x-10 -translate-y-10 rotate-45">
+                        </div>
+                        <div class="space-y-6 text-white relative z-10">
+                            <span class="text-[10px] tracking-[0.4em] font-light opacity-60 uppercase">Ressources
+                                Gratuites</span>
+                            <h3 class="text-3xl font-display leading-tight uppercase">Guide Premium Succès</h3>
+                            <div class="w-12 h-0.5 bg-accent mx-auto"></div>
+                            <p class="text-[10px] tracking-widest opacity-80 uppercase">Les étapes clés de la victoire
+                            </p>
+                            <div class="py-6">
+                                <img alt="Maquette guide" class="mx-auto h-48 drop-shadow-2xl"
+                                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-10 reveal">
+                    <h2 class="text-5xl font-display uppercase leading-tight text-primary">Prêt à lancer <br />votre
+                        marque ?</h2>
+                    <div class="space-y-6">
+                        <p class="text-accent font-bold uppercase tracking-widest text-xs">Téléchargez notre guide
+                            exclusif</p>
+                        <p class="text-gray-500 font-light text-lg max-w-md leading-relaxed">
+                            Évitez les erreurs coûteuses et avancez en toute confiance grâce à notre expertise
+                            condensée.
+                        </p>
+                    </div>
+                    <form class="flex flex-col sm:flex-row gap-0 max-w-lg shadow-2xl rounded-sm overflow-hidden">
+                        <input class="flex-grow px-8 py-5 text-sm border-none focus:ring-accent bg-white outline-none"
+                            placeholder="Votre adresse email" required="" type="email" />
+                        <button class="btn-secondary px-8 rounded-none border-none py-5" type="submit">Obtenir le
+                            guide</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+                <div class="space-y-8">
+                    <div class="flex items-center gap-3">
+                        <img src="../assets/logo_green.png" alt="Logo" class="h-10 w-auto brightness-0 invert">
+
+                    </div>
+                    <p class="text-sm font-light text-gray-400 leading-relaxed max-w-xs">
+                        Accompagnement expert et sur mesure pour transformer votre idée en un produit exceptionnel,
+                        conforme et performant.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+                            <span class="material-symbols-outlined text-xl">language</span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+                            <span class="material-symbols-outlined text-xl">camera</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Navigation</h5>
+                    <nav class="flex flex-col gap-4 text-sm font-light text-gray-400">
+                        <a href="index.html" class="hover:text-white transition-colors">Accueil</a>
+                        <a href="services.html" class="hover:text-white transition-colors">Services</a>
+                        <a href="about.html" class="hover:text-white transition-colors">À propos</a>
+                        <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                    </nav>
+                </div>
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Mentions Légales</h5>
+                    <nav class="flex flex-col gap-4 text-sm font-light text-gray-400">
+                        <a href="#" class="hover:text-white transition-colors">FAQ</a>
+                        <a href="#" class="hover:text-white transition-colors">Confidentialité</a>
+                        <a href="#" class="hover:text-white transition-colors">Termes de Service</a>
+                    </nav>
+                </div>
+                <div class="space-y-8">
+                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Contact</h5>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 group cursor-pointer">
+                            <span
+                                class="material-symbols-outlined text-accent group-hover:scale-110 transition-transform">call</span>
+                            <span class="text-sm font-medium">+00 00 00 00 00 00</span>
+                        </div>
+                        <div class="flex items-center gap-4 group cursor-pointer">
+                            <span
+                                class="material-symbols-outlined text-accent group-hover:scale-110 transition-transform">mail</span>
+                            <span class="text-sm font-medium">contact@example.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-white/10 text-center text-[10px] tracking-[0.4em] font-light text-gray-500 uppercase">
+                © 2026 Brand Name - Excellence & Innovation - Tous droits réservés
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner"
+        class="hidden fixed bottom-6 right-6 z-[60] max-w-xs bg-white p-8 shadow-2xl border border-gray-100 rounded-sm reveal active">
+        <div class="flex flex-col items-center text-center gap-6">
+            <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent">
+                <span class="material-symbols-outlined text-4xl">cookie</span>
+            </div>
+            <p class="text-xs text-gray-500 leading-relaxed">
+                Ce site utilise des cookies pour optimiser votre expérience. En continuant, vous acceptez notre
+                politique de confidentialité.
+            </p>
+            <div class="flex flex-col w-full gap-3">
+                <button id="accept-cookies"
+                    class="bg-navy text-white py-3 text-xs font-bold uppercase tracking-widest hover:bg-opacity-90 transition-all rounded-sm">
+                    Tout accepter
+                </button>
+                <button class="text-navy py-1 text-[10px] font-bold uppercase tracking-widest hover:underline">
+                    Détails
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
