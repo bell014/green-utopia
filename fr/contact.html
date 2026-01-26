@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Contactez-nous | Obtenez un Devis Professionnel</title>
+    <title>Contact | GREEN UTOPIA</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
@@ -23,13 +23,16 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#2C445C",
-                        accent: "#C1A376",
-                        "background-light": "#F9F7F4",
+                        primary: "#184F44",
+                        vibrant: "#1B8A46",
+                        gold: "#F2DA91",
+                        brown: "#8C6A3F",
+                        "background-light": "#FFFFFF",
+                        "background-cream": "#F9F7F4",
                     },
                     fontFamily: {
                         display: ["Playfair Display", "serif"],
-                        body: ["Inter", "sans-serif"],
+                        body: ["Montserrat", "sans-serif"],
                     },
                 },
             },
@@ -38,28 +41,25 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="bg-background-light text-primary">
+<body class="bg-background-light text-primary font-body">
 
     <!-- Header -->
-    <header class="glass-nav sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <header class="glass-nav">
+        <div class="max-w-7xl mx-auto h-24 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
-                <img src="../assets/logo_green.png" alt="Logo" class="h-12 w-auto">
-                <div class="hidden sm:block">
-
-                </div>
+                <img src="../assets/logo_green.png" alt="Logo" class="h-14 w-auto">
             </a>
-            <nav class="hidden md:flex items-center gap-10">
+            <nav class="hidden md:flex items-center gap-12">
                 <a href="index.html" class="nav-link">Accueil</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="about.html" class="nav-link">À propos</a>
                 <a href="contact.html" class="nav-link active">Contact</a>
             </nav>
-            <div class="flex items-center gap-6">
-                <div class="flex items-center gap-3 text-[10px] font-bold tracking-widest uppercase">
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-3 text-[10px] font-bold tracking-[0.3em] uppercase">
                     <a href="../contact.html" class="opacity-40 hover:opacity-100 transition-opacity">EN</a>
-                    <span class="opacity-20">|</span>
-                    <a href="contact.html" class="opacity-100 text-accent">FR</a>
+                    <span class="opacity-20 text-primary">|</span>
+                    <a href="contact.html" class="text-vibrant">FR</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-primary">
                     <span class="material-symbols-outlined text-3xl">menu</span>
@@ -69,176 +69,199 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center gap-8 md:hidden">
-            <button id="close-menu-btn" class="absolute top-6 right-6">
+            <button id="close-menu-btn" class="absolute top-8 right-8 text-primary">
                 <span class="material-symbols-outlined text-4xl">close</span>
             </button>
-            <a href="index.html" class="text-2xl font-display font-bold text-primary">Accueil</a>
-            <a href="services.html" class="text-2xl font-display font-bold text-primary">Services</a>
-            <a href="about.html" class="text-2xl font-display font-bold text-primary">À propos</a>
-            <a href="contact.html" class="text-2xl font-display font-bold text-primary">Contact</a>
+            <a href="index.html" class="text-3xl font-display font-bold text-primary">Accueil</a>
+            <a href="services.html" class="text-3xl font-display font-bold text-primary">Services</a>
+            <a href="about.html" class="text-3xl font-display font-bold text-primary">À propos</a>
+            <a href="contact.html" class="text-3xl font-display font-bold text-primary">Contact</a>
         </div>
     </header>
 
     <main>
         <!-- Contact Section -->
-        <section class="py-24 bg-background-light">
+        <section class="py-24 lg:py-40 bg-white overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-20 items-start">
-                    <div class="space-y-16 reveal">
-                        <h1 class="text-7xl md:text-8xl font-display font-bold text-primary leading-tight">Contact</h1>
-                        <div class="space-y-10">
-                            <div class="flex items-center space-x-6 group">
+                <div class="grid lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-4 space-y-16 reveal">
+                        <div class="space-y-6">
+                            <div
+                                class="inline-block px-6 py-2 bg-vibrant/10 text-vibrant rounded-full text-[10px] font-bold tracking-[0.4em] uppercase">
+                                INITIER LE DIALOGUE</div>
+                            <h1
+                                class="text-7xl md:text-9xl font-display font-bold text-primary leading-[0.9] uppercase tracking-tighter">
+                                Entrez en <br /><span class="italic text-gold">Contact</span></h1>
+                        </div>
+
+                        <div class="space-y-8">
+                            <div
+                                class="flex items-center space-x-8 group p-6 bg-background-cream rounded-[40px] transition-all hover:bg-gold/20">
                                 <div
-                                    class="w-14 h-14 rounded-full bg-white shadow-sm flex items-center justify-center border border-slate-100">
-                                    <span class="material-symbols-outlined text-2xl"
-                                        style="color: var(--accent);">call</span>
+                                    class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center text-vibrant group-hover:bg-vibrant group-hover:text-white transition-all">
+                                    <span class="material-symbols-outlined text-2xl">call</span>
                                 </div>
                                 <div class="flex flex-col">
                                     <span
-                                        class="text-[10px] uppercase tracking-widest text-slate-400 mb-1">Téléphone</span>
-                                    <span class="text-xl font-medium">+33 7 43 52 41 68</span>
+                                        class="text-[9px] font-black uppercase tracking-[0.3em] text-brown/40 mb-1">Ligne
+                                        Directe Élite</span>
+                                    <span class="text-xl font-bold tracking-tight">+33 7 43 52 41 68</span>
                                 </div>
                             </div>
-                            <div class="flex items-center space-x-6 group">
+                            <div
+                                class="flex items-center space-x-8 group p-6 bg-background-cream rounded-[40px] transition-all hover:bg-gold/20">
                                 <div
-                                    class="w-14 h-14 rounded-full bg-white shadow-sm flex items-center justify-center border border-slate-100">
-                                    <span class="material-symbols-outlined text-2xl"
-                                        style="color: var(--accent);">mail</span>
+                                    class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center text-vibrant group-hover:bg-vibrant group-hover:text-white transition-all">
+                                    <span class="material-symbols-outlined text-2xl">mail</span>
                                 </div>
                                 <div class="flex flex-col">
-                                    <span class="text-[10px] uppercase tracking-widest text-slate-400 mb-1">Email</span>
-                                    <span class="text-xl font-medium">contact@formulacareconsulting.com</span>
+                                    <span
+                                        class="text-[9px] font-black uppercase tracking-[0.3em] text-brown/40 mb-1">Correspondance
+                                        Directe</span>
+                                    <span class="text-xl font-bold tracking-tight">contact@greenutopia.com</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white p-10 md:p-12 rounded-none shadow-2xl shadow-slate-200/50 reveal">
-                        <div class="mb-10">
-                            <p class="text-accent text-[10px] font-bold tracking-[0.2em] uppercase mb-3">Formulaire de
-                                contact</p>
-                            <h2 class="text-3xl font-display font-bold leading-tight text-primary">Remplissez le
-                                formulaire pour nous contacter directement</h2>
+
+                    <div class="lg:col-span-6 lg:col-start-7 form-card reveal">
+                        <div class="form-inner">
+                            <div class="mb-12 space-y-4">
+                                <div class="text-vibrant text-[10px] font-black tracking-[0.4em] uppercase">Intelligence
+                                    Formulaire</div>
+                                <h2
+                                    class="text-4xl font-display font-bold leading-tight text-primary uppercase tracking-tight">
+                                    Initiez votre <br />parcours durable</h2>
+                            </div>
+                            <form class="space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+                                    <div class="form-input-group">
+                                        <label class="form-label">Nom complet</label>
+                                        <input class="form-input" placeholder="ex: Jean Dupont" required=""
+                                            type="text" />
+                                    </div>
+                                    <div class="form-input-group">
+                                        <label class="form-label">Entreprise</label>
+                                        <input class="form-input" placeholder="Optionnel" type="text" />
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+                                    <div class="form-input-group">
+                                        <label class="form-label">Adresse Email</label>
+                                        <input class="form-input" placeholder="contact@exemple.com" required=""
+                                            type="email" />
+                                    </div>
+                                    <div class="form-input-group">
+                                        <label class="form-label">Téléphone</label>
+                                        <input class="form-input" placeholder="+33 0 00 00 00" required="" type="tel" />
+                                    </div>
+                                </div>
+                                <div class="form-input-group">
+                                    <label class="form-label">Expertise Souhaitée</label>
+                                    <select class="form-input form-select" required>
+                                        <option disabled="" selected="" value="">Sélectionnez un univers</option>
+                                        <option value="regulatory">Maîtrise Réglementaire</option>
+                                        <option value="formulation">Innovation Durable</option>
+                                        <option value="quality">Gouvernance Qualité</option>
+                                    </select>
+                                </div>
+                                <div class="form-input-group">
+                                    <label class="form-label">Message</label>
+                                    <textarea class="form-input" placeholder="Décrivez votre vision..." required=""
+                                        rows="5"></textarea>
+                                </div>
+                                <div class="pt-4">
+                                    <button class="btn-primary w-full" type="submit">
+                                        TRANSMETTRE LA DEMANDE
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                        <form class="space-y-5">
-                            <div class="grid md:grid-cols-2 gap-5">
-                                <input
-                                    class="w-full bg-slate-50 border-transparent rounded-none px-5 py-4 focus:ring-1 focus:ring-accent focus:bg-white transition-all text-sm placeholder:text-slate-400 outline-none"
-                                    placeholder="Nom et prénom*" required="" type="text">
-                                <input
-                                    class="w-full bg-slate-50 border-transparent rounded-none px-5 py-4 focus:ring-1 focus:ring-accent focus:bg-white transition-all text-sm placeholder:text-slate-400 outline-none"
-                                    placeholder="Entreprise (facultatif)" type="text">
-                            </div>
-                            <div class="grid md:grid-cols-2 gap-5">
-                                <input
-                                    class="w-full bg-slate-50 border-transparent rounded-none px-5 py-4 focus:ring-1 focus:ring-accent focus:bg-white transition-all text-sm placeholder:text-slate-400 outline-none"
-                                    placeholder="E-mail*" required="" type="email">
-                                <input
-                                    class="w-full bg-slate-50 border-transparent rounded-none px-5 py-4 focus:ring-1 focus:ring-accent focus:bg-white transition-all text-sm placeholder:text-slate-400 outline-none"
-                                    placeholder="Téléphone*" required="" type="tel">
-                            </div>
-                            <div>
-                                <select
-                                    class="w-full bg-slate-50 border-transparent rounded-none px-5 py-4 focus:ring-1 focus:ring-accent focus:bg-white transition-all text-sm text-slate-500 outline-none">
-                                    <option disabled="" selected="" value="">Sélectionnez un service (ex: DIP/PIF)
-                                    </option>
-                                    <option value="regulatory">Conformité Réglementaire</option>
-                                    <option value="formulation">Formulation Cosmétique</option>
-                                    <option value="quality">Audit &amp; Qualité</option>
-                                </select>
-                            </div>
-                            <div>
-                                <textarea
-                                    class="w-full bg-slate-50 border-transparent rounded-none px-5 py-4 focus:ring-1 focus:ring-accent focus:bg-white transition-all text-sm placeholder:text-slate-400 outline-none"
-                                    placeholder="Votre message*" required="" rows="5"></textarea>
-                            </div>
-                            <button
-                                class="w-full py-5 bg-navy text-white font-bold uppercase tracking-[0.2em] text-[11px] hover:bg-slate-800 transition-all duration-300 rounded-brand"
-                                type="submit">
-                                Envoyer le message
-                            </button>
-                        </form>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Final Messaging Section -->
-        <section class="py-32 bg-navy text-white text-center">
-            <div class="max-w-4xl mx-auto px-6 space-y-12 reveal">
-                <h2 class="text-5xl font-display font-bold uppercase tracking-tight">Votre projet mérite <br /><span
-                        class="text-accent italic">l'excellence</span></h2>
-                <div class="space-y-8 text-gray-400 leading-relaxed text-xl font-light">
-                    <p>Nous sommes à votre écoute pour vous aider à transformer vos idées en produits sûrs, conformes et
-                        performants sur le marché mondial.</p>
-                    <p>Que vous soyez une start-up ou une marque établie, notre firme vous apporte la rigueur et le
-                        soutien stratégique nécessaires à votre succès.</p>
+        <section class="py-40 bg-primary text-white text-center relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-6 space-y-16 reveal relative z-10">
+                <h2 class="text-5xl md:text-8xl font-display font-bold uppercase tracking-tighter leading-tight">
+                    L'Excellence <br /><span class="text-gold italic">Est un Choix</span></h2>
+                <div class="space-y-10 text-white/60 leading-relaxed text-xl font-medium italic">
+                    <p>Nous sommes les gardiens de votre vision durable, transformant vos idées en réalités
+                        inattaquables sur l'échiquier mondial.</p>
+                    <p>Que vous bâtissiez un empire ou une révolution, Green Utopia est votre sanctuaire de réussite.
+                    </p>
                 </div>
-                <div class="w-16 h-1 bg-accent mx-auto"></div>
-                <p class="text-sm uppercase tracking-[0.4em] font-bold text-accent">Consultation initiale gratuite</p>
+                <div class="w-24 h-1.5 bg-gold mx-auto rounded-full"></div>
+                <p class="text-xs uppercase tracking-[0.5em] font-black text-gold">DISPONIBILITÉ LIMITÉE - PROJETS
+                    SÉLECTIONNÉS</p>
             </div>
+            <!-- decorative branding -->
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 border border-white/5 rounded-full"></div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-navy text-white pt-24 pb-12">
+    <footer class="bg-background-cream text-primary pt-32 pb-16">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
-                <div class="space-y-8">
-                    <div class="flex items-center gap-3">
-                        <img src="../assets/logo_green.png" alt="Logo" class="h-10 w-auto brightness-0 invert">
-
-                    </div>
-                    <p class="text-sm font-light text-gray-400 leading-relaxed max-w-xs">
-                        Accompagnement expert et sur mesure pour transformer votre idée en un produit exceptionnel,
-                        conforme et performant.
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
+                <div class="space-y-10">
+                    <img src="../assets/logo_green.png" alt="Logo" class="h-16 w-auto">
+                    <p class="text-sm font-medium text-brown/70 leading-relaxed max-w-xs">
+                        Accompagnement expert pour transformer votre vision durable en une réalité d'exception.
                     </p>
-                    <div class="flex gap-4">
+                    <div class="flex gap-6">
                         <a href="#"
-                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+                            class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-vibrant hover:text-white transition-all text-primary">
                             <span class="material-symbols-outlined text-xl">language</span>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+                            class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-vibrant hover:text-white transition-all text-primary">
                             <span class="material-symbols-outlined text-xl">camera</span>
                         </a>
                     </div>
                 </div>
                 <div>
-                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Navigation</h5>
-                    <nav class="flex flex-col gap-4 text-sm font-light text-gray-400">
-                        <a href="index.html" class="hover:text-white transition-colors">Accueil</a>
-                        <a href="services.html" class="hover:text-white transition-colors">Services</a>
-                        <a href="about.html" class="hover:text-white transition-colors">À propos</a>
-                        <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Navigation</h5>
+                    <nav class="flex flex-col gap-5 text-sm font-bold uppercase tracking-widest">
+                        <a href="index.html" class="hover:text-vibrant transition-colors">Accueil</a>
+                        <a href="services.html" class="hover:text-vibrant transition-colors">Services</a>
+                        <a href="about.html" class="hover:text-vibrant transition-colors">À propos</a>
+                        <a href="contact.html" class="hover:text-vibrant transition-colors">Contact</a>
                     </nav>
                 </div>
                 <div>
-                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Mentions Légales</h5>
-                    <nav class="flex flex-col gap-4 text-sm font-light text-gray-400">
-                        <a href="#" class="hover:text-white transition-colors">FAQ</a>
-                        <a href="#" class="hover:text-white transition-colors">Confidentialité</a>
-                        <a href="#" class="hover:text-white transition-colors">Termes de Service</a>
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Légal</h5>
+                    <nav class="flex flex-col gap-5 text-sm font-bold uppercase tracking-widest text-brown/60">
+                        <a href="#" class="hover:text-vibrant transition-colors">FAQ</a>
+                        <a href="#" class="hover:text-vibrant transition-colors">Confidentialité</a>
+                        <a href="#" class="hover:text-vibrant transition-colors">Conditions</a>
                     </nav>
                 </div>
-                <div class="space-y-8">
-                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Contact</h5>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4 group cursor-pointer">
+                <div class="space-y-10">
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Nous Contacter</h5>
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-5 group cursor-pointer">
                             <span
-                                class="material-symbols-outlined text-accent group-hover:scale-110 transition-transform">call</span>
-                            <span class="text-sm font-medium">+00 00 00 00 00 00</span>
+                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl font-bold">call</span>
+                            </span>
+                            <span class="text-sm font-bold tracking-tight">+33 7 43 52 41 68</span>
                         </div>
-                        <div class="flex items-center gap-4 group cursor-pointer">
+                        <div class="flex items-center gap-5 group cursor-pointer">
                             <span
-                                class="material-symbols-outlined text-accent group-hover:scale-110 transition-transform">mail</span>
-                            <span class="text-sm font-medium">contact@example.com</span>
+                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl font-bold">mail</span>
+                            </span>
+                            <span class="text-sm font-bold tracking-tight">contact@greenutopia.com</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div
-                class="pt-8 border-t border-white/10 text-center text-[10px] tracking-[0.4em] font-light text-gray-500 uppercase">
-                © 2026 Brand Name - Excellence & Innovation - Tous droits réservés
+                class="pt-12 border-t border-primary/5 text-center text-[10px] tracking-[0.4em] font-bold text-brown/40 uppercase">
+                © 2026 GREEN UTOPIA - Excellence & Innovation Durable
             </div>
         </div>
     </footer>

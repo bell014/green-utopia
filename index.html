@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="fr">
+<html class="scroll-smooth" lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Premium Services | Secure & Compliant Solutions</title>
-    <meta content="Professional support for your projects, from initial concept to market launch." name="description" />
+    <title>GREEN UTOPIA | Premium Eco-Solutions</title>
+    <meta content="Professional support for your sustainable projects, from initial concept to market launch."
+        name="description" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
@@ -24,14 +25,21 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#2C445C",
-                        accent: "#C1A376",
-                        "background-light": "#F9F7F4",
+                        primary: "#184F44",
+                        vibrant: "#1B8A46",
+                        gold: "#F2DA91",
+                        brown: "#8C6A3F",
+                        "background-light": "#FFFFFF",
+                        "background-cream": "#F9F7F4",
                     },
                     fontFamily: {
                         display: ["Playfair Display", "serif"],
-                        body: ["Inter", "sans-serif"],
+                        body: ["Montserrat", "sans-serif"],
                     },
+                    borderRadius: {
+                        'pill': '100px',
+                        'brand': '40px',
+                    }
                 },
             },
         };
@@ -39,27 +47,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-background-light text-primary">
+<body class="bg-background-light text-primary font-body">
 
     <!-- Header -->
-    <header class="glass-nav sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <header class="glass-nav">
+        <div class="max-w-7xl mx-auto h-24 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
-                <img src="assets/logo_green.png" alt="Logo" class="h-12 w-auto">
-                <div class="hidden sm:block">
-
-                </div>
+                <img src="assets/logo_green.png" alt="Green Utopia Logo" class="h-14 w-auto">
             </a>
-            <nav class="hidden md:flex items-center gap-10">
+            <nav class="hidden md:flex items-center gap-12">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
-            <div class="flex items-center gap-6">
-                <div class="flex items-center gap-3 text-[10px] font-bold tracking-widest uppercase">
-                    <a href="index.html" class="opacity-100 text-accent">EN</a>
-                    <span class="opacity-20">|</span>
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-3 text-[10px] font-bold tracking-[0.3em] uppercase">
+                    <a href="index.html" class="text-vibrant">EN</a>
+                    <span class="opacity-20 text-primary">|</span>
                     <a href="fr/index.html" class="opacity-40 hover:opacity-100 transition-opacity">FR</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-primary">
@@ -70,53 +75,50 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center gap-8 md:hidden">
-            <button id="close-menu-btn" class="absolute top-6 right-6">
+            <button id="close-menu-btn" class="absolute top-8 right-8 text-primary">
                 <span class="material-symbols-outlined text-4xl">close</span>
             </button>
-            <a href="index.html" class="text-2xl font-display font-bold text-primary">Home</a>
-            <a href="services.html" class="text-2xl font-display font-bold text-primary">Services</a>
-            <a href="about.html" class="text-2xl font-display font-bold text-primary">About</a>
-            <a href="contact.html" class="text-2xl font-display font-bold text-primary">Contact</a>
+            <a href="index.html" class="text-3xl font-display font-bold text-primary">Home</a>
+            <a href="services.html" class="text-3xl font-display font-bold text-primary">Services</a>
+            <a href="about.html" class="text-3xl font-display font-bold text-primary">About</a>
+            <a href="contact.html" class="text-3xl font-display font-bold text-primary">Contact</a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="relative overflow-hidden bg-background-light min-h-[90vh] flex items-center">
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-                <div class="space-y-8 py-20 animate-fade-in-up">
-                    <span class="text-accent font-bold tracking-[0.3em] uppercase text-xs block">Welcome to our
-                        brand</span>
-                    <h1 class="text-6xl lg:text-8xl leading-tight font-display text-primary uppercase reveal">
-                        Create a product <br /> <span class="italic text-accent">Safe & Compliant</span>
+        <section class="relative min-h-[90vh] flex items-center pt-10 pb-20 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                <div class="space-y-10 animate-fade-in-up">
+                    <div
+                        class="inline-block px-6 py-2 bg-gold/20 text-primary rounded-full text-[10px] font-bold tracking-[0.4em] uppercase">
+                        Experience Premium Nature
+                    </div>
+                    <h1 class="text-6xl lg:text-8xl leading-[1.05] font-display text-primary uppercase">
+                        Nature & <br /> <span class="italic text-vibrant">Excellence</span> <br /> Combined
                     </h1>
-                    <p class="text-xl text-gray-500 max-w-lg font-light reveal">
-                        Tailored support from idea to market launch for your most ambitious projects.
+                    <p class="text-xl text-brown/80 max-w-lg font-medium leading-relaxed">
+                        Redefining sustainable luxury and professional support for your most ambitious projects.
                     </p>
-                    <div class="pt-4 reveal flex gap-4">
+                    <div class="pt-6 flex flex-wrap gap-6">
                         <a class="btn-primary" href="contact.html">
-                            GET IN TOUCH
+                            Get Exploration Started
                         </a>
-                        <a class="border border-primary text-primary px-10 py-4 text-sm font-bold tracking-[0.2em] uppercase rounded-[4px] hover:bg-primary hover:text-white transition-all flex items-center"
-                            href="services.html">
-                            OUR SERVICES
+                        <a class="btn-secondary" href="services.html">
+                            Our Universe
                         </a>
                     </div>
                 </div>
-                <div class="relative h-[600px] hidden lg:block reveal w-full">
-                    <div class="carousel-container h-full w-full rounded-lg shadow-2xl overflow-hidden">
+                <div class="relative h-[650px] hidden lg:block w-full">
+                    <div class="carousel-container h-full w-full shadow-2xl">
                         <div class="carousel-track h-full">
                             <div class="carousel-slide h-full">
-                                <img alt="Laboratory" class="w-full h-full object-cover"
+                                <img alt="Premium Nature" class="w-full h-full object-cover"
                                     src="assets/Makes_the_lab_2k_202601201151.jpeg" />
                             </div>
                             <div class="carousel-slide h-full">
-                                <img alt="Factory" class="w-full h-full object-cover"
+                                <img alt="Sustainability" class="w-full h-full object-cover"
                                     src="assets/Professional_factory_range_2k_202601201152.jpeg" />
-                            </div>
-                            <div class="carousel-slide h-full">
-                                <img alt="Warehouse" class="w-full h-full object-cover"
-                                    src="assets/Neatly_organized_and_2k_202601201152.jpeg" />
                             </div>
                         </div>
                         <!-- Controls -->
@@ -126,277 +128,274 @@
                         <button class="carousel-btn carousel-btn-next">
                             <span class="material-symbols-outlined">chevron_right</span>
                         </button>
-                        <!-- Indicators -->
                         <div class="carousel-indicators"></div>
                     </div>
                 </div>
             </div>
-            <div class="absolute right-0 top-0 h-full w-1/3 bg-accent/5 -skew-x-12 transform translate-x-20"></div>
+            <!-- Dynamic Background Element -->
+            <div class="absolute -right-20 -top-20 w-[600px] h-[600px] bg-gold/5 rounded-full blur-3xl -z-10"></div>
+            <div class="absolute -left-20 -bottom-20 w-[600px] h-[600px] bg-vibrant/5 rounded-full blur-3xl -z-10">
+            </div>
         </section>
 
-        <!-- Services Preview -->
-        <section class="bg-navy py-32 text-white" id="services">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-24 space-y-4 reveal">
-                    <h2 class="text-5xl md:text-6xl font-display uppercase tracking-wider">Expertise</h2>
-                    <div class="w-20 h-1 bg-accent mx-auto"></div>
-                    <p class="text-gray-400 font-light italic text-xl">Custom services adapted to your specific needs.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Service 1 -->
-                    <div
-                        class="group cursor-pointer rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-accent/40 transition-all duration-500 reveal">
-                        <div class="aspect-square overflow-hidden bg-gray-900">
-                            <img alt="Consulting"
-                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                                src="assets/Makes_the_lab_2k_202601201151.jpeg" />
+        <!-- Universe Section (Services) -->
+        <section class="bg-primary py-32 text-white relative overflow-hidden" id="services">
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+                    <div class="space-y-6 max-w-2xl reveal">
+                        <div class="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">Professional Expertise
                         </div>
-                        <div class="p-8 text-center space-y-4">
-                            <h3 class="text-2xl font-display uppercase tracking-widest text-accent">Strategic Consulting
-                            </h3>
-                            <p class="text-sm text-gray-400 font-light">Clarifying your ideas and transforming your
-                                vision into a concrete plan.</p>
+                        <h2 class="text-5xl md:text-7xl font-display uppercase leading-tight">Our Services</h2>
+                        <p class="text-gold/80 font-medium italic text-xl">Crafting success through precision and care.
+                        </p>
+                    </div>
+                    <div class="reveal">
+                        <a href="services.html"
+                            class="group flex items-center gap-4 text-gold font-bold tracking-widest uppercase hover:text-white transition-all">
+                            View All Expertise
+                            <span
+                                class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center group-hover:bg-gold group-hover:text-primary transition-all">
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Service 1 -->
+                    <div class="brand-card group cursor-pointer reveal">
+                        <div class="brand-card-inner space-y-8 h-full flex flex-col justify-between">
+                            <div class="space-y-6">
+                                <div
+                                    class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-gold">
+                                    <span class="material-symbols-outlined text-3xl">strategy</span>
+                                </div>
+                                <h3 class="text-3xl font-display uppercase tracking-tight text-primary">Strategic
+                                    Consulting</h3>
+                                <p class="text-primary/70 font-medium text-sm leading-relaxed">Transforming your
+                                    sustainable vision into a concrete, market-ready plan.</p>
+                            </div>
+                            <span
+                                class="text-primary font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform inline-block">Explore
+                                More →</span>
                         </div>
                     </div>
                     <!-- Service 2 -->
-                    <div
-                        class="group cursor-pointer rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-accent/40 transition-all duration-500 reveal">
-                        <div class="aspect-square overflow-hidden bg-gray-900">
-                            <img alt="Development"
-                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                                src="assets/Professional_factory_range_2k_202601201152.jpeg" />
-                        </div>
-                        <div class="p-8 text-center space-y-4">
-                            <h3 class="text-2xl font-display uppercase tracking-widest text-accent">Product Development
-                            </h3>
-                            <p class="text-sm text-gray-400 font-light">Creating excellent, innovative, and
-                                high-performance solutions.</p>
+                    <div class="brand-card group cursor-pointer reveal" style="transition-delay: 100ms;">
+                        <div
+                            class="brand-card-inner space-y-8 h-full flex flex-col justify-between bg-white border-2 border-gold">
+                            <div class="space-y-6">
+                                <div
+                                    class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-gold">
+                                    <span class="material-symbols-outlined text-3xl">eco</span>
+                                </div>
+                                <h3 class="text-3xl font-display uppercase tracking-tight text-primary">Eco-Development
+                                </h3>
+                                <p class="text-primary/70 font-medium text-sm leading-relaxed">Creating innovative,
+                                    high-performance solutions with a green heart.</p>
+                            </div>
+                            <span
+                                class="text-primary font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform inline-block">Explore
+                                More →</span>
                         </div>
                     </div>
                     <!-- Service 3 -->
-                    <div
-                        class="group cursor-pointer rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-accent/40 transition-all duration-500 reveal">
-                        <div class="aspect-square overflow-hidden bg-gray-900">
-                            <img alt="Compliance"
-                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                                src="assets/Neatly_organized_and_2k_202601201152.jpeg" />
-                        </div>
-                        <div class="p-8 text-center space-y-4">
-                            <h3 class="text-2xl font-display uppercase tracking-widest text-accent">Compliance</h3>
-                            <p class="text-sm text-gray-400 font-light">Securing your launch with total regulatory and
-                                quality control.</p>
-                        </div>
-                    </div>
-                    <!-- Service 4 -->
-                    <div
-                        class="group cursor-pointer rounded-lg overflow-hidden bg-white/5 border border-white/10 hover:border-accent/40 transition-all duration-500 reveal">
-                        <div class="aspect-square overflow-hidden bg-gray-900">
-                            <img alt="Full Support"
-                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                                src="assets/Makes_the_lab_2k_202601201151-2.jpeg" />
-                        </div>
-                        <div class="p-8 text-center space-y-4">
-                            <h3 class="text-2xl font-display uppercase tracking-widest text-accent">Full Support</h3>
-                            <p class="text-sm text-gray-400 font-light">Global management from initial idea to final
-                                product.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-20 text-center reveal">
-                    <a class="btn-secondary" href="services.html">
-                        VIEW ALL SERVICES
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Preview -->
-        <section class="grid grid-cols-1 lg:grid-cols-2 min-h-[700px] items-stretch overflow-hidden">
-            <div class="bg-white flex items-center justify-center p-12 lg:p-24 reveal">
-                <div class="max-w-xl space-y-12">
-                    <div class="space-y-4">
-                        <span class="text-accent font-bold tracking-widest text-xs uppercase">Our Philosophy</span>
-                        <h2 class="text-5xl font-display tracking-tight uppercase text-primary">Why Choose Us?</h2>
-                        <p class="text-2xl font-display italic text-accent font-light">A rigorous, human, and absolutely
-                            precise approach.</p>
-                    </div>
-                    <ul class="space-y-8">
-                        <li class="flex gap-6 group">
-                            <div
-                                class="w-12 h-12 rounded-full border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all flex-shrink-0">
-                                <span class="material-symbols-outlined">lightbulb</span>
-                            </div>
-                            <div>
-                                <h4 class="font-display font-bold text-lg uppercase mb-1">Clarity</h4>
-                                <p class="text-gray-500 font-light text-sm leading-relaxed">We define a clear direction
-                                    together to avoid common industry pitfalls.</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-6 group">
-                            <div
-                                class="w-12 h-12 rounded-full border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all flex-shrink-0">
-                                <span class="material-symbols-outlined">science</span>
-                            </div>
-                            <div>
-                                <h4 class="font-display font-bold text-lg uppercase mb-1">Expertise</h4>
-                                <p class="text-gray-500 font-light text-sm leading-relaxed">Rigorous methodologies in
-                                    line with international standards.</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-6 group">
-                            <div
-                                class="w-12 h-12 rounded-full border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all flex-shrink-0">
-                                <span class="material-symbols-outlined">gavel</span>
-                            </div>
-                            <div>
-                                <h4 class="font-display font-bold text-lg uppercase mb-1">Reliability</h4>
-                                <p class="text-gray-500 font-light text-sm leading-relaxed">Complete management of all
-                                    requirements for a peaceful launch.</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="pt-4">
-                        <a href="about.html"
-                            class="text-primary font-bold text-sm tracking-widest uppercase border-b-2 border-accent pb-2 hover:text-accent transition-all">Learn
-                            more about us</a>
-                    </div>
-                </div>
-            </div>
-            <div class="relative bg-accent/10 flex items-center justify-center overflow-hidden min-h-[500px]">
-                <div class="absolute inset-0 bg-navy opacity-5"></div>
-                <div
-                    class="relative z-10 w-3/4 max-w-sm transform group hover:scale-105 transition-transform duration-1000 reveal">
-                    <img alt="Professional Facility" class="shadow-2xl rounded-sm"
-                        src="assets/Professional_factory_range_2k_202601201152-2.jpeg" />
-                    <div class="absolute -inset-8 border-2 border-accent/20 -z-10 translate-x-4 translate-y-4"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Newsletter / Ebook Section -->
-        <section class="bg-background-light py-32 border-y border-gray-100">
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="flex justify-center reveal">
-                    <div class="bg-navy p-12 shadow-2xl relative max-w-sm group rounded-sm overflow-hidden text-center">
+                    <div class="brand-card group cursor-pointer reveal" style="transition-delay: 200ms;">
                         <div
-                            class="absolute top-0 right-0 w-20 h-20 bg-accent transform translate-x-10 -translate-y-10 rotate-45">
-                        </div>
-                        <div class="space-y-6 text-white relative z-10">
-                            <span class="text-[10px] tracking-[0.4em] font-light opacity-60 uppercase">Free
-                                Resources</span>
-                            <h3 class="text-3xl font-display leading-tight uppercase">Premium Success Guide</h3>
-                            <div class="w-12 h-0.5 bg-accent mx-auto"></div>
-                            <p class="text-[10px] tracking-widest opacity-80 uppercase">The key steps to victory</p>
-                            <div class="py-6">
-                                <img alt="Guide mockup" class="mx-auto h-48 drop-shadow-2xl"
-                                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop" />
+                            class="brand-card-inner space-y-8 h-full flex flex-col justify-between bg-vibrant text-white">
+                            <div class="space-y-6">
+                                <div
+                                    class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-vibrant">
+                                    <span class="material-symbols-outlined text-3xl">verified_user</span>
+                                </div>
+                                <h3 class="text-3xl font-display uppercase tracking-tight text-white">Full Compliance
+                                </h3>
+                                <p class="text-white/80 font-medium text-sm leading-relaxed">Securing your launch with
+                                    total regulatory and quality control mastery.</p>
                             </div>
+                            <span
+                                class="text-white font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform inline-block">Explore
+                                More →</span>
                         </div>
                     </div>
                 </div>
-                <div class="space-y-10 reveal">
-                    <h2 class="text-5xl font-display uppercase leading-tight text-primary">Ready to launch <br />your
-                        brand?</h2>
-                    <div class="space-y-6">
-                        <p class="text-accent font-bold uppercase tracking-widest text-xs">Download our exclusive guide
-                        </p>
-                        <p class="text-gray-500 font-light text-lg max-w-md leading-relaxed">
-                            Avoid expensive mistakes and move forward confidently with our condensed expertise.
+            </div>
+            <!-- Decorative circle -->
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 border-[40px] border-gold/10 rounded-full"></div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="py-32 bg-background-cream overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="relative reveal">
+                    <div class="rounded-[50px] overflow-hidden shadow-2xl relative z-10">
+                        <img alt="Professional Ethics" class="w-full h-[600px] object-cover"
+                            src="assets/Professional_factory_range_2k_202601201152-2.jpeg" />
+                        <div class="absolute inset-0 bg-primary/10"></div>
+                    </div>
+                    <div
+                        class="absolute -inset-10 border-[1.5px] border-vibrant/20 rounded-[60px] -z-10 translate-x-6 translate-y-6">
+                    </div>
+                    <div
+                        class="absolute bottom-10 -right-10 bg-gold p-8 rounded-[30px] shadow-xl max-w-[240px] hidden md:block">
+                        <p class="text-primary font-bold text-lg leading-snug">"Excellence is not an act, but a habit."
                         </p>
                     </div>
-                    <form class="flex flex-col sm:flex-row gap-0 max-w-lg shadow-2xl rounded-sm overflow-hidden">
-                        <input class="flex-grow px-8 py-5 text-sm border-none focus:ring-accent bg-white outline-none"
+                </div>
+                <div class="space-y-12 reveal">
+                    <div class="space-y-6">
+                        <div class="text-vibrant text-[10px] font-bold tracking-[0.4em] uppercase">Why Choose Green
+                            Utopia</div>
+                        <h2 class="text-5xl lg:text-7xl font-display uppercase leading-tight text-primary">A Vision of
+                            <br />Luxury & Care
+                        </h2>
+                        <p class="text-xl font-medium italic text-brown">A rigorous, human, and absolutely precise
+                            approach to sustainability.</p>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="flex gap-8 group">
+                            <div
+                                class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-vibrant shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all flex-shrink-0">
+                                <span class="material-symbols-outlined text-2xl">workspace_premium</span>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-xl uppercase text-primary mb-2">Unmatched Quality
+                                </h4>
+                                <p class="text-brown/70 font-medium text-sm leading-relaxed">We maintain the highest
+                                    standards in every phase of your project development.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-8 group">
+                            <div
+                                class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-vibrant shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all flex-shrink-0">
+                                <span class="material-symbols-outlined text-2xl">psychology</span>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-xl uppercase text-primary mb-2">Ethical
+                                    Intelligence</h4>
+                                <p class="text-brown/70 font-medium text-sm leading-relaxed">Combining market expertise
+                                    with deep ethical values for a better future.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <a href="about.html" class="btn-primary">Learn Our Story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="py-32 px-6">
+            <div
+                class="max-w-7xl mx-auto bg-primary rounded-[50px] p-12 md:p-24 relative overflow-hidden text-center text-white">
+                <div class="relative z-10 max-w-2xl mx-auto space-y-10 reveal">
+                    <div class="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">Exclusive Access</div>
+                    <h2 class="text-5xl md:text-6xl font-display uppercase leading-tight">Join the Utopia</h2>
+                    <p class="text-gold/80 font-medium text-lg">Receive our curated insights on sustainability, luxury,
+                        and professional growth.</p>
+                    <form
+                        class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto bg-white/10 p-2 rounded-full backdrop-blur-md border border-white/10">
+                        <input
+                            class="flex-grow px-8 py-4 bg-transparent border-none focus:ring-0 text-white placeholder:text-white/40 text-sm"
                             placeholder="Your email address" required="" type="email" />
-                        <button class="btn-secondary px-8 rounded-none border-none py-5" type="submit">Get the
-                            guide</button>
+                        <button
+                            class="bg-gold text-primary hover:bg-white px-10 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all"
+                            type="submit">
+                            Subscribe
+                        </button>
                     </form>
+                </div>
+                <!-- Abstract leaf shapes -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2">
+                </div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-gold/5 rounded-full translate-y-1/2 -translate-x-1/2">
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-navy text-white pt-24 pb-12">
+    <footer class="bg-background-cream text-primary pt-32 pb-16">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
-                <div class="space-y-8">
-                    <div class="flex items-center gap-3">
-                        <img src="assets/logo_green.png" alt="Logo" class="h-10 w-auto brightness-0 invert">
-
-                    </div>
-                    <p class="text-sm font-light text-gray-400 leading-relaxed max-w-xs">
-                        Expert and tailored support to transform your idea into an exceptional, compliant, and
-                        high-performance product.
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
+                <div class="space-y-10">
+                    <img src="assets/logo_green.png" alt="Logo" class="h-16 w-auto">
+                    <p class="text-sm font-medium text-brown/70 leading-relaxed max-w-xs">
+                        Expert guidance for transforming your sustainable vision into an exceptional reality.
                     </p>
-                    <div class="flex gap-4">
+                    <div class="flex gap-6">
                         <a href="#"
-                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+                            class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-vibrant hover:text-white transition-all text-primary">
                             <span class="material-symbols-outlined text-xl">language</span>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+                            class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-vibrant hover:text-white transition-all text-primary">
                             <span class="material-symbols-outlined text-xl">camera</span>
                         </a>
                     </div>
                 </div>
                 <div>
-                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Navigation</h5>
-                    <nav class="flex flex-col gap-4 text-sm font-light text-gray-400">
-                        <a href="index.html" class="hover:text-white transition-colors">Home</a>
-                        <a href="services.html" class="hover:text-white transition-colors">Services</a>
-                        <a href="about.html" class="hover:text-white transition-colors">About</a>
-                        <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Navigation</h5>
+                    <nav class="flex flex-col gap-5 text-sm font-bold uppercase tracking-widest">
+                        <a href="index.html" class="hover:text-vibrant transition-colors">Home</a>
+                        <a href="services.html" class="hover:text-vibrant transition-colors">Services</a>
+                        <a href="about.html" class="hover:text-vibrant transition-colors">About</a>
+                        <a href="contact.html" class="hover:text-vibrant transition-colors">Contact</a>
                     </nav>
                 </div>
                 <div>
-                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Legal</h5>
-                    <nav class="flex flex-col gap-4 text-sm font-light text-gray-400">
-                        <a href="#" class="hover:text-white transition-colors">FAQ</a>
-                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Legal</h5>
+                    <nav class="flex flex-col gap-5 text-sm font-bold uppercase tracking-widest text-brown/60">
+                        <a href="#" class="hover:text-vibrant transition-colors">FAQ</a>
+                        <a href="#" class="hover:text-vibrant transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-vibrant transition-colors">Terms of Service</a>
                     </nav>
                 </div>
-                <div class="space-y-8">
-                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Contact</h5>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4 group cursor-pointer">
+                <div class="space-y-10">
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Contact Us</h5>
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-5 group cursor-pointer">
                             <span
-                                class="material-symbols-outlined text-accent group-hover:scale-110 transition-transform">call</span>
-                            <span class="text-sm font-medium">+00 0 00 00 00 00</span>
+                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl font-bold">call</span>
+                            </span>
+                            <span class="text-sm font-bold tracking-tight">+33 7 43 52 41 68</span>
                         </div>
-                        <div class="flex items-center gap-4 group cursor-pointer">
+                        <div class="flex items-center gap-5 group cursor-pointer">
                             <span
-                                class="material-symbols-outlined text-accent group-hover:scale-110 transition-transform">mail</span>
-                            <span class="text-sm font-medium">contact@example.com</span>
+                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl font-bold">mail</span>
+                            </span>
+                            <span class="text-sm font-bold tracking-tight">contact@greenutopia.com</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div
-                class="pt-8 border-t border-white/10 text-center text-[10px] tracking-[0.4em] font-light text-gray-500 uppercase">
-                © 2026 Brand Name - Excellence & Innovation - All rights reserved
+                class="pt-12 border-t border-primary/5 text-center text-[10px] tracking-[0.4em] font-bold text-brown/40 uppercase">
+                © 2026 GREEN UTOPIA - Excellence & Sustainable Innovation
             </div>
         </div>
     </footer>
 
     <!-- Cookie Banner -->
     <div id="cookie-banner"
-        class="hidden fixed bottom-6 right-6 z-[60] max-w-xs bg-white p-8 shadow-2xl border border-gray-100 rounded-sm reveal active">
-        <div class="flex flex-col items-center text-center gap-6">
-            <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent">
-                <span class="material-symbols-outlined text-4xl">cookie</span>
+        class="hidden fixed bottom-8 left-8 z-[60] max-w-sm bg-white p-10 shadow-2xl rounded-[30px] border border-gray-100 reveal active">
+        <div class="flex flex-col items-center text-center gap-8">
+            <div class="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center text-vibrant">
+                <span class="material-symbols-outlined text-5xl">eco</span>
             </div>
-            <p class="text-xs text-gray-500 leading-relaxed">
-                This site uses cookies to optimize your experience. By continuing, you agree to our privacy policy.
+            <p class="text-sm text-brown/60 font-medium leading-relaxed">
+                We use cookies to enhance your experience in our universe. By continuing, you agree to our privacy
+                policy.
             </p>
-            <div class="flex flex-col w-full gap-3">
-                <button id="accept-cookies"
-                    class="bg-navy text-white py-3 text-xs font-bold uppercase tracking-widest hover:bg-opacity-90 transition-all rounded-sm">
+            <div class="flex flex-col w-full gap-4">
+                <button id="accept-cookies" class="btn-primary w-full">
                     Accept All
                 </button>
-                <button class="text-navy py-1 text-[10px] font-bold uppercase tracking-widest hover:underline">
-                    Details
+                <button class="text-primary py-1 text-[10px] font-bold uppercase tracking-widest hover:underline">
+                    View Details
                 </button>
             </div>
         </div>

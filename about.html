@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="fr">
+<html class="scroll-smooth" lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>About Us | Our Story & Expertise</title>
+    <title>About Us | GREEN UTOPIA Story & Expertise</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
@@ -23,13 +23,16 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#2C445C",
-                        accent: "#C1A376",
-                        "background-light": "#F9F7F4",
+                        primary: "#184F44",
+                        vibrant: "#1B8A46",
+                        gold: "#F2DA91",
+                        brown: "#8C6A3F",
+                        "background-light": "#FFFFFF",
+                        "background-cream": "#F9F7F4",
                     },
                     fontFamily: {
                         display: ["Playfair Display", "serif"],
-                        body: ["Inter", "sans-serif"],
+                        body: ["Montserrat", "sans-serif"],
                     },
                 },
             },
@@ -38,27 +41,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-background-light text-primary">
+<body class="bg-background-light text-primary font-body">
 
     <!-- Header -->
-    <header class="glass-nav sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <header class="glass-nav">
+        <div class="max-w-7xl mx-auto h-24 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
-                <img src="assets/logo_green.png" alt="Logo" class="h-12 w-auto">
-                <div class="hidden sm:block">
-
-                </div>
+                <img src="assets/logo_green.png" alt="Logo" class="h-14 w-auto">
             </a>
-            <nav class="hidden md:flex items-center gap-10">
+            <nav class="hidden md:flex items-center gap-12">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="about.html" class="nav-link active">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
-            <div class="flex items-center gap-6">
-                <div class="flex items-center gap-3 text-[10px] font-bold tracking-widest uppercase">
-                    <a href="about.html" class="opacity-100 text-accent">EN</a>
-                    <span class="opacity-20">|</span>
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-3 text-[10px] font-bold tracking-[0.3em] uppercase">
+                    <a href="about.html" class="text-vibrant">EN</a>
+                    <span class="opacity-20 text-primary">|</span>
                     <a href="fr/about.html" class="opacity-40 hover:opacity-100 transition-opacity">FR</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-primary">
@@ -69,66 +69,72 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center gap-8 md:hidden">
-            <button id="close-menu-btn" class="absolute top-6 right-6">
+            <button id="close-menu-btn" class="absolute top-8 right-8 text-primary">
                 <span class="material-symbols-outlined text-4xl">close</span>
             </button>
-            <a href="index.html" class="text-2xl font-display font-bold text-primary">Home</a>
-            <a href="services.html" class="text-2xl font-display font-bold text-primary">Services</a>
-            <a href="about.html" class="text-2xl font-display font-bold text-primary">About</a>
-            <a href="contact.html" class="text-2xl font-display font-bold text-primary">Contact</a>
+            <a href="index.html" class="text-3xl font-display font-bold text-primary">Home</a>
+            <a href="services.html" class="text-3xl font-display font-bold text-primary">Services</a>
+            <a href="about.html" class="text-3xl font-display font-bold text-primary">About</a>
+            <a href="contact.html" class="text-3xl font-display font-bold text-primary">Contact</a>
         </div>
     </header>
 
     <main>
         <!-- Intro Hero -->
-        <section class="py-24 lg:py-32 px-6">
-            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-                <div class="reveal">
-                    <span class="text-accent font-bold tracking-[0.4em] uppercase text-xs mb-6 block">Our
-                        Visionary</span>
-                    <h1 class="font-display text-5xl md:text-7xl font-bold text-primary mb-10 tracking-tight uppercase">
-                        Expertise <br /> <span class="italic text-accent">& Innovation</span></h1>
-                    <p class="text-xl text-gray-500 leading-relaxed font-light italic mb-8">
-                        Expert in industrial security and biotechnology. Our path combines high-level research and
-                        industrial leadership to offer support of absolute rigor.
+        <section class="py-24 lg:py-32 px-6 overflow-hidden">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal space-y-8">
+                    <div
+                        class="inline-block px-6 py-2 bg-vibrant/10 text-vibrant rounded-full text-[10px] font-bold tracking-[0.4em] uppercase">
+                        Our Visionary Journey
+                    </div>
+                    <h1 class="font-display text-5xl md:text-7xl font-bold text-primary leading-tight uppercase">
+                        Expertise <br /> <span class="italic text-gold"> & Innovation</span></h1>
+                    <p class="text-xl text-brown/70 leading-relaxed font-medium italic">
+                        Specialists in high-end sustainability and premium professional support. Our path combines
+                        rigorous research with global industrial leadership.
                     </p>
-                    <div class="w-20 h-1 bg-accent"></div>
+                    <div class="w-24 h-1.5 bg-gold rounded-full"></div>
                 </div>
                 <div class="reveal relative">
-                    <div class="absolute -inset-4 border border-accent/20 translate-x-4 translate-y-4"></div>
-                    <img alt="Our Laboratory" class="relative z-10 shadow-2xl rounded-sm w-full h-[500px] object-cover"
-                        src="assets/Makes_the_lab_2k_202601201151-2.jpeg" />
+                    <div class="rounded-[50px] overflow-hidden shadow-2xl relative z-10">
+                        <img alt="Our Universe" class="w-full h-[550px] object-cover"
+                            src="assets/Makes_the_lab_2k_202601201151-2.jpeg" />
+                        <div class="absolute inset-0 bg-primary/10"></div>
+                    </div>
+                    <div
+                        class="absolute -inset-10 border-[1.5px] border-gold/30 rounded-[60px] translate-x-6 translate-y-6">
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Timeline Section -->
-        <section class="bg-navy py-32 px-6 relative overflow-hidden">
-            <div class="absolute inset-0 opacity-5 pointer-events-none">
-                <div class="diagonal-lines h-full w-full"></div>
-            </div>
+        <section class="bg-primary py-32 px-6 relative overflow-hidden text-white">
             <div class="max-w-6xl mx-auto relative z-10">
-                <h2
-                    class="font-display text-4xl md:text-5xl text-white font-bold mb-24 text-center reveal uppercase tracking-wide">
-                    Our Journey <span class="text-accent italic">& Expertise</span></h2>
+                <div class="text-center mb-24 space-y-4 reveal">
+                    <div class="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">Evolution</div>
+                    <h2 class="font-display text-4xl md:text-6xl font-bold uppercase tracking-tight">Our Journey</h2>
+                </div>
+
                 <div class="relative max-w-4xl mx-auto">
                     <div
-                        class="absolute left-1/2 top-0 bottom-0 w-px bg-white/10 transform -translate-x-1/2 hidden md:block">
+                        class="absolute left-1/2 top-0 bottom-0 w-1 bg-white/10 transform -translate-x-1/2 hidden md:block rounded-full">
                     </div>
 
-                    <div class="space-y-24">
+                    <div class="space-y-32">
                         <!-- Step 1 -->
                         <div class="flex flex-col md:flex-row items-center reveal">
                             <div class="md:w-1/2"></div>
                             <div
-                                class="relative flex items-center justify-center w-6 h-6 bg-accent rounded-full z-10 md:-ml-3 ring-8 ring-accent/10 mb-8 md:mb-0">
+                                class="relative flex items-center justify-center w-8 h-8 bg-gold rounded-full z-10 md:-ml-4 ring-[12px] ring-gold/10 mb-8 md:mb-0">
                             </div>
                             <div class="md:w-1/2 md:pl-16">
-                                <h3 class="font-display text-3xl text-accent font-bold mb-4 uppercase">Scientific
-                                    Research</h3>
-                                <p class="text-gray-300 font-light leading-relaxed text-lg">
-                                    A career focused on risk assessment and safety protocols. A solid scientific
-                                    foundation to guarantee the safety of your products.
+                                <h3 class="font-display text-3xl text-gold font-bold mb-4 uppercase">Scientific Genesis
+                                </h3>
+                                <p class="text-white/70 font-medium leading-relaxed text-lg">
+                                    Deep-rooted expertise in risk assessment and safety protocols. A solid scientific
+                                    foundation designed to guarantee the excellence of your universe.
                                 </p>
                             </div>
                         </div>
@@ -137,14 +143,14 @@
                         <div class="flex flex-col md:flex-row items-center flex-row-reverse reveal">
                             <div class="md:w-1/2"></div>
                             <div
-                                class="relative flex items-center justify-center w-6 h-6 bg-accent rounded-full z-10 md:-mr-3 ring-8 ring-accent/10 mb-8 md:mb-0">
+                                class="relative flex items-center justify-center w-8 h-8 bg-gold rounded-full z-10 md:-mr-4 ring-[12px] ring-gold/10 mb-8 md:mb-0">
                             </div>
                             <div class="md:w-1/2 md:pr-16 text-center md:text-right">
-                                <h3 class="font-display text-3xl text-accent font-bold mb-4 uppercase">Industrial
-                                    Leadership</h3>
-                                <p class="text-gray-300 font-light leading-relaxed text-lg">
-                                    Leadership of R&D laboratories and production units. We understand your field
-                                    challenges, costs, and manufacturing deadlines.
+                                <h3 class="font-display text-3xl text-gold font-bold mb-4 uppercase">Industrial Command
+                                </h3>
+                                <p class="text-white/70 font-medium leading-relaxed text-lg">
+                                    Leadership in elite R&D laboratories and production units. We master the field
+                                    challenges, precision costs, and luxury manufacturing standards.
                                 </p>
                             </div>
                         </div>
@@ -153,144 +159,151 @@
                         <div class="flex flex-col md:flex-row items-center reveal">
                             <div class="md:w-1/2"></div>
                             <div
-                                class="relative flex items-center justify-center w-6 h-6 bg-accent rounded-full z-10 md:-ml-3 ring-8 ring-accent/10 mb-8 md:mb-0">
+                                class="relative flex items-center justify-center w-8 h-8 bg-gold rounded-full z-10 md:-ml-4 ring-[12px] ring-gold/10 mb-8 md:mb-0">
                             </div>
                             <div class="md:w-1/2 md:pl-16">
-                                <h3 class="font-display text-3xl text-accent font-bold mb-4 uppercase">Global Vision
+                                <h3 class="font-display text-3xl text-gold font-bold mb-4 uppercase">The Utopia Vision
                                 </h3>
-                                <p class="text-gray-300 font-light leading-relaxed text-lg">
-                                    Specialization in international regulations. Creation of our consulting firm to put
-                                    this global expertise at the service of your success.
+                                <p class="text-white/70 font-medium leading-relaxed text-lg">
+                                    Strategic mastery of international regulations. The birth of Green Utopia to bring
+                                    this exclusive expertise to your most ambitious sustainable projects.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Decorative circle -->
+            <div class="absolute -top-20 -right-20 w-80 h-80 bg-vibrant/5 rounded-full blur-3xl"></div>
         </section>
 
         <!-- Values Section -->
-        <section class="py-32 px-6 bg-white">
+        <section class="py-32 px-6 bg-background-cream">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-24 reveal">
-                    <h2 class="font-display text-4xl font-bold text-primary uppercase mb-6">Our Core Values</h2>
-                    <div class="w-16 h-1 bg-accent mx-auto"></div>
+                <div class="text-center mb-24 reveal space-y-4">
+                    <div class="text-vibrant text-[10px] font-bold tracking-[0.4em] uppercase">Commitment</div>
+                    <h2 class="font-display text-4xl md:text-6xl font-bold text-primary uppercase">Our Core Values</h2>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-                    <div class="space-y-6 group reveal">
+                    <div class="bg-white p-10 rounded-brand shadow-sm hover:shadow-xl transition-all group reveal">
                         <div
-                            class="w-16 h-16 bg-background-light flex items-center justify-center group-hover:bg-navy transition-colors">
+                            class="w-16 h-16 bg-background-cream rounded-full flex items-center justify-center group-hover:bg-primary transition-all mb-8">
                             <span
-                                class="material-symbols-outlined text-accent text-3xl group-hover:text-white">science</span>
+                                class="material-symbols-outlined text-vibrant text-3xl group-hover:text-gold">science</span>
                         </div>
-                        <h3 class="text-lg font-bold text-primary uppercase tracking-widest">Rigor</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed">Analysis based on reliable data and
-                            uncompromising scientific methodology.</p>
+                        <h3 class="text-lg font-black text-primary uppercase tracking-widest mb-4">Precision</h3>
+                        <p class="text-sm text-brown/60 font-medium leading-relaxed">Analysis strictly based on reliable
+                            data and elite scientific methodology.</p>
                     </div>
-                    <div class="space-y-6 group reveal">
+                    <div class="bg-white p-10 rounded-brand shadow-sm hover:shadow-xl transition-all group reveal"
+                        style="transition-delay: 100ms;">
                         <div
-                            class="w-16 h-16 bg-background-light flex items-center justify-center group-hover:bg-navy transition-colors">
+                            class="w-16 h-16 bg-background-cream rounded-full flex items-center justify-center group-hover:bg-primary transition-all mb-8">
                             <span
-                                class="material-symbols-outlined text-accent text-3xl group-hover:text-white">visibility</span>
+                                class="material-symbols-outlined text-vibrant text-3xl group-hover:text-gold">visibility</span>
                         </div>
-                        <h3 class="text-lg font-bold text-primary uppercase tracking-widest">Transparency</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed">Objective advice and honest
-                            communication to secure every step of the process.</p>
+                        <h3 class="text-lg font-black text-primary uppercase tracking-widest mb-4">Integrity</h3>
+                        <p class="text-sm text-brown/60 font-medium leading-relaxed">Honest, crystal-clear communication
+                            to secure every phase of your growth.</p>
                     </div>
-                    <div class="space-y-6 group reveal">
+                    <div class="bg-white p-10 rounded-brand shadow-sm hover:shadow-xl transition-all group reveal"
+                        style="transition-delay: 200ms;">
                         <div
-                            class="w-16 h-16 bg-background-light flex items-center justify-center group-hover:bg-navy transition-colors">
+                            class="w-16 h-16 bg-background-cream rounded-full flex items-center justify-center group-hover:bg-primary transition-all mb-8">
                             <span
-                                class="material-symbols-outlined text-accent text-3xl group-hover:text-white">rocket_launch</span>
+                                class="material-symbols-outlined text-vibrant text-3xl group-hover:text-gold">bolt</span>
                         </div>
-                        <h3 class="text-lg font-bold text-primary uppercase tracking-widest">Reactivity</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed">Industrial deadlines respected and
-                            high availability for your urgent issues.</p>
+                        <h3 class="text-lg font-black text-primary uppercase tracking-widest mb-4">Velocity</h3>
+                        <p class="text-sm text-brown/60 font-medium leading-relaxed">Respecting high-stakes industrial
+                            deadlines with ultimate professional reactivity.</p>
                     </div>
-                    <div class="space-y-6 group reveal">
+                    <div class="bg-white p-10 rounded-brand shadow-sm hover:shadow-xl transition-all group reveal"
+                        style="transition-delay: 300ms;">
                         <div
-                            class="w-16 h-16 bg-background-light flex items-center justify-center group-hover:bg-navy transition-colors">
+                            class="w-16 h-16 bg-background-cream rounded-full flex items-center justify-center group-hover:bg-primary transition-all mb-8">
                             <span
-                                class="material-symbols-outlined text-accent text-3xl group-hover:text-white">lock</span>
+                                class="material-symbols-outlined text-vibrant text-3xl group-hover:text-gold">lock</span>
                         </div>
-                        <h3 class="text-lg font-bold text-primary uppercase tracking-widest">Confidentiality</h3>
-                        <p class="text-sm text-gray-500 font-light leading-relaxed">Absolute protection of your know-how
-                            and your innovative formulas.</p>
+                        <h3 class="text-lg font-black text-primary uppercase tracking-widest mb-4">Sanctity</h3>
+                        <p class="text-sm text-brown/60 font-medium leading-relaxed">Absolute and uncompromising
+                            protection of your exclusive formulas and know-how.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="bg-background-light py-24 px-6 border-t border-gray-100">
-            <div class="max-w-4xl mx-auto text-center reveal">
-                <h2 class="font-display text-4xl text-primary font-bold mb-10 leading-tight uppercase">Ready to work
-                    with an expert?</h2>
-                <a href="contact.html" class="btn-primary">Discuss your project</a>
+        <section class="py-32 px-6">
+            <div class="max-w-4xl mx-auto text-center reveal space-y-12">
+                <h2 class="font-display text-4xl md:text-5xl text-primary font-bold leading-tight uppercase">Ready to
+                    elevate your <br />project with an expert?</h2>
+                <div class="flex justify-center">
+                    <a href="contact.html" class="btn-primary">Initiate Conversation</a>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-navy text-white pt-24 pb-12">
+    <footer class="bg-background-cream text-primary pt-32 pb-16">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
-                <div class="space-y-8">
-                    <div class="flex items-center gap-3">
-                        <img src="assets/logo_green.png" alt="Logo" class="h-10 w-auto brightness-0 invert">
-
-                    </div>
-                    <p class="text-sm font-light text-gray-400 leading-relaxed max-w-xs">
-                        Expert and tailored support to transform your idea into an exceptional, compliant, and
-                        high-performance product.
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
+                <div class="space-y-10">
+                    <img src="assets/logo_green.png" alt="Logo" class="h-16 w-auto">
+                    <p class="text-sm font-medium text-brown/70 leading-relaxed max-w-xs">
+                        Expert guidance for transforming your sustainable vision into an exceptional reality.
                     </p>
-                    <div class="flex gap-4">
+                    <div class="flex gap-6">
                         <a href="#"
-                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+                            class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-vibrant hover:text-white transition-all text-primary">
                             <span class="material-symbols-outlined text-xl">language</span>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+                            class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-vibrant hover:text-white transition-all text-primary">
                             <span class="material-symbols-outlined text-xl">camera</span>
                         </a>
                     </div>
                 </div>
                 <div>
-                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Navigation</h5>
-                    <nav class="flex flex-col gap-4 text-sm font-light text-gray-400">
-                        <a href="index.html" class="hover:text-white transition-colors">Home</a>
-                        <a href="services.html" class="hover:text-white transition-colors">Services</a>
-                        <a href="about.html" class="hover:text-white transition-colors">About</a>
-                        <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Navigation</h5>
+                    <nav class="flex flex-col gap-5 text-sm font-bold uppercase tracking-widest">
+                        <a href="index.html" class="hover:text-vibrant transition-colors">Home</a>
+                        <a href="services.html" class="hover:text-vibrant transition-colors">Services</a>
+                        <a href="about.html" class="hover:text-vibrant transition-colors">About</a>
+                        <a href="contact.html" class="hover:text-vibrant transition-colors">Contact</a>
                     </nav>
                 </div>
                 <div>
-                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Legal</h5>
-                    <nav class="flex flex-col gap-4 text-sm font-light text-gray-400">
-                        <a href="#" class="hover:text-white transition-colors">FAQ</a>
-                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Legal</h5>
+                    <nav class="flex flex-col gap-5 text-sm font-bold uppercase tracking-widest text-brown/60">
+                        <a href="#" class="hover:text-vibrant transition-colors">FAQ</a>
+                        <a href="#" class="hover:text-vibrant transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-vibrant transition-colors">Terms of Service</a>
                     </nav>
                 </div>
-                <div class="space-y-8">
-                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Contact</h5>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4 group cursor-pointer">
+                <div class="space-y-10">
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Contact Us</h5>
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-5 group cursor-pointer">
                             <span
-                                class="material-symbols-outlined text-accent group-hover:scale-110 transition-transform">call</span>
-                            <span class="text-sm font-medium">+00 00 00 00 00 00</span>
+                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl font-bold">call</span>
+                            </span>
+                            <span class="text-sm font-bold tracking-tight">+33 7 43 52 41 68</span>
                         </div>
-                        <div class="flex items-center gap-4 group cursor-pointer">
+                        <div class="flex items-center gap-5 group cursor-pointer">
                             <span
-                                class="material-symbols-outlined text-accent group-hover:scale-110 transition-transform">mail</span>
-                            <span class="text-sm font-medium">contact@example.com</span>
+                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl font-bold">mail</span>
+                            </span>
+                            <span class="text-sm font-bold tracking-tight">contact@greenutopia.com</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div
-                class="pt-8 border-t border-white/10 text-center text-[10px] tracking-[0.4em] font-light text-gray-500 uppercase">
-                © 2026 Brand Name - Excellence & Innovation - All rights reserved
+                class="pt-12 border-t border-primary/5 text-center text-[10px] tracking-[0.4em] font-bold text-brown/40 uppercase">
+                © 2026 GREEN UTOPIA - Excellence & Sustainable Innovation
             </div>
         </div>
     </footer>

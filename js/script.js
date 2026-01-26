@@ -29,10 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
   revealOnScroll(); // Initial check
 
   // Mobile Menu Toggle
+  const closeMenuBtn = document.getElementById('close-menu-btn');
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
-      document.body.classList.toggle('overflow -hidden');
+      document.body.classList.toggle('overflow-hidden');
+    });
+  }
+  if (closeMenuBtn && mobileMenu) {
+    closeMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
     });
   }
 

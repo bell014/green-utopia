@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="fr">
+<html class="scroll-smooth" lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Our Services | Professional Solutions</title>
+    <title>Our Universe of Services | GREEN UTOPIA</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
@@ -23,13 +23,16 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#2C445C",
-                        accent: "#C1A376",
-                        "background-light": "#F9F7F4",
+                        primary: "#184F44",
+                        vibrant: "#1B8A46",
+                        gold: "#F2DA91",
+                        brown: "#8C6A3F",
+                        "background-light": "#FFFFFF",
+                        "background-cream": "#F9F7F4",
                     },
                     fontFamily: {
                         display: ["Playfair Display", "serif"],
-                        body: ["Inter", "sans-serif"],
+                        body: ["Montserrat", "sans-serif"],
                     },
                 },
             },
@@ -38,27 +41,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-background-light text-primary">
+<body class="bg-background-light text-primary font-body">
 
     <!-- Header -->
-    <header class="glass-nav sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <header class="glass-nav">
+        <div class="max-w-7xl mx-auto h-24 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
-                <img src="assets/logo_green.png" alt="Logo" class="h-12 w-auto">
-                <div class="hidden sm:block">
-
-                </div>
+                <img src="assets/logo_green.png" alt="Logo" class="h-14 w-auto">
             </a>
-            <nav class="hidden md:flex items-center gap-10">
+            <nav class="hidden md:flex items-center gap-12">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="services.html" class="nav-link active">Services</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
-            <div class="flex items-center gap-6">
-                <div class="flex items-center gap-3 text-[10px] font-bold tracking-widest uppercase">
-                    <a href="services.html" class="opacity-100 text-accent">EN</a>
-                    <span class="opacity-20">|</span>
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-3 text-[10px] font-bold tracking-[0.3em] uppercase">
+                    <a href="services.html" class="text-vibrant">EN</a>
+                    <span class="opacity-20 text-primary">|</span>
                     <a href="fr/services.html" class="opacity-40 hover:opacity-100 transition-opacity">FR</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-primary">
@@ -69,39 +69,40 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center gap-8 md:hidden">
-            <button id="close-menu-btn" class="absolute top-6 right-6">
+            <button id="close-menu-btn" class="absolute top-8 right-8 text-primary">
                 <span class="material-symbols-outlined text-4xl">close</span>
             </button>
-            <a href="index.html" class="text-2xl font-display font-bold text-primary">Home</a>
-            <a href="services.html" class="text-2xl font-display font-bold text-primary">Services</a>
-            <a href="about.html" class="text-2xl font-display font-bold text-primary">About</a>
-            <a href="contact.html" class="text-2xl font-display font-bold text-primary">Contact</a>
+            <a href="index.html" class="text-3xl font-display font-bold text-primary">Home</a>
+            <a href="services.html" class="text-3xl font-display font-bold text-primary">Services</a>
+            <a href="about.html" class="text-3xl font-display font-bold text-primary">About</a>
+            <a href="contact.html" class="text-3xl font-display font-bold text-primary">Contact</a>
         </div>
     </header>
 
     <main>
         <!-- Page Header -->
-        <section class="max-w-7xl mx-auto px-6 py-24 lg:py-32">
+        <section class="max-w-7xl mx-auto px-6 py-24 lg:py-32 overflow-hidden">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-20">
-                <div class="max-w-2xl reveal">
-                    <span class="text-accent font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Our
-                        Expertise</span>
-                    <h1 class="text-6xl lg:text-8xl font-display text-primary mb-8 leading-tight uppercase">Our Services
-                    </h1>
-                    <p class="text-2xl font-light text-primary/70 mb-10 italic">Excellent support for your industrial
-                        projects.</p>
-                    <div class="h-1 w-24 bg-accent mb-12"></div>
-                    <p class="text-lg leading-relaxed text-gray-500 max-w-xl font-light">
+                <div class="max-w-2xl reveal space-y-8">
+                    <div
+                        class="inline-block px-6 py-2 bg-gold/20 text-primary rounded-full text-[10px] font-bold tracking-[0.4em] uppercase">
+                        Our Expertise
+                    </div>
+                    <h1 class="text-6xl lg:text-8xl font-display text-primary leading-tight uppercase">Our Services</h1>
+                    <p class="text-2xl font-medium text-brown/70 italic leading-relaxed">Exclusive support for your most
+                        ambitious sustainable projects.</p>
+                    <div class="h-1.5 w-24 bg-vibrant rounded-full"></div>
+                    <p class="text-lg leading-relaxed text-brown/60 font-medium max-w-xl">
                         We provide unique expertise, combining scientific rigor, regulatory mastery, and industrial
-                        experience. We accompany you at every stage: from design to market launch.
+                        experience. We accompany you at every stage: from design to market success.
                     </p>
                 </div>
                 <div class="w-full lg:w-2/5 flex justify-center lg:justify-end reveal">
                     <div class="relative">
-                        <div class="absolute -inset-6 border-2 border-accent/20 -z-10 translate-x-8 translate-y-8">
+                        <div
+                            class="absolute -inset-8 border-[1.5px] border-gold/40 rounded-[50px] translate-x-6 translate-y-6">
                         </div>
-                        <img alt="Our Operations"
-                            class="w-full max-w-sm h-auto grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl rounded-sm"
+                        <img alt="Our Operations" class="w-full max-w-sm h-auto shadow-2xl rounded-[40px] relative z-10"
                             src="assets/Neatly_organized_and_2k_202601201152.jpeg" />
                     </div>
                 </div>
@@ -109,247 +110,279 @@
         </section>
 
         <!-- Solutions Section -->
-        <section class="bg-white py-32 border-y border-gray-100">
+        <section class="bg-background-cream py-32 border-y border-primary/5">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-20 reveal">
-                    <h2 class="text-4xl md:text-5xl font-display text-primary uppercase mb-6">Expert Solutions &
-                        Compliance</h2>
-                    <div class="w-20 h-0.5 bg-accent mx-auto"></div>
+                <div class="text-center mb-24 reveal space-y-4">
+                    <div class="text-vibrant text-[10px] font-bold tracking-[0.4em] uppercase">The Universe Selection
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-display text-primary uppercase">Solutions & Compliance</h2>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <!-- Option 1 -->
-                    <div
-                        class="bg-navy text-white p-12 flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl reveal">
-                        <h3 class="text-2xl font-display mb-6 h-16 flex items-center uppercase tracking-wide">Full
-                            Package + Support</h3>
-                        <div class="text-accent font-bold text-lg mb-10 italic">Personalized Quote</div>
-                        <p class="text-sm leading-relaxed text-gray-400 mb-12 min-h-[100px]">Integral management of your
-                            project dossier, fully compliant with international standards and local regulations.</p>
-                        <ul
-                            class="text-[11px] space-y-5 mb-16 flex-grow text-gray-400 uppercase tracking-widest text-left w-full">
-                            <li class="flex items-start"><span
-                                    class="material-symbols-outlined text-accent mr-4 text-lg">check_circle</span> Raw
-                                material analysis</li>
-                            <li class="flex items-start"><span
-                                    class="material-symbols-outlined text-accent mr-4 text-lg">check_circle</span> Risk
-                                assessment</li>
-                            <li class="flex items-start"><span
-                                    class="material-symbols-outlined text-accent mr-4 text-lg">check_circle</span>
-                                Official notification</li>
-                        </ul>
-                        <a href="contact.html" class="btn-secondary w-full">Ask for a quote</a>
+                    <div class="brand-card reveal flex flex-col items-center text-center">
+                        <div class="brand-card-inner !p-10 flex flex-col items-center h-full w-full">
+                            <h3
+                                class="text-2xl font-display text-primary mb-6 uppercase tracking-tight h-16 flex items-center">
+                                Full Package support</h3>
+                            <div class="text-vibrant font-black text-xl mb-10 italic">Personalized Quote</div>
+                            <p class="text-sm leading-relaxed text-primary/60 font-medium mb-10 min-h-[80px]">Integral
+                                management of your sustainable project, fully compliant with global elite standards.</p>
+                            <ul
+                                class="text-[10px] space-y-4 mb-12 flex-grow text-primary/80 font-bold uppercase tracking-[0.2em] text-left w-full">
+                                <li class="flex items-start"><span
+                                        class="material-symbols-outlined text-vibrant mr-3 text-lg">check_circle</span>
+                                    Raw material analysis</li>
+                                <li class="flex items-start"><span
+                                        class="material-symbols-outlined text-vibrant mr-3 text-lg">check_circle</span>
+                                    Luxury Risk assessment</li>
+                                <li class="flex items-start"><span
+                                        class="material-symbols-outlined text-vibrant mr-3 text-lg">check_circle</span>
+                                    Elite Notification</li>
+                            </ul>
+                            <a href="contact.html" class="btn-primary w-full !text-xs">Request Quote</a>
+                        </div>
                     </div>
+
                     <!-- Option 2 -->
-                    <div
-                        class="bg-white text-primary p-12 flex flex-col items-center text-center shadow-2xl relative z-10 border-t-4 border-accent reveal">
+                    <div class="brand-card reveal flex flex-col items-center text-center !bg-vibrant/5"
+                        style="transition-delay: 100ms;">
                         <div
-                            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white text-[10px] font-bold px-4 py-1 uppercase tracking-widest">
-                            Most Requested</div>
-                        <h3 class="text-2xl font-display mb-6 h-16 flex items-center uppercase tracking-wide">Standard
-                            Evaluation</h3>
-                        <div class="mb-10">
-                            <span class="text-accent font-bold text-5xl italic">$500</span>
-                            <span class="text-[10px] text-gray-400 uppercase tracking-widest ml-2">/ Product</span>
+                            class="brand-card-inner !p-10 flex flex-col items-center h-full w-full !bg-white border-2 border-gold relative">
+                            <div
+                                class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-primary text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-[0.3em]">
+                                Signature</div>
+                            <h3
+                                class="text-2xl font-display text-primary mb-6 uppercase tracking-tight h-16 flex items-center">
+                                Standard Evaluation</h3>
+                            <div class="mb-10 text-primary">
+                                <span class="font-black text-4xl">$500</span>
+                                <span class="text-[9px] opacity-60 uppercase tracking-widest ml-1">/ Piece</span>
+                            </div>
+                            <p class="text-sm leading-relaxed text-primary/60 font-medium mb-10 min-h-[80px]">Precision
+                                safety evaluation – elite report based on your universe data.</p>
+                            <ul
+                                class="text-[10px] space-y-4 mb-12 flex-grow text-primary/80 font-bold uppercase tracking-[0.2em] text-left w-full">
+                                <li class="flex items-start"><span
+                                        class="material-symbols-outlined text-gold mr-3 text-lg">verified</span> Formula
+                                    analysis</li>
+                                <li class="flex items-start"><span
+                                        class="material-symbols-outlined text-gold mr-3 text-lg">verified</span>
+                                    Exposure calculations</li>
+                                <li class="flex items-start"><span
+                                        class="material-symbols-outlined text-gold mr-3 text-lg">verified</span> Expert
+                                    certification</li>
+                            </ul>
+                            <a href="contact.html"
+                                class="btn-primary w-full !text-xs !bg-gold !text-primary hover:!bg-primary hover:!text-gold">Select
+                                Solution</a>
                         </div>
-                        <p class="text-sm leading-relaxed text-gray-500 mb-12 min-h-[100px]">Safety evaluation –
-                            Ready-to-use report based on your data and provided test results.</p>
-                        <ul
-                            class="text-[11px] space-y-5 mb-16 flex-grow text-gray-500 uppercase tracking-widest text-left w-full">
-                            <li class="flex items-start"><span
-                                    class="material-symbols-outlined text-accent mr-4 text-lg">verified</span> Formula
-                                analysis</li>
-                            <li class="flex items-start"><span
-                                    class="material-symbols-outlined text-accent mr-4 text-lg">verified</span> Exposure
-                                calculations</li>
-                            <li class="flex items-start"><span
-                                    class="material-symbols-outlined text-accent mr-4 text-lg">verified</span> Expert
-                                signed report</li>
-                        </ul>
-                        <a href="contact.html" class="btn-primary w-full">Order Now</a>
                     </div>
+
                     <!-- Option 3 -->
-                    <div
-                        class="bg-navy text-white p-12 flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl reveal">
-                        <h3 class="text-2xl font-display mb-6 h-16 flex items-center uppercase tracking-wide">Registry
-                            Support</h3>
-                        <div class="mb-10">
-                            <span class="text-accent font-bold text-5xl italic">$100</span>
-                            <span class="text-[10px] text-gray-400 uppercase tracking-widest ml-2">/ Product</span>
+                    <div class="brand-card reveal flex flex-col items-center text-center"
+                        style="transition-delay: 200ms;">
+                        <div class="brand-card-inner !p-10 flex flex-col items-center h-full w-full">
+                            <h3
+                                class="text-2xl font-display text-primary mb-6 uppercase tracking-tight h-16 flex items-center">
+                                Registry Mastery</h3>
+                            <div class="mb-10 text-vibrant">
+                                <span class="font-black text-4xl">$100</span>
+                                <span class="text-[9px] opacity-60 uppercase tracking-widest ml-1">/ Piece</span>
+                            </div>
+                            <p class="text-sm leading-relaxed text-primary/60 font-medium mb-10 min-h-[80px]">Official
+                                submission of your brand on all global regulatory platforms.</p>
+                            <ul
+                                class="text-[10px] space-y-4 mb-12 flex-grow text-primary/80 font-bold uppercase tracking-[0.2em] text-left w-full">
+                                <li class="flex items-start"><span
+                                        class="material-symbols-outlined text-vibrant mr-3 text-lg">language</span>
+                                    Document mastery</li>
+                                <li class="flex items-start"><span
+                                        class="material-symbols-outlined text-vibrant mr-3 text-lg">language</span>
+                                    Portal management</li>
+                                <li class="flex items-start"><span
+                                        class="material-symbols-outlined text-vibrant mr-3 text-lg">language</span>
+                                    Confirmation vault</li>
+                            </ul>
+                            <a href="contact.html" class="btn-primary w-full !text-xs">Select Solution</a>
                         </div>
-                        <p class="text-sm leading-relaxed text-gray-400 mb-12 min-h-[100px]">Official submission of your
-                            product on relevant regulatory portals and platforms.</p>
-                        <ul
-                            class="text-[11px] space-y-5 mb-16 flex-grow text-gray-400 uppercase tracking-widest text-left w-full">
-                            <li class="flex items-start"><span
-                                    class="material-symbols-outlined text-accent mr-4 text-lg">language</span> Document
-                                verification</li>
-                            <li class="flex items-start"><span
-                                    class="material-symbols-outlined text-accent mr-4 text-lg">language</span> Portal
-                                submission</li>
-                            <li class="flex items-start"><span
-                                    class="material-symbols-outlined text-accent mr-4 text-lg">language</span>
-                                Confirmation receipt</li>
-                        </ul>
-                        <a href="contact.html" class="btn-secondary w-full">Order Now</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Coaching Section -->
-        <section class="py-32 bg-background-light">
-            <div class="max-w-4xl mx-auto px-6 text-center reveal">
-                <span class="text-accent font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Support</span>
-                <h2 class="text-5xl font-display text-primary uppercase mb-8">Personalized Coaching</h2>
-                <div class="mb-12">
-                    <span class="text-6xl font-light text-accent font-display italic">From $100 / H</span>
+        <section class="py-32 bg-background-light overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal space-y-10">
+                    <div
+                        class="inline-block px-6 py-2 bg-gold/20 text-primary rounded-full text-[10px] font-bold tracking-[0.4em] uppercase">
+                        Professional Support</div>
+                    <h2 class="text-5xl lg:text-7xl font-display text-primary uppercase leading-tight">Personalized
+                        <br /><span class="italic text-vibrant">Coaching</span>
+                    </h2>
+                    <div class="text-vibrant font-black text-3xl italic">From $100 / Hour</div>
+                    <p class="text-xl text-brown/70 leading-relaxed font-medium">
+                        Strategic consulting sessions to answer all your technical and regulatory questions in
+                        real-time, designed for industrial excellence.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div
+                            class="flex items-center space-x-5 p-6 bg-background-cream rounded-[30px] border border-primary/5 hover:border-vibrant/20 transition-all group">
+                            <div
+                                class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-vibrant group-hover:bg-vibrant group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined">video_call</span>
+                            </div>
+                            <span class="text-[10px] font-black uppercase tracking-widest">Video Dialogue</span>
+                        </div>
+                        <div
+                            class="flex items-center space-x-5 p-6 bg-background-cream rounded-[30px] border border-primary/5 hover:border-vibrant/20 transition-all group">
+                            <div
+                                class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-vibrant group-hover:bg-vibrant group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined">strategy</span>
+                            </div>
+                            <span class="text-[10px] font-black uppercase tracking-widest">Growth Strategy</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn-primary">Initiate Coaching</a>
                 </div>
-                <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-16 leading-relaxed font-light">
-                    Strategic consulting sessions to answer all your technical and regulatory questions in real-time.
-                </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left max-w-2xl mx-auto mb-20">
-                    <div
-                        class="flex items-center space-x-6 p-6 bg-white shadow-sm border border-gray-100 hover:shadow-xl transition-shadow">
-                        <span class="material-symbols-outlined text-accent text-3xl">video_call</span>
-                        <span class="text-sm font-bold uppercase tracking-widest">Video Conference</span>
+                <div class="reveal relative hidden lg:block">
+                    <div class="rounded-[50px] overflow-hidden shadow-2xl relative z-10 border-[1.5px] border-gold/40">
+                        <img alt="Strategic Dialogue" class="w-full h-[600px] object-cover"
+                            src="assets/Makes_the_lab_2k_202601201151-2.jpeg" />
                     </div>
-                    <div
-                        class="flex items-center space-x-6 p-6 bg-white shadow-sm border border-gray-100 hover:shadow-xl transition-shadow">
-                        <span class="material-symbols-outlined text-accent text-3xl">strategy</span>
-                        <span class="text-sm font-bold uppercase tracking-widest">Product Strategy</span>
-                    </div>
-                    <div
-                        class="flex items-center space-x-6 p-6 bg-white shadow-sm border border-gray-100 hover:shadow-xl transition-shadow">
-                        <span class="material-symbols-outlined text-accent text-3xl">gavel</span>
-                        <span class="text-sm font-bold uppercase tracking-widest">Regulatory Support</span>
-                    </div>
-                    <div
-                        class="flex items-center space-x-6 p-6 bg-white shadow-sm border border-gray-100 hover:shadow-xl transition-shadow">
-                        <span class="material-symbols-outlined text-accent text-3xl">done_all</span>
-                        <span class="text-sm font-bold uppercase tracking-widest">Continuous Follow-up</span>
-                    </div>
+                    <!-- decorative dots -->
+                    <div class="absolute -top-10 -right-10 w-40 h-40 border-[20px] border-gold/10 rounded-full"></div>
                 </div>
-                <a href="contact.html" class="btn-primary">Book a session</a>
             </div>
         </section>
 
         <!-- Industrial Quality Section -->
-        <section class="bg-navy py-32 text-white relative overflow-hidden">
-            <div
-                class="absolute top-0 right-0 w-96 h-96 bg-accent opacity-[0.03] rounded-full -translate-y-1/2 translate-x-1/2">
-            </div>
+        <section class="bg-primary py-32 text-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="text-center mb-24 reveal">
-                    <h2 class="text-4xl md:text-5xl font-display uppercase tracking-widest mb-6">Industrial Compliance &
-                        Quality</h2>
-                    <div class="w-20 h-0.5 bg-accent mx-auto"></div>
+                <div class="text-center mb-24 space-y-4 reveal">
+                    <div class="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">Sanctity & Industrial</div>
+                    <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight">Compliance & Quality</h2>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
-                    <div class="reveal">
-                        <div class="flex items-center gap-6 mb-10">
-                            <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-accent text-3xl">cleaning_services</span>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div class="brand-card reveal">
+                        <div
+                            class="brand-card-inner !bg-white/5 !p-12 space-y-10 border border-white/10 rounded-[40px]">
+                            <div class="flex items-center gap-8">
+                                <div
+                                    class="w-20 h-20 rounded-full bg-gold flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-4xl">cleaning_services</span>
+                                </div>
+                                <h3 class="text-3xl font-display uppercase text-white">Chemical Sanctuary</h3>
                             </div>
-                            <h3 class="text-3xl font-display uppercase">Chemical Products</h3>
+                            <div class="text-gold font-black text-2xl italic">From $400 / Piece</div>
+                            <p class="text-white/60 font-medium leading-relaxed">Total and uncompromising compliance for
+                                your maintenance and high-end industrial formulas.</p>
+                            <ul class="space-y-6 text-[10px] font-black tracking-[0.3em] uppercase text-white/80">
+                                <li class="flex items-center gap-5"><span class="w-2 h-2 bg-gold rounded-full"></span>
+                                    Safety Data Sheets (SDS)</li>
+                                <li class="flex items-center gap-5"><span class="w-2 h-2 bg-gold rounded-full"></span>
+                                    Labeling Mastery</li>
+                                <li class="flex items-center gap-5"><span class="w-2 h-2 bg-gold rounded-full"></span>
+                                    Notification Vault</li>
+                            </ul>
+                            <a href="contact.html" class="btn-secondary !bg-gold !text-primary w-full">Inquire Now</a>
                         </div>
-                        <p class="text-accent font-bold mb-8 italic text-xl">From $400 / Product</p>
-                        <p class="text-gray-400 mb-12 font-light leading-relaxed">Total compliance for your maintenance
-                            and industrial chemical products.</p>
-                        <ul class="space-y-6 mb-12 text-xs font-bold tracking-widest uppercase text-gray-300">
-                            <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accent"></span> Safety Data
-                                Sheets (SDS)</li>
-                            <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accent"></span> Labeling &
-                                Classification</li>
-                            <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accent"></span> Portal
-                                Notifications</li>
-                        </ul>
-                        <a href="contact.html" class="btn-secondary">Contact Us</a>
                     </div>
-                    <div class="reveal">
-                        <div class="flex items-center gap-6 mb-10">
-                            <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-accent text-3xl">verified_user</span>
+
+                    <div class="brand-card reveal" style="transition-delay: 150ms;">
+                        <div
+                            class="brand-card-inner !bg-white/5 !p-12 space-y-10 border border-white/10 rounded-[40px]">
+                            <div class="flex items-center gap-8">
+                                <div
+                                    class="w-20 h-20 rounded-full bg-gold flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-4xl">verified_user</span>
+                                </div>
+                                <h3 class="text-3xl font-display uppercase text-white">Quality Mastery</h3>
                             </div>
-                            <h3 class="text-3xl font-display uppercase">Quality Support</h3>
+                            <div class="text-gold font-black text-2xl italic">Personalized Quote</div>
+                            <p class="text-white/60 font-medium leading-relaxed">Expert assistance for setting up your
+                                industrial and complex regulatory governance.</p>
+                            <ul class="space-y-6 text-[10px] font-black tracking-[0.3em] uppercase text-white/80">
+                                <li class="flex items-center gap-5"><span class="w-2 h-2 bg-gold rounded-full"></span>
+                                    Process Governance</li>
+                                <li class="flex items-center gap-5"><span class="w-2 h-2 bg-gold rounded-full"></span>
+                                    Audit Excellence</li>
+                                <li class="flex items-center gap-5"><span class="w-2 h-2 bg-gold rounded-full"></span>
+                                    Documentation Sanctity</li>
+                            </ul>
+                            <a href="contact.html" class="btn-secondary !bg-gold !text-primary w-full">Inquire Now</a>
                         </div>
-                        <p class="text-accent font-bold mb-8 italic text-xl">Personalized Quote</p>
-                        <p class="text-gray-400 mb-12 font-light leading-relaxed">Expert assistance for setting up your
-                            industrial and complex regulatory processes.</p>
-                        <ul class="space-y-6 mb-12 text-xs font-bold tracking-widest uppercase text-gray-300">
-                            <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accent"></span> Process
-                                Implementation</li>
-                            <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accent"></span> Audit &
-                                Monitoring</li>
-                            <li class="flex items-center gap-4"><span class="w-2 h-2 bg-accent"></span> Quality
-                                Documentation</li>
-                        </ul>
-                        <a href="contact.html" class="btn-secondary">Contact Us</a>
                     </div>
                 </div>
+            </div>
+            <!-- decorative circles -->
+            <div class="absolute -bottom-40 -right-40 w-[600px] h-[600px] border-[1px] border-white/5 rounded-full">
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-navy text-white pt-24 pb-12">
+    <footer class="bg-background-cream text-primary pt-32 pb-16">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
-                <div class="space-y-8">
-                    <div class="flex items-center gap-3">
-                        <img src="assets/logo_green.png" alt="Logo" class="h-10 w-auto brightness-0 invert">
-
-                    </div>
-                    <p class="text-sm font-light text-gray-400 leading-relaxed max-w-xs">
-                        Expert and tailored support to transform your idea into an exceptional, compliant, and
-                        high-performance product.
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
+                <div class="space-y-10">
+                    <img src="assets/logo_green.png" alt="Logo" class="h-16 w-auto">
+                    <p class="text-sm font-medium text-brown/70 leading-relaxed max-w-xs">
+                        Expert guidance for transforming your sustainable vision into an exceptional reality.
                     </p>
-                    <div class="flex gap-4">
+                    <div class="flex gap-6">
                         <a href="#"
-                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+                            class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-vibrant hover:text-white transition-all text-primary">
                             <span class="material-symbols-outlined text-xl">language</span>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all">
+                            class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-vibrant hover:text-white transition-all text-primary">
                             <span class="material-symbols-outlined text-xl">camera</span>
                         </a>
                     </div>
                 </div>
                 <div>
-                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Navigation</h5>
-                    <nav class="flex flex-col gap-4 text-sm font-light text-gray-400">
-                        <a href="index.html" class="hover:text-white transition-colors">Home</a>
-                        <a href="services.html" class="hover:text-white transition-colors">Services</a>
-                        <a href="about.html" class="hover:text-white transition-colors">About</a>
-                        <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Navigation</h5>
+                    <nav class="flex flex-col gap-5 text-sm font-bold uppercase tracking-widest">
+                        <a href="index.html" class="hover:text-vibrant transition-colors">Home</a>
+                        <a href="services.html" class="hover:text-vibrant transition-colors">Services</a>
+                        <a href="about.html" class="hover:text-vibrant transition-colors">About</a>
+                        <a href="contact.html" class="hover:text-vibrant transition-colors">Contact</a>
                     </nav>
                 </div>
                 <div>
-                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Legal</h5>
-                    <nav class="flex flex-col gap-4 text-sm font-light text-gray-400">
-                        <a href="#" class="hover:text-white transition-colors">FAQ</a>
-                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Legal</h5>
+                    <nav class="flex flex-col gap-5 text-sm font-bold uppercase tracking-widest text-brown/60">
+                        <a href="#" class="hover:text-vibrant transition-colors">FAQ</a>
+                        <a href="#" class="hover:text-vibrant transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-vibrant transition-colors">Terms of Service</a>
                     </nav>
                 </div>
-                <div class="space-y-8">
-                    <h5 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Contact</h5>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4 group cursor-pointer">
+                <div class="space-y-10">
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Contact Us</h5>
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-5 group cursor-pointer">
                             <span
-                                class="material-symbols-outlined text-accent group-hover:scale-110 transition-transform">call</span>
-                            <span class="text-sm font-medium">+00 00 00 00 00 00</span>
+                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl font-bold">call</span>
+                            </span>
+                            <span class="text-sm font-bold tracking-tight">+33 7 43 52 41 68</span>
                         </div>
-                        <div class="flex items-center gap-4 group cursor-pointer">
+                        <div class="flex items-center gap-5 group cursor-pointer">
                             <span
-                                class="material-symbols-outlined text-accent group-hover:scale-110 transition-transform">mail</span>
-                            <span class="text-sm font-medium">contact@example.com</span>
+                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-xl font-bold">mail</span>
+                            </span>
+                            <span class="text-sm font-bold tracking-tight">contact@greenutopia.com</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div
-                class="pt-8 border-t border-white/10 text-center text-[10px] tracking-[0.4em] font-light text-gray-500 uppercase">
-                © 2026 Brand Name - Excellence & Innovation - All rights reserved
+                class="pt-12 border-t border-primary/5 text-center text-[10px] tracking-[0.4em] font-bold text-brown/40 uppercase">
+                © 2026 GREEN UTOPIA - Excellence & Sustainable Innovation
             </div>
         </div>
     </footer>
