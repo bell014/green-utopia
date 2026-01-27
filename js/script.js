@@ -44,9 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Active Link Highlight
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const currentPath = window.location.pathname;
   document.querySelectorAll('.nav-link').forEach(link => {
-    if (link.getAttribute('href') === currentPath) {
+    const linkHref = link.getAttribute('href');
+    if (linkHref && currentPath.endsWith(linkHref)) {
       link.classList.add('active', 'text-accent');
     }
   });
@@ -122,21 +123,21 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
 
   // Theme Toggle Handler
-  const checkbox = document.getElementById('theme-checkbox');
-  if (checkbox) {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    checkbox.checked = currentTheme === 'dark';
+  const themeCheckboxes = document.querySelectorAll('input[type="checkbox"][id="theme-checkbox"]');
+  const currentTheme = document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme') || 'light';
 
-    checkbox.addEventListener('change', function () {
-      if (this.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-      }
+  themeCheckboxes.forEach(cb => {
+    cb.checked = currentTheme === 'dark';
+    cb.addEventListener('change', function () {
+      const newTheme = this.checked ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      // Synchronize other checkboxes
+      themeCheckboxes.forEach(other => {
+        if (other !== this) other.checked = this.checked;
+      });
     });
-  }
+  });
 });
 
 // Form Submission (Simulated)
