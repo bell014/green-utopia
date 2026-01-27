@@ -82,27 +82,39 @@
                         </svg>
                     </span>
                 </label>
-                <button id="mobile-menu-btn" class="md:hidden text-primary">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
+                <div class="md:hidden hamburger-container">
+                    <input class="label-check" id="label-check" type="checkbox" />
+                    <label for="label-check" class="hamburger-label">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </label>
+                </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center gap-8 md:hidden">
-            <button id="close-menu-btn" class="absolute top-8 right-8 text-primary">
-                <span class="material-symbols-outlined text-4xl">close</span>
-            </button>
-            <a href="index.html" class="text-3xl font-display font-bold text-primary">Home</a>
-            <a href="services.html" class="text-3xl font-display font-bold text-primary">Services</a>
-            <a href="about.html" class="text-3xl font-display font-bold text-primary">About</a>
-            <a href="contact.html" class="text-3xl font-display font-bold text-primary">Contact</a>
-        </div>
     </header>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-start pt-40 gap-10 md:hidden p-10 overflow-y-auto">
+        <div class="flex flex-col items-center gap-8">
+            <a href="index.html"
+                class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">Home</a>
+            <a href="services.html"
+                class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">Services</a>
+            <a href="about.html"
+                class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">About</a>
+            <a href="contact.html"
+                class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">Contact</a>
+        </div>
+        <div class="mt-10 pt-10 border-t border-primary/10 w-full flex justify-center gap-8">
+            <a href="contact.html" class="text-vibrant font-bold">EN</a>
+            <a href="fr/contact.html" class="opacity-40 font-bold">FR</a>
+        </div>
+    </div>
 
     <main>
         <!-- Contact Section -->
-        <section class="py-24 bg-background-light overflow-hidden">
+        <section class="section-padding bg-background-light overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid lg:grid-cols-12 gap-12 items-start">
                     <div class="lg:col-span-4 space-y-16 reveal">
@@ -204,7 +216,7 @@
         </section>
 
         <!-- Final Messaging Section -->
-        <section class="py-32 bg-primary-dark text-white text-center relative overflow-hidden">
+        <section class="section-padding bg-primary-dark text-white text-center relative overflow-hidden">
             <div class="max-w-4xl mx-auto px-6 space-y-12 reveal relative z-10">
                 <h2 class="text-5xl md:text-7xl font-display font-bold uppercase leading-tight tracking-tight">Your
                     project deserves <br /><span class="text-gold italic">Excellence</span></h2>

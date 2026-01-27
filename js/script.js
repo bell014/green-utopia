@@ -29,19 +29,41 @@ document.addEventListener('DOMContentLoaded', () => {
   revealOnScroll(); // Initial check
 
   // Mobile Menu Toggle
+  // Mobile Menu Toggle
+  const mobileMenuToggle = document.getElementById('label-check');
   const closeMenuBtn = document.getElementById('close-menu-btn');
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      document.body.classList.toggle('overflow-hidden');
-    });
-  }
-  if (closeMenuBtn && mobileMenu) {
-    closeMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
+
+  const closeMenu = () => {
+    if (mobileMenu) {
+      mobileMenu.classList.remove('active');
       document.body.classList.remove('overflow-hidden');
+    }
+    if (mobileMenuToggle) {
+      mobileMenuToggle.checked = false;
+    }
+  };
+
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('change', function () {
+      if (this.checked) {
+        mobileMenu.classList.add('active');
+        document.body.classList.add('overflow-hidden');
+      } else {
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('overflow-hidden');
+      }
     });
   }
+
+  if (closeMenuBtn) {
+    closeMenuBtn.addEventListener('click', closeMenu);
+  }
+
+  // Close menu on link click
+  const mobileMenuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
 
   // Active Link Highlight
   const currentPath = window.location.pathname;
@@ -114,10 +136,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Auto play
-    setInterval(() => {
+    let autoPlayInterval = setInterval(() => {
       currentIndex = (currentIndex + 1) % slides.length;
       goToSlide(currentIndex);
     }, 5000);
+
+    // Touch / Swipe Support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      clearInterval(autoPlayInterval); // Pause on interact
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      // Restart autoplay
+      autoPlayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        goToSlide(currentIndex);
+      }, 5000);
+    }, { passive: true });
+
+    const handleSwipe = () => {
+      const threshold = 50;
+      if (touchEndX < touchStartX - threshold) {
+        // Swiped Left -> Next
+        currentIndex = (currentIndex + 1) % slides.length;
+        goToSlide(currentIndex);
+      }
+      if (touchEndX > touchStartX + threshold) {
+        // Swiped Right -> Prev
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        goToSlide(currentIndex);
+      }
+    };
   };
 
   initCarousel();

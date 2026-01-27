@@ -82,28 +82,40 @@
                         </svg>
                     </span>
                 </label>
-                <button id="mobile-menu-btn" class="md:hidden text-primary">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
+                <div class="md:hidden hamburger-container">
+                    <input class="label-check" id="label-check" type="checkbox" />
+                    <label for="label-check" class="hamburger-label">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </label>
+                </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center gap-8 md:hidden">
-            <button id="close-menu-btn" class="absolute top-8 right-8 text-primary">
-                <span class="material-symbols-outlined text-4xl">close</span>
-            </button>
-            <a href="index.html" class="text-3xl font-display font-bold text-primary">Home</a>
-            <a href="services.html" class="text-3xl font-display font-bold text-primary">Services</a>
-            <a href="about.html" class="text-3xl font-display font-bold text-primary">About</a>
-            <a href="contact.html" class="text-3xl font-display font-bold text-primary">Contact</a>
-        </div>
     </header>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-start pt-40 gap-10 md:hidden p-10 overflow-y-auto">
+        <div class="flex flex-col items-center gap-8">
+            <a href="index.html"
+                class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">Home</a>
+            <a href="services.html"
+                class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">Services</a>
+            <a href="about.html"
+                class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">About</a>
+            <a href="contact.html"
+                class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">Contact</a>
+        </div>
+        <div class="mt-10 pt-10 border-t border-primary/10 w-full flex justify-center gap-8">
+            <a href="about.html" class="text-vibrant font-bold">EN</a>
+            <a href="fr/about.html" class="opacity-40 font-bold">FR</a>
+        </div>
+    </div>
 
     <main>
         <!-- Intro Hero -->
-        <section class="py-24 lg:py-32 px-6 overflow-hidden">
-            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+        <section class="section-padding px-6 overflow-hidden">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <div class="reveal space-y-8">
                     <div
                         class="inline-block px-6 py-2 bg-vibrant/10 text-vibrant rounded-full text-[10px] font-bold tracking-[0.4em] uppercase">
@@ -131,7 +143,7 @@
         </section>
 
         <!-- Timeline Section -->
-        <section class="bg-primary py-32 px-6 relative overflow-hidden text-white">
+        <section class="bg-primary section-padding px-6 relative overflow-hidden text-white">
             <div class="max-w-6xl mx-auto relative z-10">
                 <div class="text-center mb-24 space-y-4 reveal">
                     <div class="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">Evolution</div>
@@ -143,7 +155,7 @@
                         class="absolute left-1/2 top-0 bottom-0 w-1 bg-white/10 transform -translate-x-1/2 hidden md:block rounded-full">
                     </div>
 
-                    <div class="space-y-32">
+                    <div class="space-y-16 lg:space-y-32">
                         <!-- Step 1 -->
                         <div class="flex flex-col md:flex-row items-center reveal">
                             <div class="md:w-1/2"></div>
@@ -199,9 +211,9 @@
         </section>
 
         <!-- Values Section -->
-        <section class="py-32 px-6 bg-background-cream">
+        <section class="section-padding px-6 bg-background-cream">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-24 reveal space-y-4">
+                <div class="text-center mb-16 md:mb-24 reveal space-y-4">
                     <div class="text-vibrant text-[10px] font-bold tracking-[0.4em] uppercase">Commitment</div>
                     <h2 class="font-display text-4xl md:text-6xl font-bold text-primary uppercase">Our Core Values</h2>
                 </div>
@@ -257,7 +269,7 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="py-32 px-6">
+        <section class="section-padding px-6">
             <div class="max-w-4xl mx-auto text-center reveal space-y-12">
                 <h2 class="font-display text-4xl md:text-5xl text-primary font-bold leading-tight uppercase">Ready to
                     elevate your <br />project with an expert?</h2>

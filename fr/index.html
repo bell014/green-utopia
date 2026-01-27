@@ -84,29 +84,42 @@
                         </svg>
                     </span>
                 </label>
-                <button id="mobile-menu-btn" class="md:hidden text-primary">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
+                <div class="md:hidden hamburger-container">
+                    <input class="label-check" id="label-check" type="checkbox" />
+                    <label for="label-check" class="hamburger-label">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </label>
+                </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-            class="hidden fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center gap-8 md:hidden">
-            <button id="close-menu-btn" class="absolute top-8 right-8 text-primary">
-                <span class="material-symbols-outlined text-4xl">close</span>
-            </button>
-            <a href="index.html" class="text-3xl font-display font-bold text-primary">Accueil</a>
-            <a href="services.html" class="text-3xl font-display font-bold text-primary">Services</a>
-            <a href="about.html" class="text-3xl font-display font-bold text-primary">À propos</a>
-            <a href="contact.html" class="text-3xl font-display font-bold text-primary">Contact</a>
-        </div>
     </header>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-start pt-40 gap-10 md:hidden p-10 overflow-y-auto">
+        <div class="flex flex-col items-center gap-8">
+            <a href="index.html"
+                class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">Accueil</a>
+            <a href="services.html"
+                class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">Services</a>
+            <a href="about.html"
+                class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">À
+                propos</a>
+            <a href="contact.html"
+                class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">Contact</a>
+        </div>
+        <div class="mt-10 pt-10 border-t border-primary/10 w-full flex justify-center gap-8">
+            <a href="../index.html" class="opacity-40 font-bold">EN</a>
+            <a href="index.html" class="text-vibrant font-bold">FR</a>
+        </div>
+    </div>
 
     <main>
         <!-- Hero Section -->
-        <section class="relative min-h-[90vh] flex items-center pt-10 pb-20 overflow-hidden">
+        <section class="relative min-h-[90vh] flex items-center pt-24 pb-16 lg:pt-10 lg:pb-20 overflow-hidden">
             <div
-                class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20 items-center relative z-10">
+                class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center relative z-10">
                 <div class="space-y-10 reveal">
                     <div
                         class="inline-block px-6 py-2 bg-gold/20 text-primary rounded-full text-[10px] font-bold tracking-[0.4em] uppercase">
@@ -127,7 +140,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="relative h-[650px] hidden lg:block w-full lg:translate-x-12">
+                <div class="relative h-[400px] lg:h-[650px] block w-full lg:translate-x-12 mt-12 lg:mt-0">
                     <div class="carousel-container h-full w-full shadow-3xl">
                         <div class="carousel-track h-full">
                             <div class="carousel-slide h-full">
@@ -157,9 +170,9 @@
         </section>
 
         <!-- Universe Section (Services) -->
-        <section class="bg-primary py-32 text-white relative overflow-hidden" id="services">
+        <section class="bg-primary section-padding text-white relative overflow-hidden" id="services">
             <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-8">
                     <div class="space-y-6 max-w-2xl reveal">
                         <div class="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">EXPERTISE ÉLITE
                         </div>
@@ -267,8 +280,8 @@
         </section>
 
         <!-- Philosophy Section -->
-        <section class="py-32 bg-background-cream overflow-hidden">
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <section class="section-padding bg-background-cream overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                 <div class="relative reveal">
                     <div class="rounded-[50px] overflow-hidden shadow-3xl relative z-10">
                         <img alt="L'Excellence Durable" class="w-full h-[600px] object-cover"
@@ -329,16 +342,16 @@
         </section>
 
         <!-- Newsletter Section -->
-        <section class="py-32 px-6">
+        <section class="section-padding px-6">
             <div
-                class="max-w-7xl mx-auto bg-primary rounded-[50px] p-12 md:p-24 relative overflow-hidden text-center text-white">
+                class="max-w-7xl mx-auto bg-primary rounded-[30px] md:rounded-[50px] p-10 md:p-24 relative overflow-hidden text-center text-white">
                 <div class="relative z-10 max-w-2xl mx-auto space-y-10 reveal">
                     <div class="text-gold text-[10px] font-bold tracking-[0.4em] uppercase">ACCÈS EXCLUSIF</div>
                     <h2 class="text-5xl md:text-6xl font-display uppercase leading-tight">Rejoignez l'Utopie</h2>
                     <p class="text-gold/80 font-medium text-lg">Recevez nos analyses sur la durabilité, le luxe et la
                         croissance industrielle.</p>
                     <form
-                        class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto bg-white/10 p-2 rounded-full backdrop-blur-md border border-white/10">
+                        class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto bg-white/10 md:p-2 rounded-[20px] md:rounded-full backdrop-blur-md border border-white/10 p-4">
                         <input
                             class="flex-grow px-8 py-4 bg-transparent border-none focus:ring-0 text-white placeholder:text-white/40 text-sm"
                             placeholder="Votre adresse email" required="" type="email" />
