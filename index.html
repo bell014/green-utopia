@@ -11,8 +11,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
@@ -20,21 +19,29 @@
     <!-- Styles -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
     <script>
+        // Immediate Theme Application
+        (function () {
+            const theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        primary: "#184F44",
-                        vibrant: "#1B8A46",
+                        primary: "var(--primary)",
+                        vibrant: "var(--vibrant-green)",
                         gold: "#F2DA91",
-                        brown: "#8C6A3F",
-                        "background-light": "#FFFFFF",
-                        "background-cream": "#F9F7F4",
+                        brown: "var(--earthy-brown)",
+                        "background-light": "var(--background-light)",
+                        "background-cream": "var(--background-cream)",
                     },
                     fontFamily: {
-                        display: ["Playfair Display", "serif"],
+                        display: ["Montserrat", "sans-serif"],
                         body: ["Montserrat", "sans-serif"],
+                        logo: ["Mongolian Baiti", "serif"],
                     },
                     borderRadius: {
                         'pill': '100px',
@@ -67,6 +74,20 @@
                     <span class="opacity-20 text-primary">|</span>
                     <a href="fr/index.html" class="opacity-40 hover:opacity-100 transition-opacity">FR</a>
                 </div>
+                <!-- Theme Switcher -->
+                <label class="switch hidden md:inline-block">
+                    <input id="theme-checkbox" type="checkbox" />
+                    <span class="slider">
+                        <div class="star star_1"></div>
+                        <div class="star star_2"></div>
+                        <div class="star star_3"></div>
+                        <svg viewBox="0 0 16 16" class="cloud_1 cloud">
+                            <path transform="matrix(.77976 0 0 .78395-299.99-418.63)" fill="#fff"
+                                d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925">
+                            </path>
+                        </svg>
+                    </span>
+                </label>
                 <button id="mobile-menu-btn" class="md:hidden text-primary">
                     <span class="material-symbols-outlined text-3xl">menu</span>
                 </button>
@@ -88,7 +109,8 @@
     <main>
         <!-- Hero Section -->
         <section class="relative min-h-[90vh] flex items-center pt-10 pb-20 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div
+                class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20 items-center relative z-10">
                 <div class="space-y-10 animate-fade-in-up">
                     <div
                         class="inline-block px-6 py-2 bg-gold/20 text-primary rounded-full text-[10px] font-bold tracking-[0.4em] uppercase">
@@ -109,7 +131,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="relative h-[650px] hidden lg:block w-full">
+                <div class="relative h-[650px] hidden lg:block w-full lg:translate-x-12">
                     <div class="carousel-container h-full w-full shadow-2xl">
                         <div class="carousel-track h-full">
                             <div class="carousel-slide h-full">
@@ -164,11 +186,18 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     <!-- Service 1 -->
                     <div class="brand-card group cursor-pointer reveal">
-                        <div class="brand-card-inner space-y-8 h-full flex flex-col justify-between">
+                        <div class="brand-card-border"></div>
+                        <div class="brand-card-inner">
                             <div class="space-y-6">
-                                <div
-                                    class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-gold">
-                                    <span class="material-symbols-outlined text-3xl">strategy</span>
+                                <div class="icon-wrapper">
+                                    <div
+                                        class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-gold icon-primary">
+                                        <span class="material-symbols-outlined text-3xl">strategy</span>
+                                    </div>
+                                    <div
+                                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary icon-secondary">
+                                        <span class="material-symbols-outlined text-3xl">trending_up</span>
+                                    </div>
                                 </div>
                                 <h3 class="text-3xl font-display uppercase tracking-tight text-primary">Strategic
                                     Consulting</h3>
@@ -179,17 +208,25 @@
                                 class="text-primary font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform inline-block">Explore
                                 More →</span>
                         </div>
+                        <span class="brand-card-bottom-text">Green Utopia Elite</span>
                     </div>
+
                     <!-- Service 2 -->
                     <div class="brand-card group cursor-pointer reveal" style="transition-delay: 100ms;">
-                        <div
-                            class="brand-card-inner space-y-8 h-full flex flex-col justify-between bg-white border-2 border-gold">
+                        <div class="brand-card-border"></div>
+                        <div class="brand-card-inner">
                             <div class="space-y-6">
-                                <div
-                                    class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-gold">
-                                    <span class="material-symbols-outlined text-3xl">eco</span>
+                                <div class="icon-wrapper">
+                                    <div
+                                        class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-gold icon-primary">
+                                        <span class="material-symbols-outlined text-3xl">eco</span>
+                                    </div>
+                                    <div
+                                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary icon-secondary">
+                                        <span class="material-symbols-outlined text-3xl">nature_door</span>
+                                    </div>
                                 </div>
-                                <h3 class="text-3xl font-display uppercase tracking-tight text-primary">Eco-Development
+                                <h3 class="text-3xl font-display uppercase tracking-tight text-primary">Bioconformity
                                 </h3>
                                 <p class="text-primary/70 font-medium text-sm leading-relaxed">Creating innovative,
                                     high-performance solutions with a green heart.</p>
@@ -198,25 +235,34 @@
                                 class="text-primary font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform inline-block">Explore
                                 More →</span>
                         </div>
+                        <span class="brand-card-bottom-text">Green Utopia Elite</span>
                     </div>
+
                     <!-- Service 3 -->
                     <div class="brand-card group cursor-pointer reveal" style="transition-delay: 200ms;">
-                        <div
-                            class="brand-card-inner space-y-8 h-full flex flex-col justify-between bg-vibrant text-white">
+                        <div class="brand-card-border"></div>
+                        <div class="brand-card-inner">
                             <div class="space-y-6">
-                                <div
-                                    class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-vibrant">
-                                    <span class="material-symbols-outlined text-3xl">verified_user</span>
+                                <div class="icon-wrapper">
+                                    <div
+                                        class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-gold icon-primary">
+                                        <span class="material-symbols-outlined text-3xl">verified_user</span>
+                                    </div>
+                                    <div
+                                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary icon-secondary">
+                                        <span class="material-symbols-outlined text-3xl">verified</span>
+                                    </div>
                                 </div>
-                                <h3 class="text-3xl font-display uppercase tracking-tight text-white">Full Compliance
+                                <h3 class="text-3xl font-display uppercase tracking-tight text-primary">Full Mastery
                                 </h3>
-                                <p class="text-white/80 font-medium text-sm leading-relaxed">Securing your launch with
+                                <p class="text-primary/70 font-medium text-sm leading-relaxed">Securing your launch with
                                     total regulatory and quality control mastery.</p>
                             </div>
                             <span
-                                class="text-white font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform inline-block">Explore
+                                class="text-primary font-bold text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform inline-block">Explore
                                 More →</span>
                         </div>
+                        <span class="brand-card-bottom-text">Green Utopia Elite</span>
                     </div>
                 </div>
             </div>
@@ -316,28 +362,28 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-background-cream text-primary pt-32 pb-16">
+    <footer class="bg-primary text-white pt-32 pb-16">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
                 <div class="space-y-10">
-                    <img src="assets/logo_green.png" alt="Logo" class="h-16 w-auto">
-                    <p class="text-sm font-medium text-brown/70 leading-relaxed max-w-xs">
+                    <img src="assets/logo_green.png" alt="Logo" class="h-16 w-auto invert-white">
+                    <p class="text-sm font-medium text-white/60 leading-relaxed max-w-xs">
                         Expert guidance for transforming your sustainable vision into an exceptional reality.
                     </p>
                     <div class="flex gap-6">
                         <a href="#"
-                            class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-vibrant hover:text-white transition-all text-primary">
+                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-vibrant hover:text-white transition-all text-white">
                             <span class="material-symbols-outlined text-xl">language</span>
                         </a>
                         <a href="#"
-                            class="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center hover:bg-vibrant hover:text-white transition-all text-primary">
+                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-vibrant hover:text-white transition-all text-white">
                             <span class="material-symbols-outlined text-xl">camera</span>
                         </a>
                     </div>
                 </div>
                 <div>
-                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Navigation</h5>
-                    <nav class="flex flex-col gap-5 text-sm font-bold uppercase tracking-widest">
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-10">Navigation</h5>
+                    <nav class="flex flex-col gap-5 text-sm font-bold uppercase tracking-widest text-white/80">
                         <a href="index.html" class="hover:text-vibrant transition-colors">Home</a>
                         <a href="services.html" class="hover:text-vibrant transition-colors">Services</a>
                         <a href="about.html" class="hover:text-vibrant transition-colors">About</a>
@@ -345,26 +391,26 @@
                     </nav>
                 </div>
                 <div>
-                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Legal</h5>
-                    <nav class="flex flex-col gap-5 text-sm font-bold uppercase tracking-widest text-brown/60">
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-10">Legal</h5>
+                    <nav class="flex flex-col gap-5 text-sm font-bold uppercase tracking-widest text-white/60">
                         <a href="#" class="hover:text-vibrant transition-colors">FAQ</a>
                         <a href="#" class="hover:text-vibrant transition-colors">Privacy Policy</a>
                         <a href="#" class="hover:text-vibrant transition-colors">Terms of Service</a>
                     </nav>
                 </div>
                 <div class="space-y-10">
-                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-vibrant mb-10">Contact Us</h5>
+                    <h5 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-10">Contact Us</h5>
                     <div class="space-y-8">
                         <div class="flex items-center gap-5 group cursor-pointer">
                             <span
-                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gold shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
                                 <span class="material-symbols-outlined text-xl font-bold">call</span>
                             </span>
                             <span class="text-sm font-bold tracking-tight">+33 7 43 52 41 68</span>
                         </div>
                         <div class="flex items-center gap-5 group cursor-pointer">
                             <span
-                                class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gold shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
                                 <span class="material-symbols-outlined text-xl font-bold">mail</span>
                             </span>
                             <span class="text-sm font-bold tracking-tight">contact@greenutopia.com</span>
@@ -373,7 +419,7 @@
                 </div>
             </div>
             <div
-                class="pt-12 border-t border-primary/5 text-center text-[10px] tracking-[0.4em] font-bold text-brown/40 uppercase">
+                class="pt-12 border-t border-white/5 text-center text-[10px] tracking-[0.4em] font-bold text-white/40 uppercase font-logo">
                 © 2026 GREEN UTOPIA - Excellence & Sustainable Innovation
             </div>
         </div>

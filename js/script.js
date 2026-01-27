@@ -120,6 +120,23 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   initCarousel();
+
+  // Theme Toggle Handler
+  const checkbox = document.getElementById('theme-checkbox');
+  if (checkbox) {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    checkbox.checked = currentTheme === 'dark';
+
+    checkbox.addEventListener('change', function () {
+      if (this.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  }
 });
 
 // Form Submission (Simulated)
