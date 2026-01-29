@@ -77,6 +77,11 @@
 }
 
 /* Base Styles */
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   color: var(--text-main);
@@ -755,6 +760,14 @@ video {
   .btn-secondary {
     width: 100%;
     padding: 0.875rem 1.5rem;
+  }
+
+  .form-inner {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .form-card {
+    border-radius: 24px;
   }
 }
 
