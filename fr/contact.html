@@ -56,7 +56,7 @@
             <a href="index.html" class="flex items-center gap-3">
                 <img src="../assets/logo_green.png" alt="Logo" class="h-14 w-auto">
             </a>
-            <nav class="hidden md:flex items-center gap-12">
+            <nav class="hidden lg:flex items-center gap-12">
                 <a href="index.html" class="nav-link">Accueil</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="about.html" class="nav-link">À propos</a>
@@ -69,7 +69,7 @@
                     <a href="contact.html" class="text-vibrant">FR</a>
                 </div>
                 <!-- Theme Switcher -->
-                <label class="switch hidden md:inline-block">
+                <label class="switch hidden lg:inline-block">
                     <input id="theme-checkbox" type="checkbox" />
                     <span class="slider">
                         <div class="star star_1"></div>
@@ -82,7 +82,7 @@
                         </svg>
                     </span>
                 </label>
-                <div class="md:hidden hamburger-container">
+                <div class="lg:hidden hamburger-container">
                     <input class="label-check hidden" id="label-check" type="checkbox" />
                     <label for="label-check" class="hamburger-label">
                         <div class="line1"></div>
@@ -95,7 +95,7 @@
     </header>
     <!-- Mobile Menu -->
     <div id="mobile-menu"
-        class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-start pt-40 gap-10 md:hidden p-10 overflow-y-auto">
+        class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-start pt-40 gap-10 lg:hidden p-10 overflow-y-auto">
         <div class="flex flex-col items-center gap-8">
             <a href="index.html"
                 class="text-3xl font-display font-bold text-primary hover:text-vibrant transition-colors">Accueil</a>
@@ -115,7 +115,7 @@
 
     <main>
         <!-- Contact Section -->
-        <section class="section-padding bg-white overflow-hidden">
+        <section class="section-padding bg-background-light overflow-hidden">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid lg:grid-cols-12 gap-12 items-start">
                     <div class="lg:col-span-4 space-y-6 reveal order-1 lg:order-none">
@@ -124,7 +124,7 @@
                             INITIER LE DIALOGUE</div>
                         <h1
                             class="text-7xl md:text-9xl font-display font-bold text-primary leading-[0.9] uppercase tracking-tighter">
-                            Entrez en <br /><span class="italic text-gold">Contact</span></h1>
+                            Entrez en <br /><span class="italic text-primary">Contact</span></h1>
                     </div>
 
                     <div class="lg:col-span-6 lg:col-start-7 lg:row-span-2 form-card reveal order-2 lg:order-none">
@@ -187,43 +187,29 @@
                         <div
                             class="flex items-center space-x-8 group p-6 bg-background-cream rounded-[40px] transition-all hover:bg-gold/20">
                             <div
-                                class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center text-vibrant group-hover:bg-vibrant group-hover:text-white transition-all">
+                                class="w-16 h-16 rounded-full bg-primary shadow-sm flex items-center justify-center text-gold group-hover:bg-white group-hover:text-primary transition-all flex-shrink-0">
                                 <span class="material-symbols-outlined text-2xl">call</span>
                             </div>
-                            <div class="flex flex-col">
+                            <div class="flex flex-col flex-1 min-w-0">
                                 <span class="text-[9px] font-black uppercase tracking-[0.3em] text-brown/40 mb-1">Ligne
                                     Directe Élite</span>
-                                <span class="text-xl font-bold tracking-tight">+33 06 12 93 49 27</span>
+                                <span class="text-xl font-bold tracking-tight break-words">+33 06 12 93 49 27</span>
                             </div>
                         </div>
                         <div
                             class="flex items-center space-x-8 group p-6 bg-background-cream rounded-[40px] transition-all hover:bg-gold/20">
                             <div
-                                class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center text-vibrant group-hover:bg-vibrant group-hover:text-white transition-all">
+                                class="w-16 h-16 rounded-full bg-primary shadow-sm flex items-center justify-center text-gold group-hover:bg-white group-hover:text-primary transition-all flex-shrink-0">
                                 <span class="material-symbols-outlined text-2xl">mail</span>
                             </div>
-                            <div class="flex flex-col">
+                            <div class="flex flex-col flex-1 min-w-0">
                                 <span
                                     class="text-[9px] font-black uppercase tracking-[0.3em] text-brown/40 mb-1">Correspondance
                                     Directe</span>
-                                <span class="text-xl font-bold tracking-tight">a.rodriguez@greenutopia.eu</span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center space-x-8 group p-6 bg-background-cream rounded-[40px] transition-all hover:bg-gold/20">
-                            <div
-                                class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center text-vibrant group-hover:bg-vibrant group-hover:text-white transition-all">
-                                <span class="material-symbols-outlined text-2xl">location_on</span>
-                            </div>
-                            <div class="flex flex-col">
                                 <span
-                                    class="text-[9px] font-black uppercase tracking-[0.3em] text-brown/40 mb-1">Adresse
-                                    Siège</span>
-                                <span class="text-xl font-bold tracking-tight leading-tight">Zona industrial da Gia lote
-                                    10<br />3105-467 Gia pombal</span>
+                                    class="text-xl font-bold tracking-tight break-words">a.rodriguez@greenutopia.eu</span>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -291,14 +277,14 @@
                     <div class="space-y-8">
                         <div class="flex items-center gap-5 group cursor-pointer">
                             <span
-                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gold shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gold shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all flex-shrink-0">
                                 <span class="material-symbols-outlined text-xl font-bold">call</span>
                             </span>
                             <span class="text-sm font-bold tracking-tight">+33 06 12 93 49 27</span>
                         </div>
                         <div class="flex items-center gap-5 group cursor-pointer">
                             <span
-                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gold shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gold shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all flex-shrink-0">
                                 <span class="material-symbols-outlined text-xl font-bold">mail</span>
                             </span>
                             <span class="text-sm font-bold tracking-tight">a.rodriguez@greenutopia.eu</span>
