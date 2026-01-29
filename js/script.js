@@ -195,23 +195,53 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Form Submission (Simulated)
+// Form Submission with Backend Integration
 const contactForm = document.querySelector('form');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button');
     const originalText = btn.innerText;
+
+    // Gather Data using FormData to easily get value by name
+    const formData = new FormData(contactForm);
+    const updates = {
+      fullName: formData.get('fullName'),
+      company: formData.get('company'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      expertise: formData.get('expertise'),
+      message: formData.get('message')
+    };
+
+    // UI Loading State
     btn.disabled = true;
     btn.innerText = 'Envoi en cours...';
 
-    setTimeout(() => {
-      btn.innerText = 'Message envoyé !';
-      contactForm.reset();
+    try {
+      // Send Data to Backend
+      // TODO: Replace 'http://localhost:3000' with your actual production URL when deploying
+      const response = await fetch('http://localhost:3000/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updates)
+      });
+
+      if (response.ok) {
+        btn.innerText = 'Message envoyé !';
+        contactForm.reset();
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      console.error(error);
+      btn.innerText = 'Erreur due serveur';
+    } finally {
+      // Reset Button after delay
       setTimeout(() => {
         btn.innerText = originalText;
         btn.disabled = false;
       }, 3000);
-    }, 1500);
+    }
   });
 }

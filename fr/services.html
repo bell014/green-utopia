@@ -120,16 +120,19 @@
                 <div class="max-w-2xl reveal space-y-8">
                     <div
                         class="inline-block px-6 py-2 bg-gold/20 text-primary rounded-full text-[10px] font-bold tracking-[0.4em] uppercase">
-                        NOTRE EXPERTISE
+                        FABRICATION & INNOVATION
                     </div>
                     <h1 class="text-6xl lg:text-8xl font-display text-primary leading-tight uppercase">Nos Services</h1>
-                    <p class="text-2xl font-medium text-brown/70 italic leading-relaxed">Un accompagnement exclusif pour
-                        vos projets durables les plus ambitieux.</p>
+                    <p class="text-2xl font-medium text-brown/70 italic leading-relaxed">
+                        Green UTOPIA est un partenaire de fabrication spécialisé dans les solutions capillaires
+                        innovantes, efficaces et respectueuses de la fibre.
+                    </p>
                     <div class="h-1.5 w-24 bg-vibrant rounded-full"></div>
                     <p class="text-lg leading-relaxed text-brown/60 font-medium max-w-xl">
-                        Nous fournissons une expertise unique, combinant rigueur scientifique, maîtrise réglementaire et
-                        expérience industrielle. Nous vous accompagnons à chaque étape : de la conception au succès
-                        commercial.
+                        Grâce à notre double ADN — biologie et coiffure — nous avons développé des technologies de
+                        lissage nouvelle génération « One Step », offrant un gain de temps considérable. Notre
+                        savoir-faire s'étend aux produits d'entretien experts et aux soins de haute finition, conçus
+                        pour sublimer le résultat dès la première application.
                     </p>
                 </div>
                 <div class="w-full lg:w-2/5 flex justify-center lg:justify-end reveal">
@@ -144,112 +147,41 @@
             </div>
         </section>
 
-        <!-- Solutions Section -->
-        <section class="bg-background-cream section-padding border-y border-primary/5">
+        <!-- Packaging Catalog Viewer -->
+        <section class="bg-background-cream section-padding border-y border-primary/5" id="catalog">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16 md:mb-24 reveal space-y-4">
-                    <div class="text-vibrant text-[10px] font-bold tracking-[0.4em] uppercase">SÉLECTION DE L'UNIVERS
-                    </div>
-                    <h2 class="text-4xl md:text-6xl font-display text-primary uppercase">Solutions & Conformité</h2>
+                <div class="text-center mb-16 reveal space-y-4">
+                    <div class="text-vibrant text-[10px] font-bold tracking-[0.4em] uppercase">COLLECTION 2026</div>
+                    <h2 class="text-4xl md:text-6xl font-display text-primary uppercase">Feuilleter le Catalogue</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <!-- Option 1 -->
-                    <div class="brand-card reveal flex flex-col items-center group cursor-pointer transition-all">
-                        <div class="brand-card-border"></div>
-                        <div class="brand-card-inner !p-10 flex flex-col items-center h-full w-full">
-                            <h3
-                                class="text-2xl font-display text-primary mb-6 uppercase tracking-tight h-16 flex items-center">
-                                Accompagnement Complet</h3>
-                            <div class="text-vibrant font-black text-xl mb-10 italic">Devis Personnalisé</div>
-                            <p class="text-sm leading-relaxed text-primary/60 font-medium mb-10 min-h-[80px]">Gestion
-                                intégrale de votre projet durable, en totale conformité avec les standards mondiaux
-                                d'élite.</p>
-                            <ul
-                                class="text-[10px] space-y-4 mb-12 flex-grow text-primary/80 font-bold uppercase tracking-[0.2em] text-left w-full">
-                                <li class="flex items-start"><span
-                                        class="material-symbols-outlined text-vibrant mr-3 text-lg">check_circle</span>
-                                    Analyse des matières premières</li>
-                                <li class="flex items-start"><span
-                                        class="material-symbols-outlined text-vibrant mr-3 text-lg">check_circle</span>
-                                    Évaluation des risques de prestige</li>
-                                <li class="flex items-start"><span
-                                        class="material-symbols-outlined text-vibrant mr-3 text-lg">check_circle</span>
-                                    Notification Élite</li>
-                            </ul>
-                            <a href="contact.html" class="btn-primary w-full !text-xs">DEMANDER UN DEVIS</a>
-                        </div>
-                        <span class="brand-card-bottom-text">Green Utopia Élite</span>
+                <div class="reveal bg-white p-4 md:p-8 rounded-[40px] shadow-xl border border-primary/5">
+                    <div class="w-full h-[80vh] rounded-[20px] overflow-hidden bg-background-light relative group">
+                        <!-- PDF Viewer -->
+                        <iframe src="../catalog_2026.pdf" class="w-full h-full" type="application/pdf">
+                            <div class="flex flex-col items-center justify-center h-full space-y-4">
+                                <p class="text-primary font-medium">Votre navigateur ne supporte pas l'affichage PDF.
+                                </p>
+                                <a href="../catalog_2026.pdf" class="btn-primary" download>Télécharger le Catalogue</a>
+                            </div>
+                        </iframe>
                     </div>
 
-                    <!-- Option 2 -->
-                    <div class="brand-card reveal flex flex-col items-center group cursor-pointer transition-all"
-                        style="transition-delay: 100ms;">
-                        <div class="brand-card-border"></div>
-                        <div class="brand-card-inner !p-10 flex flex-col items-center h-full w-full relative">
-                            <div
-                                class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-primary text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-[0.3em] z-20">
-                                SIGNATURE</div>
-                            <h3
-                                class="text-2xl font-display text-primary mb-6 uppercase tracking-tight h-16 flex items-center">
-                                Évaluation Standard</h3>
-                            <div class="mb-10 text-primary">
-                                <span class="font-black text-4xl">500€</span>
-                                <span class="text-[9px] opacity-60 uppercase tracking-widest ml-1">/ UNITÉ</span>
+                    <div class="mt-8 flex justify-between items-center flex-col md:flex-row gap-6">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-4xl text-vibrant">menu_book</span>
+                            <div>
+                                <h3 class="font-bold text-primary text-lg">Visionneuse Interactive</h3>
+                                <p class="text-xs text-primary/60 uppercase tracking-widest">Utilisez le défilement pour
+                                    explorer</p>
                             </div>
-                            <p class="text-sm leading-relaxed text-primary/60 font-medium mb-10 min-h-[80px]">Évaluation
-                                de sécurité précise – rapport d'élite basé sur les données de votre univers.</p>
-                            <ul
-                                class="text-[10px] space-y-4 mb-12 flex-grow text-primary/80 font-bold uppercase tracking-[0.2em] text-left w-full">
-                                <li class="flex items-start"><span
-                                        class="material-symbols-outlined text-gold mr-3 text-lg">verified</span> Analyse
-                                    de formule</li>
-                                <li class="flex items-start"><span
-                                        class="material-symbols-outlined text-gold mr-3 text-lg">verified</span> Calculs
-                                    d'exposition</li>
-                                <li class="flex items-start"><span
-                                        class="material-symbols-outlined text-gold mr-3 text-lg">verified</span>
-                                    Certification d'expert</li>
-                            </ul>
-                            <a href="contact.html"
-                                class="btn-primary w-full !text-xs !bg-gold !text-primary hover:!bg-primary hover:!text-gold">CHOISIR
-                                LA SOLUTION</a>
                         </div>
-                        <span class="brand-card-bottom-text">Green Utopia Élite</span>
-                    </div>
-
-                    <!-- Option 3 -->
-                    <div class="brand-card reveal flex flex-col items-center group cursor-pointer transition-all"
-                        style="transition-delay: 200ms;">
-                        <div class="brand-card-border"></div>
-                        <div class="brand-card-inner !p-10 flex flex-col items-center h-full w-full">
-                            <h3
-                                class="text-2xl font-display text-primary mb-6 uppercase tracking-tight h-16 flex items-center">
-                                Maîtrise des Registres</h3>
-                            <div class="mb-10 text-vibrant">
-                                <span class="font-black text-4xl">100€</span>
-                                <span class="text-[9px] opacity-60 uppercase tracking-widest ml-1">/ UNITÉ</span>
-                            </div>
-                            <p class="text-sm leading-relaxed text-primary/60 font-medium mb-10 min-h-[80px]">Soumission
-                                officielle de votre marque sur toutes les plateformes réglementaires mondiales.</p>
-                            <ul
-                                class="text-[10px] space-y-4 mb-12 flex-grow text-primary/80 font-bold uppercase tracking-[0.2em] text-left w-full">
-                                <li class="flex items-start"><span
-                                        class="material-symbols-outlined text-vibrant mr-3 text-lg">language</span>
-                                    Maîtrise documentaire</li>
-                                <li class="flex items-start"><span
-                                        class="material-symbols-outlined text-vibrant mr-3 text-lg">language</span>
-                                    Gestion des portails</li>
-                                <li class="flex items-start"><span
-                                        class="material-symbols-outlined text-vibrant mr-3 text-lg">language</span>
-                                    Coffre-fort de confirmation</li>
-                            </ul>
-                            <a href="contact.html" class="btn-primary w-full !text-xs">CHOISIR LA SOLUTION</a>
-                        </div>
-                        <span class="brand-card-bottom-text">Green Utopia Élite</span>
+                        <a href="../catalog_2026.pdf" class="btn-primary flex items-center gap-3" download>
+                            <span>Télécharger PDF</span>
+                            <span class="material-symbols-outlined text-sm">download</span>
+                        </a>
                     </div>
                 </div>
-            </div>
             </div>
         </section>
 
@@ -410,14 +342,14 @@
                                 class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gold shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
                                 <span class="material-symbols-outlined text-xl font-bold">call</span>
                             </span>
-                            <span class="text-sm font-bold tracking-tight">+33 7 43 52 41 68</span>
+                            <span class="text-sm font-bold tracking-tight">+33 06 12 93 49 27</span>
                         </div>
                         <div class="flex items-center gap-5 group cursor-pointer">
                             <span
                                 class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gold shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
                                 <span class="material-symbols-outlined text-xl font-bold">mail</span>
                             </span>
-                            <span class="text-sm font-bold tracking-tight">contact@greenutopia.com</span>
+                            <span class="text-sm font-bold tracking-tight">a.rodriguez@greenutopia.eu</span>
                         </div>
                     </div>
                 </div>

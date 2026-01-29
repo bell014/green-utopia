@@ -139,28 +139,29 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12">
                                     <div class="form-input-group">
                                         <label class="form-label">Full Name</label>
-                                        <input class="form-input" placeholder="e.g. Jean Dupont" required=""
-                                            type="text" />
+                                        <input class="form-input" name="fullName" placeholder="e.g. Jean Dupont"
+                                            required="" type="text" />
                                     </div>
                                     <div class="form-input-group">
                                         <label class="form-label">Company</label>
-                                        <input class="form-input" placeholder="Optional" type="text" />
+                                        <input class="form-input" name="company" placeholder="Optional" type="text" />
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12">
                                     <div class="form-input-group">
                                         <label class="form-label">Email Address</label>
-                                        <input class="form-input" placeholder="contact@example.com" required=""
-                                            type="email" />
+                                        <input class="form-input" name="email" placeholder="contact@example.com"
+                                            required="" type="email" />
                                     </div>
                                     <div class="form-input-group">
                                         <label class="form-label">Phone Number</label>
-                                        <input class="form-input" placeholder="+00 000 000" required="" type="tel" />
+                                        <input class="form-input" name="phone" placeholder="+00 000 000" required=""
+                                            type="tel" />
                                     </div>
                                 </div>
                                 <div class="form-input-group">
                                     <label class="form-label">Requested Expertise</label>
-                                    <select class="form-input form-select" required>
+                                    <select class="form-input form-select" name="expertise" required>
                                         <option disabled="" selected="" value="">Select a universe</option>
                                         <option value="regulatory">Regulatory Mastery</option>
                                         <option value="formulation">Green Formulation</option>
@@ -169,8 +170,8 @@
                                 </div>
                                 <div class="form-input-group">
                                     <label class="form-label">Message</label>
-                                    <textarea class="form-input" placeholder="Describe your vision..." required=""
-                                        rows="5"></textarea>
+                                    <textarea class="form-input" name="message" placeholder="Describe your vision..."
+                                        required="" rows="5"></textarea>
                                 </div>
                                 <div class="pt-4">
                                     <button class="btn-primary w-full" type="submit">
@@ -191,7 +192,7 @@
                             <div class="flex flex-col">
                                 <span class="text-[9px] font-black uppercase tracking-[0.3em] text-brown/40 mb-1">Elite
                                     Hotline</span>
-                                <span class="text-xl font-bold tracking-tight">+33 7 43 52 41 68</span>
+                                <span class="text-xl font-bold tracking-tight">+33 06 12 93 49 27</span>
                             </div>
                         </div>
                         <div
@@ -203,9 +204,23 @@
                             <div class="flex flex-col">
                                 <span class="text-[9px] font-black uppercase tracking-[0.3em] text-brown/40 mb-1">Direct
                                     Correspondence</span>
-                                <span class="text-xl font-bold tracking-tight">contact@greenutopia.com</span>
+                                <span class="text-xl font-bold tracking-tight">a.rodriguez@greenutopia.eu</span>
                             </div>
                         </div>
+                        <div
+                            class="flex items-center space-x-8 group p-6 bg-background-cream rounded-[40px] transition-all hover:bg-gold/20">
+                            <div
+                                class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center text-vibrant group-hover:bg-vibrant group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-2xl">location_on</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-[9px] font-black uppercase tracking-[0.3em] text-brown/40 mb-1">HQ
+                                    Address</span>
+                                <span class="text-xl font-bold tracking-tight leading-tight">Zona industrial da Gia lote
+                                    10<br />3105-467 Gia pombal</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -276,14 +291,14 @@
                                 class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gold shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
                                 <span class="material-symbols-outlined text-xl font-bold">call</span>
                             </span>
-                            <span class="text-sm font-bold tracking-tight">+33 7 43 52 41 68</span>
+                            <span class="text-sm font-bold tracking-tight">+33 06 12 93 49 27</span>
                         </div>
                         <div class="flex items-center gap-5 group cursor-pointer">
                             <span
                                 class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gold shadow-sm group-hover:bg-vibrant group-hover:text-white transition-all">
                                 <span class="material-symbols-outlined text-xl font-bold">mail</span>
                             </span>
-                            <span class="text-sm font-bold tracking-tight">contact@greenutopia.com</span>
+                            <span class="text-sm font-bold tracking-tight">a.rodriguez@greenutopia.eu</span>
                         </div>
                     </div>
                 </div>
