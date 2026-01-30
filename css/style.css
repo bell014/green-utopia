@@ -1369,3 +1369,21 @@ video {
   transform: translate(-50%, 50%);
   opacity: 1;
 }
+
+/* Adaptive Title: White in Light Mode, Gold in Dark Mode */
+.text-adaptive-title {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .text-adaptive-title {
+  color: #f2da91;
+}
+
+/* Adaptive Highlight: Dark Green in Light Mode, Gold in Dark Mode */
+.text-adaptive-highlight {
+  color: #184f44;
+}
+
+[data-theme="dark"] .text-adaptive-highlight {
+  color: #f2da91;
+}
