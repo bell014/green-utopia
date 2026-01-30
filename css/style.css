@@ -803,11 +803,13 @@ video {
   }
 
   h1 {
-    font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
-    line-height: 1;
+    font-size: clamp(2.2rem, 12vw, 3rem) !important;
+    line-height: 1.1 !important;
     overflow-wrap: break-word;
+    word-break: break-word;
     letter-spacing: -0.04em;
     width: 100%;
+    margin-bottom: 1.5rem;
   }
 
   .form-card {
@@ -819,8 +821,24 @@ video {
   }
 
   h2 {
-    font-size: 1.5rem !important;
-    /* Explicitly smaller */
+    font-size: 1.25rem !important;
+  }
+
+  /* Fix overflowing contact buttons */
+  .bg-background-cream.rounded-\[40px\] {
+    border-radius: 20px !important;
+    padding: 1rem !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  .bg-background-cream.rounded-\[40px\] .w-16.h-16 {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .bg-background-cream.rounded-\[40px\] .text-xl {
+    font-size: 1rem !important;
   }
 }
 
