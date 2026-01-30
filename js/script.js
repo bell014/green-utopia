@@ -4,29 +4,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  // Sticky Header Effect
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled', 'shadow-md');
-    } else {
-      header.classList.remove('scrolled', 'shadow-md');
-    }
-  });
-
-  // Reveal Animations on Scroll
+  // Optimized Scroll Handlers
   const revealElements = document.querySelectorAll('.reveal');
-  const revealOnScroll = () => {
-    revealElements.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      if (elementTop < windowHeight - 50) {
-        el.classList.add('active');
-      }
-    });
+  let isScrolling = false;
+  const handleScroll = () => {
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        // Sticky Header Effect
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled', 'shadow-md');
+        } else {
+          header.classList.remove('scrolled', 'shadow-md');
+        }
+
+        // Reveal Animations
+        revealElements.forEach(el => {
+          const elementTop = el.getBoundingClientRect().top;
+          if (elementTop < window.innerHeight - 50) {
+            el.classList.add('active');
+          }
+        });
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
   };
 
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll(); // Initial check
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll(); // Initial check
 
   // Mobile Menu Toggle
   // Mobile Menu Toggle
@@ -34,9 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeMenuBtn = document.getElementById('close-menu-btn');
 
   const closeMenu = () => {
-    if (mobileMenu) {
+    if (mobileMenu && mobileMenu.classList.contains('active')) {
+      mobileMenu.classList.add('closing');
       mobileMenu.classList.remove('active');
-      document.body.classList.remove('overflow-hidden');
+
+      // Delay overflow removal for smoother transition
+      setTimeout(() => {
+        document.body.classList.remove('overflow-hidden');
+        mobileMenu.classList.remove('closing');
+      }, 600); // Matches the 0.6s transition in CSS
     }
     if (mobileMenuToggle) {
       mobileMenuToggle.checked = false;
@@ -46,11 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileMenuToggle && mobileMenu) {
     mobileMenuToggle.addEventListener('change', function () {
       if (this.checked) {
+        mobileMenu.classList.remove('closing');
         mobileMenu.classList.add('active');
         document.body.classList.add('overflow-hidden');
       } else {
-        mobileMenu.classList.remove('active');
-        document.body.classList.remove('overflow-hidden');
+        closeMenu();
       }
     });
   }
@@ -135,11 +146,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Auto play
-    let autoPlayInterval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      goToSlide(currentIndex);
-    }, 5000);
+    // Auto play with safety clear
+    const startAutoPlay = () => {
+      if (autoPlayInterval) clearInterval(autoPlayInterval);
+      autoPlayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        goToSlide(currentIndex);
+      }, 5000);
+    };
+
+    let autoPlayInterval;
+    startAutoPlay();
 
     // Touch / Swipe Support
     let touchStartX = 0;
@@ -153,11 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
     track.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
       handleSwipe();
-      // Restart autoplay
-      autoPlayInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        goToSlide(currentIndex);
-      }, 5000);
+      // Restart autoplay with safety
+      startAutoPlay();
     }, { passive: true });
 
     const handleSwipe = () => {
@@ -219,9 +233,12 @@ if (contactForm) {
     btn.innerText = 'Envoi en cours...';
 
     try {
-      // Send Data to Backend
-      // TODO: Replace 'http://localhost:3000' with your actual production URL when deploying
-      const response = await fetch('http://localhost:3000/submit-form', {
+      // Dynamic URL Detection
+      const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://localhost:3000/submit-form'
+        : 'https://api.greenutopia.eu/submit-form'; // Placeholder - update with real production API
+
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updates)
@@ -235,7 +252,7 @@ if (contactForm) {
       }
     } catch (error) {
       console.error(error);
-      btn.innerText = 'Erreur due serveur';
+      btn.innerText = 'Erreur du serveur';
     } finally {
       // Reset Button after delay
       setTimeout(() => {
