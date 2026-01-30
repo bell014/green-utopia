@@ -1126,10 +1126,13 @@ video {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #2a2a2a;
+  background-color: var(--primary);
+  /* Default Dark Green */
   transition: 0.4s;
   border-radius: 30px;
   overflow: hidden;
+  border: 1px solid rgba(242, 218, 145, 0.2);
+  /* Subtle Gold Border */
 }
 
 .slider:before {
@@ -1140,28 +1143,32 @@ video {
   border-radius: 20px;
   left: 0.5em;
   bottom: 0.5em;
+  /* Centered vertically relative to 2.2em height? 2.2 - 1.2 = 1.0 / 2 = 0.5 */
   transition: 0.4s;
   transition-timing-function: cubic-bezier(0.81, -0.04, 0.38, 1.5);
-  box-shadow: inset 8px -4px 0px 0px #fff;
+  box-shadow: inset 8px -4px 0px 0px #f2da91;
+  /* Gold Crescent */
   z-index: 10;
+  background-color: transparent;
 }
 
 .switch input:checked+.slider {
-  background-color: #00a6ff;
+  background-color: var(--background-cream);
+  /* Cream Background for Light Mode */
+  border-color: var(--primary);
 }
 
 .switch input:checked+.slider:before {
   transform: translateX(1.8em);
-  box-shadow: inset 15px -4px 0px 15px #ffcf48;
+  background-color: var(--primary);
+  /* solid sun circle */
+  box-shadow: none;
+  /* Remove crescent shadow */
 }
 
-.star {
-  background-color: #fff;
-  border-radius: 50%;
-  position: absolute;
-  width: 5px;
-  transition: all 0.4s;
-  height: 5px;
+.star,
+.cloud {
+  display: none !important;
 }
 
 .star_1 {
@@ -1321,6 +1328,12 @@ video {
   cursor: pointer;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
+}
+
+/* Fix for Contact/Inquire buttons in Dark Mode (Gold on Gold issue) */
+[data-theme="dark"] .brand-card-inner .btn-secondary,
+[data-theme="dark"] .brand-card-inner .\!text-primary {
+  color: #0d2b25 !important;
 }
 
 .service-card-button:hover {
