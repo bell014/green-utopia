@@ -845,44 +845,39 @@ video {
   }
 
   .form-inner {
-    padding: 1rem 1rem !important;
+    padding: 1.25rem 1rem !important;
+    border-radius: 20px !important;
+    height: auto !important;
+    /* Allow content to dictate height */
   }
 
   .form-card {
-    border-radius: 20px;
+    border-radius: 24px !important;
+    padding: 6px !important;
   }
 
   .form-input-group {
     margin-bottom: 1.25rem;
     position: relative;
     z-index: 10;
-    /* Lower than generic overlay but higher than base */
     isolation: isolate;
-    /* Create new stacking context */
   }
 
   .form-input {
-    padding: 0.875rem 1rem;
-    font-size: 0.8rem;
-    background-color: #ffffff !important;
-    position: relative;
-    /* Essential for z-index */
-    z-index: 10;
+    padding: 1rem 1rem !important;
+    /* Smaller padding */
   }
 
   .form-label {
-    font-size: 0.65rem;
-    left: 0.8rem;
-    top: -0.5rem;
-    background-color: #ffffff !important;
-    padding: 0 6px;
-    line-height: normal;
-    z-index: 20 !important;
-    /* Strictly higher than input */
-    display: inline-block;
-    border-radius: 4px;
-    /* Soften edges */
+    left: 1rem !important;
+    /* Align with new padding */
+    top: -0.5rem !important;
+    font-size: 0.7rem !important;
+    background-color: #ffffff;
+    padding: 0 4px;
   }
+
+
 
   h1 {
     font-size: clamp(2rem, 10vw, 2.8rem) !important;
@@ -898,12 +893,19 @@ video {
   }
 
   .form-card {
-    width: 100%;
-    max-width: calc(100vw - 3rem);
-    /* Ensure margin on sides */
-    margin-left: auto;
-    margin-right: auto;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 24px !important;
+    padding: 6px !important;
+    box-sizing: border-box !important;
   }
+
+  .form-inner {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
 
   h2 {
     font-size: 1.25rem !important;
@@ -912,18 +914,43 @@ video {
   /* Fix overflowing contact buttons */
   .bg-background-cream.rounded-\[40px\] {
     border-radius: 20px !important;
-    padding: 1rem !important;
-    gap: 1rem !important;
+    padding: 0.75rem !important;
+    gap: 0.5rem !important;
     width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .bg-background-cream.rounded-\[40px\] .w-16.h-16 {
-    width: 48px !important;
-    height: 48px !important;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    min-width: 2.5rem !important;
+  }
+
+  .bg-background-cream.rounded-\[40px\] .flex-1 {
+    min-width: 0;
+    /* Align flex items */
   }
 
   .bg-background-cream.rounded-\[40px\] .text-xl {
-    font-size: 1rem !important;
+    font-size: 0.85rem !important;
+    overflow-wrap: break-word !important;
+    word-break: break-all !important;
+    line-height: 1.2;
+  }
+
+  .bg-background-cream.rounded-\[40px\] .text-\[9px\] {
+    display: none !important;
+    /* Hide tiny label on small screens to save space */
+  }
+
+  /* Restore missing Form Label Fixes */
+  .form-label {
+    left: 1rem !important;
+    top: -0.6rem !important;
+    font-size: 0.65rem !important;
+    background-color: #ffffff;
+    padding: 0 4px;
+    z-index: 50 !important;
   }
 }
 
