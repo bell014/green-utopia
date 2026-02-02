@@ -179,7 +179,8 @@ h6,
   /* Initial state handled by JS/GSAP to avoid FOUC or conflicts */
   opacity: 0;
   visibility: hidden;
-  /* Helper to ensure they don't flash */
+  will-change: transform, opacity, filter;
+  /* optimize performance */
 }
 
 /* GSAP will add 'active' if needed, but we rely on inline styles mostly */

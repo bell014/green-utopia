@@ -1,0 +1,23 @@
+/* Carousel Image Fix (Aspect Ratio + Parallax Bleed) */
+.carousel-slide img {
+    height: 120% !important;
+    width: 100% !important;
+    position: absolute;
+    top: -10%;
+    left: 0;
+    object-fit: cover !important;
+    object-position: 15% center !important;
+    /* Shows the logo on the left wall */
+}
+
+/* Strategic Dialogue Image Fix */
+.parallax-fix-img {
+    height: 120% !important;
+    width: 100% !important;
+    position: absolute;
+    top: -10%;
+    left: 0;
+    object-fit: cover !important;
+    object-position: center 30% !important;
+    /* Shifts focus up to show the logo */
+}

@@ -42,27 +42,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Register GSAP Plugins
   gsap.registerPlugin(ScrollTrigger);
 
-  // 4. Reveal Animations (Batching for performance & stagger)
-  // We use ScrollTrigger.batch to handle multiple elements cleanly
+  // 4. Reveal Animations (Fast & Snappy)
+  // Clean, time-based animation for immediate feedback
   ScrollTrigger.batch(".reveal", {
     onEnter: (batch) => {
       gsap.to(batch, {
-        autoAlpha: 1, // Handles opacity + visibility
+        autoAlpha: 1,
         y: 0,
-        stagger: 0.1, // Staggering for grids
-        duration: 0.6, // Faster animation (was 1s)
-        ease: "power2.out", // Slightly snappier ease
+        stagger: 0.05, // Rapid fire stagger
+        duration: 0.4, // Fast duration
+        ease: "power2.out",
         overwrite: true
       });
     },
-    start: "top 90%", // Trigger earlier (almost as soon as it enters screen)
-    once: true // Ensure it happens only once for stability
+    start: "top 90%", // Triggers almost immediately upon entering viewport
+    once: true
   });
 
   // Set initial state for reveal elements
   gsap.set(".reveal", {
     autoAlpha: 0,
-    y: 30 // Reduced distance (was 50) for quicker feel
+    y: 30 // Subtle slide distance
   });
 
   // 5. Parallax Effect for Images (Optional Premium Feel)
