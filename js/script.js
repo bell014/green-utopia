@@ -4,34 +4,82 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  // Optimized Scroll Handlers
-  const revealElements = document.querySelectorAll('.reveal');
-  let isScrolling = false;
-  const handleScroll = () => {
-    if (!isScrolling) {
-      window.requestAnimationFrame(() => {
-        // Sticky Header Effect
-        if (window.scrollY > 50) {
-          header.classList.add('scrolled', 'shadow-md');
-        } else {
-          header.classList.remove('scrolled', 'shadow-md');
-        }
+  // --- Advanced Scroll Setup (Lenis + GSAP) ---
 
-        // Reveal Animations
-        revealElements.forEach(el => {
-          const elementTop = el.getBoundingClientRect().top;
-          if (elementTop < window.innerHeight - 50) {
-            el.classList.add('active');
-          }
-        });
-        isScrolling = false;
-      });
-      isScrolling = true;
+  // 1. Initialize Lenis (Virtual Scroll)
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential easing
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: true,
+    mouseMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+    infinite: false,
+  });
+
+  // Connect Lenis to GSAP ScrollTrigger
+  lenis.on('scroll', ScrollTrigger.update);
+
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+
+  gsap.ticker.lagSmoothing(0);
+
+  // 2. Sticky Header Logic (compatible with Lenis)
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled', 'shadow-md');
+    } else {
+      header.classList.remove('scrolled', 'shadow-md');
     }
   };
+  // Hook into Lenis scroll event
+  lenis.on('scroll', handleScroll);
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // Initial check
+  // 3. Register GSAP Plugins
+  gsap.registerPlugin(ScrollTrigger);
+
+  // 4. Reveal Animations (Batching for performance & stagger)
+  // We use ScrollTrigger.batch to handle multiple elements cleanly
+  ScrollTrigger.batch(".reveal", {
+    onEnter: (batch) => {
+      gsap.to(batch, {
+        autoAlpha: 1, // Handles opacity + visibility
+        y: 0,
+        stagger: 0.1, // Staggering for grids
+        duration: 0.6, // Faster animation (was 1s)
+        ease: "power2.out", // Slightly snappier ease
+        overwrite: true
+      });
+    },
+    start: "top 90%", // Trigger earlier (almost as soon as it enters screen)
+    once: true // Ensure it happens only once for stability
+  });
+
+  // Set initial state for reveal elements
+  gsap.set(".reveal", {
+    autoAlpha: 0,
+    y: 30 // Reduced distance (was 50) for quicker feel
+  });
+
+  // 5. Parallax Effect for Images (Optional Premium Feel)
+  // Targets any image within a .reveal section that isn't the logo
+  const parallaxImages = document.querySelectorAll('section img:not(.logo-img)');
+  parallaxImages.forEach(img => {
+    gsap.to(img, {
+      yPercent: 10, // Move image slightly slower
+      ease: "none",
+      scrollTrigger: {
+        trigger: img,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+  });
 
   // Mobile Menu Toggle
   // Mobile Menu Toggle

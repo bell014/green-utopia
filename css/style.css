@@ -176,14 +176,16 @@ h6,
 }
 
 .reveal {
+  /* Initial state handled by JS/GSAP to avoid FOUC or conflicts */
   opacity: 0;
-  transform: translateY(30px);
-  transition: var(--transition);
+  visibility: hidden;
+  /* Helper to ensure they don't flash */
 }
 
+/* GSAP will add 'active' if needed, but we rely on inline styles mostly */
 .reveal.active {
   opacity: 1;
-  transform: translateY(0);
+  visibility: visible;
 }
 
 /* Unified Components */
