@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Theme Toggle Handler
   const themeCheckboxes = document.querySelectorAll('input[type="checkbox"][id="theme-checkbox"]');
-  const currentTheme = document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme') || 'light';
+  const currentTheme = document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme') || 'dark';
 
   themeCheckboxes.forEach(cb => {
     cb.checked = currentTheme === 'dark';
@@ -210,14 +210,90 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Form Submission with Backend Integration
-const contactForm = document.querySelector('form');
+// --- Modal & Loader Logic ---
+
+const loaderHTML = `
+<div class="loader">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>`;
+
+function createModal() {
+  if (document.getElementById('successModal')) return;
+
+  const modalOverlay = document.createElement('div');
+  modalOverlay.id = 'successModal';
+  modalOverlay.className = 'modal-overlay';
+
+  modalOverlay.innerHTML = `
+    <div class="modal-content">
+      <div class="modal-icon">
+        <span class="material-symbols-outlined" style="font-size: 40px;">check</span>
+      </div>
+      <h3 class="modal-title" id="modalTitle">Success</h3>
+      <p class="modal-text" id="modalMessage">Your submission was successful.</p>
+      <button class="modal-close-btn" id="modalCloseBtn">Close</button>
+    </div>
+  `;
+
+  document.body.appendChild(modalOverlay);
+
+  // Close handlers
+  const closeBtn = modalOverlay.querySelector('#modalCloseBtn');
+  closeBtn.addEventListener('click', closeModal);
+
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
+  });
+}
+
+function showModal(title, message, btnText) {
+  createModal();
+  const modal = document.getElementById('successModal');
+  const titleEl = modal.querySelector('#modalTitle');
+  const msgEl = modal.querySelector('#modalMessage');
+  const btnEl = modal.querySelector('#modalCloseBtn');
+
+  titleEl.innerText = title;
+  msgEl.innerText = message;
+  btnEl.innerText = btnText;
+
+  modal.classList.add('active');
+}
+
+function closeModal() {
+  const modal = document.getElementById('successModal');
+  if (modal) {
+    modal.classList.remove('active');
+  }
+}
+
+function showLoader(btn) {
+  btn.dataset.originalText = btn.innerText;
+  btn.style.width = getComputedStyle(btn).width; // Lock width to prevent jumping
+  btn.style.height = getComputedStyle(btn).height; // Lock height
+  btn.innerHTML = loaderHTML;
+  btn.disabled = true;
+}
+
+function hideLoader(btn) {
+  btn.innerHTML = btn.dataset.originalText || 'Submit';
+  btn.disabled = false;
+  // Unlock dimensions (optional, but good for responsiveness if text changes)
+  btn.style.width = '';
+  btn.style.height = '';
+}
+
+// Main Contact Form
+const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button');
-    const originalText = btn.innerText;
 
-    // Gather Data using FormData to easily get value by name
+    // Gather Data
     const formData = new FormData(contactForm);
     const updates = {
       fullName: formData.get('fullName'),
@@ -229,14 +305,16 @@ if (contactForm) {
     };
 
     // UI Loading State
-    btn.disabled = true;
-    btn.innerText = 'Envoi en cours...';
+    showLoader(btn);
 
     try {
-      // Dynamic URL Detection
-      const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      const isLocal = window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1' ||
+        window.location.protocol === 'file:';
+
+      const API_URL = isLocal
         ? 'http://localhost:3000/submit-form'
-        : 'https://api.greenutopia.eu/submit-form'; // Placeholder - update with real production API
+        : 'https://api.greenutopia.eu/submit-form';
 
       const response = await fetch(API_URL, {
         method: 'POST',
@@ -245,20 +323,76 @@ if (contactForm) {
       });
 
       if (response.ok) {
-        btn.innerText = 'Message envoyé !';
+        hideLoader(btn);
         contactForm.reset();
+
+        const isFrench = document.documentElement.lang === 'fr';
+        showModal(
+          isFrench ? 'Bien reçu !' : 'Thank You!',
+          isFrench ? 'Nous avons bien reçu votre message. Notre équipe reviendra vers vous très prochainement.' : 'We have received your message. Our team will get back to you shortly.',
+          isFrench ? 'Fermer' : 'Close'
+        );
       } else {
         throw new Error('Submission failed');
       }
     } catch (error) {
       console.error(error);
-      btn.innerText = 'Erreur du serveur';
-    } finally {
-      // Reset Button after delay
-      setTimeout(() => {
-        btn.innerText = originalText;
-        btn.disabled = false;
-      }, 3000);
+      hideLoader(btn);
+      const isFrench = document.documentElement.lang === 'fr';
+      alert(isFrench ? 'Une erreur est survenue.' : 'An error occurred.');
+    }
+  });
+}
+
+// Newsletter Subscription Form
+const newsletterForm = document.getElementById('newsletterForm');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = newsletterForm.querySelector('button');
+
+    // Gather Data
+    const formData = new FormData(newsletterForm);
+    const email = formData.get('email');
+
+    if (!email) return;
+
+    // UI Loading State
+    showLoader(btn);
+
+    try {
+      const isLocal = window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1' ||
+        window.location.protocol === 'file:';
+
+      const API_URL = isLocal
+        ? 'http://localhost:3000/subscribe'
+        : 'https://api.greenutopia.eu/subscribe';
+
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+
+      if (response.ok) {
+        hideLoader(btn);
+        newsletterForm.reset();
+
+        const isFrench = document.documentElement.lang === 'fr';
+        showModal(
+          isFrench ? 'Bienvenue !' : 'Welcome!',
+          isFrench ? 'Merci de votre inscription à notre newsletter.' : 'Thank you for subscribing to our newsletter.',
+          isFrench ? 'Fermer' : 'Close'
+        );
+      } else {
+        throw new Error('Subscription failed');
+      }
+    } catch (error) {
+      console.error(error);
+      hideLoader(btn);
+      const isFrench = document.documentElement.lang === 'fr';
+      alert(isFrench ? 'Une erreur est survenue.' : 'An error occurred.');
     }
   });
 }

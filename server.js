@@ -84,6 +84,40 @@ app.post('/submit-form', async (req, res) => {
     }
 });
 
+// Endpoint to handle newsletter subscription
+app.post('/subscribe', async (req, res) => {
+    try {
+        const { email } = req.body;
+
+        if (!email) {
+            return res.status(400).json({ error: 'Email is required' });
+        }
+
+        // Load document info
+        await doc.loadInfo();
+
+        // Get or create "green-utopia-newsletter" sheet
+        let sheet = doc.sheetsByTitle['green-utopia-newsletter'];
+        if (!sheet) {
+            console.log('Creating new sheet: green-utopia-newsletter');
+            sheet = await doc.addSheet({ title: 'green-utopia-newsletter', headerValues: ['Date', 'Email'] });
+        }
+
+        // Append a row
+        await sheet.addRow({
+            Date: new Date().toISOString(),
+            Email: email
+        });
+        console.log(`✅ New subscriber added to "green-utopia-newsletter" sheet: ${email}`);
+
+        res.status(200).json({ message: 'Subscribed successfully' });
+
+    } catch (error) {
+        console.error('Error subscribing:', error);
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });
+    }
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

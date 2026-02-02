@@ -1,0 +1,31 @@
+name: Deploy to Gandi
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GANDI_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          # Add Gandi git server to known hosts to avoid prompt
+          ssh-keyscan -p 22 -H $(echo "${{ secrets.GANDI_GIT_URL }}" | sed 's/.*@//' | sed 's/\/.*//') >> ~/.ssh/known_hosts
+
+      - name: Push to Gandi
+        env:
+          GANDI_URL: ${{ secrets.GANDI_GIT_URL }}
+        run: |
+          git remote add gandi $GANDI_URL
+          # Force push to master (Gandi usually expects master)
+          git push gandi main:master --force

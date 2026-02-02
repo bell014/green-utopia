@@ -21,7 +21,7 @@
     <script>
         // Immediate Theme Application
         (function () {
-            const theme = localStorage.getItem('theme') || 'light';
+            const theme = localStorage.getItem('theme') || 'dark';
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
@@ -56,7 +56,7 @@
     <header class="glass-nav">
         <div class="max-w-7xl mx-auto h-24 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
-                <img src="../assets/logo_green.png" alt="Green Utopia Logo" class="h-14 w-auto">
+                <img src="../assets/Logo-UTOPIA.png" alt="Green Utopia Logo" class="h-14 w-auto">
             </a>
             <nav class="hidden lg:flex items-center gap-12">
                 <a href="index.html" class="nav-link active">Accueil</a>
@@ -334,11 +334,11 @@
                     <h2 class="text-5xl md:text-6xl font-display uppercase leading-tight">Rejoignez l'Utopie</h2>
                     <p class="text-gold/80 font-medium text-lg">Recevez nos analyses sur la durabilité, le luxe et la
                         croissance industrielle.</p>
-                    <form
+                    <form id="newsletterForm"
                         class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto bg-white/10 md:p-2 rounded-[20px] md:rounded-full backdrop-blur-md border border-white/10 p-4">
                         <input
                             class="flex-grow px-8 py-4 bg-transparent border-none focus:ring-0 text-white placeholder:text-white/40 text-sm"
-                            placeholder="Votre adresse email" required="" type="email" />
+                            name="email" placeholder="Votre adresse email" required="" type="email" />
                         <button class="btn-secondary" type="submit">
                             S'INSCRIRE
                         </button>
@@ -358,7 +358,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-20 mb-12 lg:mb-24">
                 <div class="space-y-8 lg:space-y-10">
-                    <img src="../assets/logo_green.png" alt="Logo" class="h-16 w-auto invert-white mx-auto lg:mx-0">
+                    <img src="../assets/Logo-UTOPIA.png" alt="Logo" class="h-16 w-auto invert-white mx-auto lg:mx-0">
                     <p class="text-sm font-medium text-white/60 leading-relaxed max-w-xs mx-auto lg:mx-0">
                         Accompagnement expert pour transformer votre vision durable en une réalité d'exception.
                     </p>
