@@ -145,99 +145,122 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('cookies-accepted', 'true');
     });
   }
-  // Carousel Logic
-  const initCarousel = () => {
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
-    const nextBtn = document.querySelector('.carousel-btn-next');
-    const prevBtn = document.querySelector('.carousel-btn-prev');
-    const dotsContainer = document.querySelector('.carousel-indicators');
+  // Carousel Logic - Supports Multiple Carousels
+  const initCarousels = () => {
+    const carousels = document.querySelectorAll('.carousel-container');
 
-    if (!track || slides.length === 0) return;
+    carousels.forEach(carousel => {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      const nextBtn = carousel.querySelector('.carousel-btn-next');
+      const prevBtn = carousel.querySelector('.carousel-btn-prev');
+      const dotsContainer = carousel.querySelector('.carousel-indicators');
 
-    let currentIndex = 0;
+      if (!track || slides.length === 0) return;
 
-    // Create dots
-    slides.forEach((_, i) => {
-      const dot = document.createElement('div');
-      dot.classList.add('carousel-dot');
-      if (i === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(i));
-      dotsContainer.appendChild(dot);
-    });
+      let currentIndex = 0;
+      let autoPlayInterval;
 
-    const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+      // Clear existing dots if any (to prevent duplicates if re-initialized)
+      if (dotsContainer) dotsContainer.innerHTML = '';
 
-    const updateDots = (index) => {
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
-    };
+      // Create dots
+      if (dotsContainer) {
+        slides.forEach((_, i) => {
+          const dot = document.createElement('div');
+          dot.classList.add('carousel-dot');
+          if (i === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => {
+            goToSlide(i);
+            resetAutoPlay();
+          });
+          dotsContainer.appendChild(dot);
+        });
+      }
 
-    const goToSlide = (index) => {
-      currentIndex = index;
-      track.style.transform = `translateX(-${index * 100}%)`;
-      updateDots(index);
-    };
+      const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.carousel-dot')) : [];
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
+      const updateDots = (index) => {
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      };
+
+      const goToSlide = (index) => {
+        currentIndex = index;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        updateDots(index);
+      };
+
+      const nextSlide = () => {
         currentIndex = (currentIndex + 1) % slides.length;
         goToSlide(currentIndex);
-      });
-    }
+      };
 
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
+      const prevSlide = () => {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         goToSlide(currentIndex);
-      });
-    }
+      };
 
-    // Auto play with safety clear
-    const startAutoPlay = () => {
-      if (autoPlayInterval) clearInterval(autoPlayInterval);
-      autoPlayInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        goToSlide(currentIndex);
-      }, 5000);
-    };
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          nextSlide();
+          resetAutoPlay();
+        });
+      }
 
-    let autoPlayInterval;
-    startAutoPlay();
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          prevSlide();
+          resetAutoPlay();
+        });
+      }
 
-    // Touch / Swipe Support
-    let touchStartX = 0;
-    let touchEndX = 0;
+      // Auto play logic
+      const startAutoPlay = () => {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+        autoPlayInterval = setInterval(nextSlide, 5000);
+      };
 
-    track.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      clearInterval(autoPlayInterval); // Pause on interact
-    }, { passive: true });
+      const stopAutoPlay = () => {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+      };
 
-    track.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-      // Restart autoplay with safety
+      const resetAutoPlay = () => {
+        stopAutoPlay();
+        startAutoPlay();
+      };
+
       startAutoPlay();
-    }, { passive: true });
 
-    const handleSwipe = () => {
-      const threshold = 50;
-      if (touchEndX < touchStartX - threshold) {
-        // Swiped Left -> Next
-        currentIndex = (currentIndex + 1) % slides.length;
-        goToSlide(currentIndex);
-      }
-      if (touchEndX > touchStartX + threshold) {
-        // Swiped Right -> Prev
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        goToSlide(currentIndex);
-      }
-    };
+      // Touch / Swipe Support
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoPlay();
+      }, { passive: true });
+
+      track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoPlay();
+      }, { passive: true });
+
+      const handleSwipe = () => {
+        const threshold = 50;
+        if (touchEndX < touchStartX - threshold) {
+          nextSlide();
+        }
+        if (touchEndX > touchStartX + threshold) {
+          prevSlide();
+        }
+      };
+    });
   };
 
-  initCarousel();
+  initCarousels();
 
   // Theme Toggle Handler
   const themeCheckboxes = document.querySelectorAll('input[type="checkbox"][id="theme-checkbox"]');
