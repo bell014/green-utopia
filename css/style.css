@@ -1400,6 +1400,35 @@ video {
   line-height: 1.6;
 }
 
+@media (max-width: 640px) {
+  .service-card {
+    padding: 1.5rem;
+    min-height: 350px;
+  }
+
+  .service-text-title {
+    font-size: 1.5rem;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .service-card-button {
+    min-width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .service-card {
+    padding: 1.25rem;
+  }
+
+  .service-text-title {
+    font-size: 1.25rem;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
 /* Hover Effects */
 .service-card:hover {
   border-color: var(--white);
