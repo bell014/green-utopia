@@ -278,6 +278,70 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  // Video Cycling Logic
+  const philosophyVideo = document.getElementById('philosophy-video');
+  const videoSource = document.getElementById('video-source');
+
+  if (philosophyVideo && videoSource) {
+    const isFrench = document.documentElement.lang === 'fr';
+    const videos = [
+      isFrench ? '../assets/animation home page 1.mp4' : 'assets/animation home page 1.mp4',
+      isFrench ? '../assets/animation home page 2.mp4' : 'assets/animation home page 2.mp4'
+    ];
+    let currentVideoIndex = 0;
+
+    const updateVideo = (index) => {
+      // Fade out the video before switching
+      gsap.to(philosophyVideo, {
+        opacity: 0,
+        duration: 0.4,
+        ease: "power2.inOut",
+        onComplete: () => {
+          currentVideoIndex = index;
+          videoSource.src = videos[currentVideoIndex];
+          philosophyVideo.load();
+
+          // Wait for the new video data to be ready before fading back in
+          philosophyVideo.onloadeddata = () => {
+            philosophyVideo.play();
+            gsap.to(philosophyVideo, {
+              opacity: 1,
+              duration: 0.6,
+              ease: "power2.inOut"
+            });
+          };
+        }
+      });
+    };
+
+    philosophyVideo.addEventListener('ended', () => {
+      updateVideo((currentVideoIndex + 1) % videos.length);
+    });
+
+    // Arrow Controls
+    const prevBtn = document.getElementById('video-prev');
+    const nextBtn = document.getElementById('video-next');
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        updateVideo((currentVideoIndex - 1 + videos.length) % videos.length);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        updateVideo((currentVideoIndex + 1) % videos.length);
+      });
+    }
+  }
+
+  // Force GIF Restart for Header Logo
+  const headerLogo = document.querySelector('.logo-img');
+  if (headerLogo) {
+    const originalSrc = headerLogo.src.split('?')[0];
+    headerLogo.src = originalSrc + '?t=' + Date.now();
+  }
 });
 
 // Form Submission with Backend Integration

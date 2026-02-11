@@ -91,9 +91,9 @@
 
     <!-- Header -->
     <header class="glass-nav">
-        <div class="max-w-7xl mx-auto h-24 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto h-24 lg:h-40 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
-                <img src="assets/Logo-UTOPIA.png" alt="Green Utopia Logo" class="h-14 w-auto">
+                <img src="assets/Animation logo.gif?v=header" alt="Green Utopia Logo" class="logo-img">
             </a>
             <nav class="hidden lg:flex items-center gap-12">
                 <a href="index.html" class="nav-link active">Home</a>
@@ -293,28 +293,22 @@
 
         <!-- Philosophy Section -->
         <section class="section-padding bg-background-cream overflow-hidden">
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center">
+            <div class="max-w-[1800px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center">
                 <div class="relative reveal">
                     <div
-                        class="carousel-container h-[400px] lg:h-[600px] w-full shadow-2xl rounded-[50px] overflow-hidden relative z-10 mb-8 lg:mb-0">
-                        <div class="carousel-track h-full">
-                            <div class="carousel-slide h-full">
-                                <img alt="Premium Nature" class="w-full h-full object-cover object-top"
-                                    src="assets/Makes_the_lab_2k_202601201151.jpeg">
-                            </div>
-                            <div class="carousel-slide h-full">
-                                <img alt="Sustainability" class="w-full h-full object-cover object-top"
-                                    src="assets/Professional_factory_range_2k_202601201152.jpeg">
-                            </div>
-                        </div>
-                        <!-- Controls -->
-                        <button class="carousel-btn carousel-btn-prev">
+                        class="h-[400px] lg:h-[600px] w-full shadow-2xl rounded-[50px] overflow-hidden relative z-10 mb-8 lg:mb-0">
+                        <video id="philosophy-video" class="w-full h-full object-cover" autoplay muted playsinline
+                            poster="assets/Makes_the_lab_2k_202601201151.jpeg">
+                            <source id="video-source" src="assets/animation home page 1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <!-- Video Controls -->
+                        <button id="video-prev" class="carousel-btn carousel-btn-prev">
                             <span class="material-symbols-outlined">chevron_left</span>
                         </button>
-                        <button class="carousel-btn carousel-btn-next">
+                        <button id="video-next" class="carousel-btn carousel-btn-next">
                             <span class="material-symbols-outlined">chevron_right</span>
                         </button>
-                        <div class="carousel-indicators"></div>
                     </div>
                     <div
                         class="absolute -inset-4 lg:-inset-10 border-[1.5px] border-vibrant/20 rounded-[55px] lg:rounded-[60px] -z-10 lg:translate-x-6 lg:translate-y-6">
@@ -396,7 +390,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-20 mb-12 lg:mb-24">
                 <div class="space-y-8 lg:space-y-10">
-                    <img src="assets/Logo-UTOPIA.png" alt="Logo" class="h-16 w-auto invert-white mx-auto lg:mx-0">
+                    <img src="assets/Animation logo.gif" alt="Logo" class="footer-logo mx-auto lg:mx-0">
                     <p class="text-sm font-medium text-white/60 leading-relaxed max-w-xs mx-auto lg:mx-0">
                         Expert guidance for transforming your sustainable vision into an exceptional reality.
                     </p>
