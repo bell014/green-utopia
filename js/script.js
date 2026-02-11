@@ -315,9 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-    philosophyVideo.addEventListener('ended', () => {
-      updateVideo((currentVideoIndex + 1) % videos.length);
-    });
+
 
     // Arrow Controls
     const prevBtn = document.getElementById('video-prev');
