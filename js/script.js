@@ -81,6 +81,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 6. Hero Video Scroll Animation
+  const heroContainer = document.querySelector('#hero-video-container');
+  if (heroContainer) {
+    gsap.to(heroContainer, {
+      width: "100%",
+      borderRadius: "0px",
+      scrollTrigger: {
+        trigger: document.body,
+        start: "top top",
+        end: "+=400",
+        scrub: 1
+      }
+    });
+  }
+
   // Mobile Menu Toggle
   // Mobile Menu Toggle
   const mobileMenuToggle = document.getElementById('label-check');
