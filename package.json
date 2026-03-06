@@ -1,7 +1,7 @@
 {
   "name": "green-utopia-backend",
   "version": "1.0.0",
-  "description": "Backend for Green Utopia contact form",
+  "description": "Backend for GreenUtopia contact form",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
