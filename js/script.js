@@ -462,7 +462,7 @@ if (contactForm) {
 
       const API_URL = isLocal
         ? 'http://localhost:3000/submit-form'
-        : 'https://api.greenutopia.eu/submit-form';
+        : 'https://greenutopialda.com/submit-form';
 
       const response = await fetch(API_URL, {
         method: 'POST',
@@ -515,7 +515,7 @@ if (newsletterForm) {
 
       const API_URL = isLocal
         ? 'http://localhost:3000/subscribe'
-        : 'https://api.greenutopia.eu/subscribe';
+        : 'https://greenutopialda.com/subscribe';
 
       const response = await fetch(API_URL, {
         method: 'POST',
