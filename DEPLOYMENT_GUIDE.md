@@ -17,15 +17,16 @@ This guide outlines the steps to deploy your `green-utopia` website to Gandi.net
 5. Choose the **Small** size (sufficient for this project).
 6. Complete the checkout process to create the instance.
 
-## Step 2: Configure Environment Variables
-Your application requires specific secrets to connect to Google Sheets.
-1. In your Gandi Instance dashboard, go to the **Configuration** or **Environment** tab.
-2. Add the following variables (values can be found in your local `.env` file):
-   - `GOOGLE_SERVICE_ACCOUNT_EMAIL`
-   - `GOOGLE_SHEET_ID`
-   - `GOOGLE_PRIVATE_KEY`
-     - *Note: Copy the full key including `-----BEGIN...` and `...END-----`. If you encounter issues, ensure newline characters (`\n`) are handled correctly.*
-   - `PORT`: Set to `8080`.
+## Step 2: Configure Environment Variables in GitHub
+Since Gandi no longer provides a direct UI for Node.js environment variables, we will set them in GitHub so our deployment script can create the `.env` file automatically.
+
+1. Go to your GitHub Repository > **Settings** > **Secrets and variables** > **Actions**.
+2. Click **New repository secret** and add the following variables one by one (values can be found in your local `.env` file):
+   - **Name**: `GOOGLE_SERVICE_ACCOUNT_EMAIL` | **Value**: (your email)
+   - **Name**: `GOOGLE_SHEET_ID` | **Value**: (your sheet ID)
+   - **Name**: `GOOGLE_PRIVATE_KEY` | **Value**: (your private key)
+     - *Note: Copy the full key including `-----BEGIN...` and `...END-----` exactly as it appears.*
+   *(Note: `PORT=8080` is automatically added by our deployment script)*
 
 ## Step 3: Get Connection Details
 1. On your Instance overview page, look for the **"Git"** or **"Deployment"** section.
