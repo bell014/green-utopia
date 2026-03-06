@@ -21,9 +21,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.GANDI_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          # Add Gandi git server to known hosts
-          CLEAN_SECRET=$(echo "$GANDI_URL_SECRET" | tr -d ' \n\r\t')
-          GANDI_HOST=$(echo "$CLEAN_SECRET" | grep -oE 'git\.[a-z0-9.-]+' | head -n 1 || true)
+          # Add Gandi git server to known hosts by safely explicitly matching the domain
+          GANDI_HOST=$(echo "$GANDI_URL_SECRET" | grep -oE 'git\.[a-z0-9.-]+\.gpaas\.net' | head -n 1 || true)
           if [ -n "$GANDI_HOST" ]; then
             ssh-keyscan -p 22 -H "$GANDI_HOST" >> ~/.ssh/known_hosts
           else
@@ -54,17 +53,16 @@ jobs:
         env:
           GANDI_URL_SECRET: ${{ secrets.GANDI_GIT_URL }}
         run: |
-          # Strip spaces and newlines in case it was copied with breaks
-          CLEAN_SECRET=$(echo "$GANDI_URL_SECRET" | tr -d ' \n\r\t')
-          EXTRACTED=$(echo "$CLEAN_SECRET" | grep -oE '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}@git\.[a-z0-9.-]+' | head -n 1 || true)
+          USER_ID=$(echo "$GANDI_URL_SECRET" | grep -oE '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}' | head -n 1 || true)
+          GANDI_HOST=$(echo "$GANDI_URL_SECRET" | grep -oE 'git\.[a-z0-9.-]+\.gpaas\.net' | head -n 1 || true)
 
-          if [ -z "$EXTRACTED" ]; then
+          if [ -z "$USER_ID" ] || [ -z "$GANDI_HOST" ]; then
             echo "Error: Could not extract Gandi username/host. Check your GANDI_GIT_URL secret."
             exit 1
           fi
 
           # Rebuild the final and clean Gandi URL
-          GANDI_URL="ssh://${EXTRACTED}/default.git"
+          GANDI_URL="ssh://${USER_ID}@${GANDI_HOST}/default.git"
 
           git remote add gandi "$GANDI_URL"
           # Force push the current HEAD to master
@@ -74,13 +72,14 @@ jobs:
         env:
           GANDI_URL_SECRET: ${{ secrets.GANDI_GIT_URL }}
         run: |
-          CLEAN_SECRET=$(echo "$GANDI_URL_SECRET" | tr -d ' \n\r\t')
-          EXTRACTED=$(echo "$CLEAN_SECRET" | grep -oE '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}@git\.[a-z0-9.-]+' | head -n 1 || true)
+          USER_ID=$(echo "$GANDI_URL_SECRET" | grep -oE '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}' | head -n 1 || true)
+          GANDI_HOST=$(echo "$GANDI_URL_SECRET" | grep -oE 'git\.[a-z0-9.-]+\.gpaas\.net' | head -n 1 || true)
 
-          if [ -z "$EXTRACTED" ]; then
+          if [ -z "$USER_ID" ] || [ -z "$GANDI_HOST" ]; then
             echo "Error: Could not extract Gandi username/host. Check your GANDI_GIT_URL secret."
             exit 1
           fi
 
+          EXTRACTED="${USER_ID}@${GANDI_HOST}"
           echo "Triggering deploy on $EXTRACTED..."
           ssh -o StrictHostKeyChecking=no "$EXTRACTED" deploy default.git
