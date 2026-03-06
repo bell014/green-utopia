@@ -44,17 +44,21 @@ jobs:
 
       - name: Push to Gandi
         env:
-          GANDI_URL: ${{ secrets.GANDI_GIT_URL }}
+          GANDI_URL_SECRET: ${{ secrets.GANDI_GIT_URL }}
         run: |
-          git remote add gandi $GANDI_URL
+          # Clean up the URL just in case the entire command was pasted
+          GANDI_URL=$(echo "$GANDI_URL_SECRET" | awk '{print $NF}')
+          git remote add gandi "$GANDI_URL"
           # Force push the current HEAD to master (Gandi usually expects master)
           git push gandi HEAD:master --force
 
       - name: Trigger Gandi Deploy
         env:
-          GANDI_URL: ${{ secrets.GANDI_GIT_URL }}
+          GANDI_URL_SECRET: ${{ secrets.GANDI_GIT_URL }}
         run: |
-          # Extract user@host from GANDI_GIT_URL to run the deploy command
-          SSH_TARGET=$(echo $GANDI_URL | sed 's|^git+ssh://||' | sed 's|^ssh://||' | sed 's|/.*||')
+          # Clean up the URL first
+          GANDI_URL=$(echo "$GANDI_URL_SECRET" | awk '{print $NF}')
+          # Extract user@host from GANDI_URL to run the deploy command
+          SSH_TARGET=$(echo "$GANDI_URL" | sed 's|^git+ssh://||' | sed 's|^ssh://||' | sed 's|/.*||')
           echo "Triggering deploy on $SSH_TARGET..."
-          ssh $SSH_TARGET deploy default.git
+          ssh "$SSH_TARGET" deploy default.git
