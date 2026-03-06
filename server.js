@@ -13,6 +13,25 @@ const PORT = process.env.PORT || 3000;
 app.use(cors()); // Allow all CORS requests for now (can be restricted to specific domain)
 app.use(express.json()); // Parse JSON bodies
 
+// Serve Static Frontend Files (Securely)
+// Serve HTML files and assets, but explicitly deny access to sensitive files
+const sensitiveFiles = ['.env', 'credentials.json', 'package.json', 'package-lock.json', 'server.js'];
+app.use((req, res, next) => {
+    const isSensitive = sensitiveFiles.some(file => req.path.includes(file));
+    if (isSensitive) {
+        return res.status(403).send('Forbidden');
+    }
+    next();
+});
+
+// Serve the current directory as static files (excluding sensitive ones blocked above)
+app.use(express.static(path.join(__dirname)));
+
+// Fallback for root route to index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // Google Sheets Setup
 // Strict .env usage as requested
 
@@ -41,12 +60,12 @@ if (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && privateKey && process.env.GOOGLE
         console.log('✅ Auth initialized using .env variables');
     } catch (err) {
         console.error('❌ Error initializing Google Auth:', err.message);
-        process.exit(1); // Exit if auth fails
+        // Do NOT process.exit(1) so the frontend website can still stay online even if forms are broken
     }
 } else {
-    console.error('❌ CRITICAL ERROR: Missing .env credentials.');
+    console.error('❌ Missing .env credentials. Forms will not work.');
     console.error('Please ensure GOOGLE_SERVICE_ACCOUNT_EMAIL, GOOGLE_PRIVATE_KEY, and GOOGLE_SHEET_ID are set.');
-    process.exit(1); // Exit if credentials missing
+    // Do NOT process.exit(1) so the frontend website can still stay online even if forms are broken
 }
 
 // Endpoint to handle form submission
@@ -56,6 +75,10 @@ app.post('/submit-form', async (req, res) => {
 
         if (!fullName || !email || !message) {
             return res.status(400).json({ error: 'Missing required fields: fullName, email, message' });
+        }
+
+        if (!doc) {
+            return res.status(500).json({ error: 'Backend not fully configured. Missing credentials.' });
         }
 
         // Load document info
@@ -91,6 +114,10 @@ app.post('/subscribe', async (req, res) => {
 
         if (!email) {
             return res.status(400).json({ error: 'Email is required' });
+        }
+
+        if (!doc) {
+            return res.status(500).json({ error: 'Backend not fully configured. Missing credentials.' });
         }
 
         // Load document info
