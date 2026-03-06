@@ -30,13 +30,33 @@ jobs:
           fi
 
       - name: Create .env file and commit
+        env:
+          GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
         run: |
-          # Create the .env file using GitHub Secrets
-          echo "GOOGLE_SERVICE_ACCOUNT_EMAIL=${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}" >> .env
-          echo "GOOGLE_SHEET_ID=${{ secrets.GOOGLE_SHEET_ID }}" >> .env
-          # Escape newlines carefully for the private key
-          echo "GOOGLE_PRIVATE_KEY=\"${{ secrets.GOOGLE_PRIVATE_KEY }}\"" >> .env
-          echo "PORT=8080" >> .env
+          # Use Node.js to safely parse and serialize the secretive multiline strings into .env
+          node -e "
+            const fs = require('fs');
+            let key = process.env.GOOGLE_PRIVATE_KEY || '';
+            
+            // If the user pasted the literal JSON quoted string, parse it out
+            if (key.trim().startsWith('\"') && key.trim().endsWith('\"')) {
+                try { key = JSON.parse(key); } catch (e) {}
+            }
+            
+            // Ensure any literal backslash-n gets converted to real newlines
+            key = key.replace(/\\\\n/g, '\n').replace(/\\r/g, '');
+            
+            const lines = [
+              'PORT=8080',
+              'GOOGLE_SERVICE_ACCOUNT_EMAIL=' + (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || ''),
+              'GOOGLE_SHEET_ID=' + (process.env.GOOGLE_SHEET_ID || ''),
+              'GOOGLE_PRIVATE_KEY=' + JSON.stringify(key)
+            ];
+            
+            fs.writeFileSync('.env', lines.join('\n'));
+          "
 
           # Temporarily remove .env from .gitignore so we can push it to Gandi
           sed -i '/\.env/d' .gitignore || true
