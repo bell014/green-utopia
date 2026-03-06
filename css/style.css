@@ -1409,7 +1409,6 @@ video {
   .service-text-title {
     font-size: 1.5rem;
     overflow-wrap: break-word;
-    hyphens: auto;
   }
 
   .service-card-button {
