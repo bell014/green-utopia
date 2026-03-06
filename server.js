@@ -35,15 +35,34 @@ app.get('/', (req, res) => {
 // Google Sheets Setup
 // Strict .env usage as requested
 
-// Helper function to clean the private key
+// Helper function to clean the private key robustly
 const getPrivateKey = () => {
-    const key = process.env.GOOGLE_PRIVATE_KEY;
+    let key = process.env.GOOGLE_PRIVATE_KEY;
     if (!key) return null;
 
-    // If the key is wrapped in double quotes in the .env file, dotenv might leave them if not parsed correctly,
-    // but usually dotenv handles it. 
-    // We need to convert literal "\n" characters back to actual newlines.
-    return key.replace(/\\n/g, '\n');
+    // Remove any surrounding quotes that might have been trapped during interpolation
+    if (key.startsWith('"') && key.endsWith('"')) {
+        key = key.substring(1, key.length - 1);
+    } else if (key.startsWith("'") && key.endsWith("'")) {
+        key = key.substring(1, key.length - 1);
+    }
+
+    // If literal '\n' characters were passed, convert them to real line breaks
+    key = key.replace(/\\n/g, '\n');
+
+    // To prevent OpenSSL "DECODER routines::unsupported" errors caused by extra spaces,
+    // we split every line, trim any hidden trailing/leading spaces, and stitch it back.
+    key = key.split('\n')
+        .map(line => line.trim())
+        .filter(line => line.length > 0)
+        .join('\n');
+
+    // Ensure it strictly has the PEM headers and footers intact if they got lost or spaced
+    if (!key.includes('BEGIN PRIVATE KEY')) {
+        console.error('❌ Private key is missing BEGIN marker');
+    }
+
+    return key;
 };
 
 let doc;
