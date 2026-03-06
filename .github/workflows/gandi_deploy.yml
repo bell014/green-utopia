@@ -1,0 +1,60 @@
+name: Deploy to Gandi
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GANDI_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          # Add Gandi git server to known hosts to avoid prompt
+          ssh-keyscan -p 22 -H $(echo "${{ secrets.GANDI_GIT_URL }}" | sed 's/.*@//' | sed 's/\/.*//') >> ~/.ssh/known_hosts
+
+      - name: Create .env file and commit
+        run: |
+          # Create the .env file using GitHub Secrets
+          echo "GOOGLE_SERVICE_ACCOUNT_EMAIL=${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}" >> .env
+          echo "GOOGLE_SHEET_ID=${{ secrets.GOOGLE_SHEET_ID }}" >> .env
+          # Escape newlines carefully for the private key
+          echo "GOOGLE_PRIVATE_KEY=\"${{ secrets.GOOGLE_PRIVATE_KEY }}\"" >> .env
+          echo "PORT=8080" >> .env
+
+          # Temporarily remove .env from .gitignore so we can push it to Gandi
+          sed -i '/\.env/d' .gitignore || true
+
+          # Configure git
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+
+          # Commit the .env file locally
+          git add .env .gitignore
+          git commit -m "chore: Include .env for Gandi deployment"
+
+      - name: Push to Gandi
+        env:
+          GANDI_URL: ${{ secrets.GANDI_GIT_URL }}
+        run: |
+          git remote add gandi $GANDI_URL
+          # Force push the current HEAD to master (Gandi usually expects master)
+          git push gandi HEAD:master --force
+
+      - name: Trigger Gandi Deploy
+        env:
+          GANDI_URL: ${{ secrets.GANDI_GIT_URL }}
+        run: |
+          # Extract user@host from GANDI_GIT_URL to run the deploy command
+          SSH_TARGET=$(echo $GANDI_URL | sed 's|^git+ssh://||' | sed 's|^ssh://||' | sed 's|/.*||')
+          echo "Triggering deploy on $SSH_TARGET..."
+          ssh $SSH_TARGET deploy default.git
